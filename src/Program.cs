@@ -14,6 +14,7 @@ namespace PROYECTO
         [STAThread]
         static void Main()
         {
+            //diego ha estado aqui - borrar esta linea
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
