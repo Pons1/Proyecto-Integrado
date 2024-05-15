@@ -13,35 +13,12 @@ namespace PROYECTO
 {
     public partial class Mapa : Form
     {
-        Puertas puerta = new Puertas();
-        ConexionBD con = new ConexionBD();
+
 
         public Mapa()
         {
             InitializeComponent();
-            try
-            {
-                if (con.AbrirConexion())
-                {
-                    if(puerta.ComprobarPuerta(111, con.Conexion))
-                    {
-                        btn_bloqA.BackColor = Color.Red;                    
-                    }
-                    else
-                    {
-                        btn_bloqA.BackColor = Color.Green;
-                    }
-                    
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
-            }
-            finally
-            {
-                con.CerrarConexion();
-            }
+            
         }
 
 

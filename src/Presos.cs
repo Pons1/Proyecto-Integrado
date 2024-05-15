@@ -23,5 +23,11 @@ namespace PROYECTO
             Añadir_recluso r1 = new Añadir_recluso();
             r1.Show();
         }
+
+        private void Presos_Load(object sender, EventArgs e)
+        {
+            dgvPresos.DataSource = Preso.MostrarPresos();
+               
+        }
     }
 }

@@ -7,48 +7,48 @@ using MySql.Data.MySqlClient;
 
 namespace PROYECTO
 {
-    internal class ConexionBD
-    {
-        private MySqlConnection conexion;
-        public MySqlConnection Conexion { get { return conexion; } }
-
-        public ConexionBD()
+    
+        internal class ConexionBD
         {
-            string server = "server=127.0.0.1;";
-            string port = "port=3306;";
-            string database = "database=proyecto;";
-            string usuario = "uid=root;";
-            string password = "pwd=;";
-            string convert = "Convert Zero Datetime=True;";
-            string connectionstring = server + port + database + usuario + password + convert;
+            private static MySqlConnection conexion = null;
+            private static readonly object padlock = new object();
 
-            conexion = new MySqlConnection(connectionstring);
-        }
 
-        public bool AbrirConexion()
-        {
-            try
-            {
-                conexion.Open();
-                return true;
-            }
-            catch 
-            {
-                return false;
-            }
-        }
+            private ConexionBD() { }
 
-        public bool CerrarConexion()
-        {
-            try
+            public static MySqlConnection Conexion
             {
-                conexion.Close();
-                return true;
+                get
+                {
+                    lock (padlock)
+                    {
+                        if (conexion == null)
+                        {
+                            conexion = new MySqlConnection();
+                            conexion.ConnectionString = "server=127.0.0.1;database=centralis;uid=root;pwd=";
+                        }
+                        return conexion;
+                    }
+                }
             }
-            catch
+
+            //Abre la conexión con la base de datos
+
+            public static void AbrirConexion()
             {
-                return false;
+                if (conexion != null)
+                {
+                    conexion.Open();
+                }
+            }
+            //Cierra la conexión con la base de datos
+
+            public static void CerrarConexion()
+            {
+                if (conexion != null)
+                {
+                    conexion.Close();
+                }
             }
         }
-    }
 }

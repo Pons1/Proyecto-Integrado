@@ -81,6 +81,7 @@
     <Compile Include="Personal.Designer.cs">
       <DependentUpon>Personal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Preso.cs" />
     <Compile Include="Presos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,7 +90,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Puertas.cs" />
     <Compile Include="Registro.cs">
       <SubType>Form</SubType>
     </Compile>
