@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0px;
+            font-family: Arial, sans-serif; /* Agregamos una fuente genérica */
+            background-color: rgb(165, 165, 170);
+        }
+
+        #div-menu {
+            width: 100%; /* Hace que el div ocupe todo el ancho disponible */
+            height: 6.2vh; /* Hace que el div ocupe el 20% del alto de la página */
+            text-align: center; /* Centra horizontalmente los elementos dentro del div */
+            background-color: #004AAD; /* Cambia el color de fondo del div a azul */
+        }
+
+        .logo {
+            float: left; /* Alinea la imagen a la izquierda */
+            margin-right: 20px; /* Espacio entre la imagen y los enlaces */
+            max-width: 80%; /* Establece el ancho máximo de la imagen */
+            max-height: 100%; /* Establece la altura máxima de la imagen */
+        }
+
+        .link-1 {
+            color: #ffffff; /* Cambiamos el color del texto a negro */
+            font-size: 20px;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .link-1::before,
+        .link-1::after {
+            content: "";
+            position: absolute;
+            background-color: #ffffff; /* Cambiamos el color del subrayado a negro */
+            width: 100%;
+            height: 2px;
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .link-1::before {
+            top: 0;
+            left: 0;
+            transform-origin: left;
+        }
+
+        .link-1::after {
+            bottom: 0;
+            right: 0;
+            transform-origin: right;
+        }
+
+        .link-1:hover::before,
+        .link-1:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Estilos para las tarjetas */
+        .card {
+            width: 500px; /* Ancho total de la tarjeta */
+            margin: 20px ; /* Centrar la tarjeta horizontalmente */
+            background-color: #ffffff;
+            padding: 20px;
+            border: solid #004AAD;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Para contener la imagen y el texto */
+        }
+
+        .card:hover {
+          width: 520px;
+          border: solid 4px #5f64ff;
+        }
+
+        .card img {
+            float: left; /* Alinear la imagen a la izquierda */
+            width: 100px; /* Ancho de la imagen */
+            height: 100px; /* Altura de la imagen */
+            border-radius: 8px; /* Borde redondeado para la imagen */
+            margin-right: 20px; /* Espacio entre la imagen y el texto */
+        }
+
+        .card p {
+            margin: 5px 0; /* Espacio entre los párrafos */
+        }
+    </style>
+</head>
+<body>
+    <div id="div-menu">
+      <img class="logo" src="LogoCentralis.png" alt="Logo Centralis">
+      <a class="link-1" href="mapa.html">Mapa</a>
+      <a class="link-1" href="#">Presos</a>
+      <a class="link-1" href="#">Personal</a>
+      <a class="link-1" href="#">Horarios</a>
+      <a class="link-1" href="#">Registros</a>
+      <a class="link-1" href="#">Sobre Nosotros</a>
+    </div>
+    <div class="cards-container" style="float: right; width: 590px;">
+      <div class="card">
+        <img src="diego.png" alt="Integrante 1:">
+        <p>Nombre:&ensp; Diego Martínez León</p>
+        <p>Roles:&ensp; ROLES</p>
+        <p>Teléfono:&ensp; 63329604</p>
+        <p>Email:&ensp; dimale@floridauniversitaria.es</p>
+      </div>
+      <div class="card">
+        <img src="manu.png" alt="Integrante 2:">
+        <p>Nombre:&ensp; Manuel García Muañache</p>
+        <p>Roles:&ensp; ROLES</p>
+        <p>Teléfono:&ensp; 638927854</p>
+        <p>Email:&ensp; magamu@floridauniversitaria.es</p>
+      </div>
+      <div class="card">
+        <img src="adrian.png" alt="Integrante 3:">
+        <p>Nombre:&ensp; Andrián Pons</p>
+        <p>Roles:&ensp; ROLES</p>
+        <p>Teléfono:&ensp; 987654321</p>
+        <p>Email:&ensp; dimale@floridauniversitaria.es</p>
+      </div>
+      <div class="card">
+        <img src="sergio.png" alt="Integrante 4:">
+        <p>Nombre:&ensp; Sergio Samper Calvo</p>
+        <p>Roles:&ensp; ROLES</p>
+        <p>Teléfono:&ensp; 659040146</p>
+        <p>Email:&ensp; sesaca@floridauniversitaria.es</p>
+      </div>
+      <div class="card">
+        <img src="LogoCentralis.png" alt="Integrante 5:">
+        <p>Nombre:&ensp; Jorge García</p>
+        <p>Roles:&ensp; ROLES</p>
+        <p>Teléfono:&ensp; 987654321</p>
+        <p>Email:&ensp; dimale@floridauniversitaria.es</p>
+      </div>
+    </div>
+    <div style="float: right; border: solid #004AAD; height: 790px; width: 60%; margin-top: 25px;">
+      <img src="LOS_PIBES.jpeg" style="height: 100%; width: 100%;">
+    </div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+          margin: 0px;
+          font-family: Arial, sans-serif;
+          background-color: rgb(108, 108, 116);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          height: 100vh;
+        }
+
+        #div-menu {
+          width: 100%;
+          height: 6.2vh;
+          text-align: center;
+          background-color: #004AAD;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .logo {
+          max-width: 80%;
+          max-height: 100%;
+          margin-right: 20px;
+        }
+
+        .link-1 {
+          color: #ffffff;
+          font-size: 20px;
+          text-decoration: none;
+          padding: 10px 20px;
+          margin: 0 5px;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+        }
+
+        .link-1::before,
+        .link-1::after {
+          content: "";
+          position: absolute;
+          background-color: #ffffff;
+          width: 100%;
+          height: 2px;
+          transform: scaleX(0);
+          transition: transform 0.4s;
+        }
+
+        .link-1::before {
+          top: 0;
+          left: 0;
+          transform-origin: left;
+        }
+
+        .link-1::after {
+          bottom: 0;
+          right: 0;
+          transform-origin: right;
+        }
+
+        .link-1:hover::before,
+        .link-1:hover::after {
+          transform: scaleX(1);
+        }
+
+        .container {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-top: 20px;
+          width: 80%;
+        }
+
+        #div-imagen,
+        #div-texto {
+          background-color: #ffffff;
+          border: solid white;
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #div-imagen {
+          margin-right: 20px; /* Espacio entre el div de imagen y el de texto */
+        }
+
+        #div-texto {
+          width: 50%; /* Ajusta el tamaño del div de texto según tus necesidades */
+          height: 93%;
+        }
+
+        #mapa-img {
+          width: 100%;
+          height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="div-menu">
+        <img class="logo" src="LogoCentralis.png" alt="Logo Centralis">
+        <a class="link-1" href="#">Map</a>
+        <a class="link-1" href="#">Presos</a>
+        <a class="link-1" href="#">Personal</a>
+        <a class="link-1" href="#">Horarios</a>
+        <a class="link-1" href="#">Registros</a>
+        <a class="link-1" href="sobre_nosotros.html">About us</a>
+    </div>
+    <div class="container">
+        <div id="div-imagen">
+            <img id="mapa-img" src="Mapa.jpeg" alt="Mapa">
+        </div>
+        <div id="div-texto">
+            <p>FNBSJBGISFKEÑHUFSPEHUFISPHFUIPSHEUIPFHSUEIHFESPUI. EHUSHFUISEUIFLSHEUIOSEHUIOFSHUIOESHUIFHUSEIFHSUIE</p>
+        </div>
+    </div>
+</body>
+</html>
