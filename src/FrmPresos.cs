@@ -52,5 +52,10 @@ namespace PROYECTO
         {
             dgvPresos.DataSource = Preso.MostrarPresosPorNombre(txt_buscar.Text);
         }
+
+        private void dgvPresos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

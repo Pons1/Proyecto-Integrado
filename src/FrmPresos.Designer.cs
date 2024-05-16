@@ -36,8 +36,10 @@
             this.btn_añadir_recluso = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLupa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_buscar
@@ -96,6 +98,7 @@
             this.dgvPresos.RowHeadersWidth = 51;
             this.dgvPresos.Size = new System.Drawing.Size(915, 396);
             this.dgvPresos.TabIndex = 7;
+            this.dgvPresos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPresos_CellContentClick);
             // 
             // pcbLupa
             // 
@@ -147,6 +150,11 @@
             this.lblNombre.TabIndex = 9;
             this.lblNombre.Text = "Nombre:";
             // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
             // FrmPresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -168,6 +176,7 @@
             this.Load += new System.EventHandler(this.Presos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPresos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLupa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +192,6 @@
         private System.Windows.Forms.DataGridView dgvPresos;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Label lblNombre;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
     }
 }
