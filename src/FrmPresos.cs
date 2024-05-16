@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PROYECTO
 {
-    public partial class Presos : Form
+    public partial class FrmPresos : Form
     {
-        public Presos()
+        public FrmPresos()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace PROYECTO
 
         private void btn_añadir_recluso_Click(object sender, EventArgs e)
         {
-            Añadir_recluso r1 = new Añadir_recluso();
+            FrmAñadir_recluso r1 = new FrmAñadir_recluso();
             r1.Show();
         }
 

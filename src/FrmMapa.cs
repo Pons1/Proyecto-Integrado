@@ -11,11 +11,11 @@ using System.Drawing.Design;
 
 namespace PROYECTO
 {
-    public partial class Mapa : Form
+    public partial class FrmMapa : Form
     {
 
 
-        public Mapa()
+        public FrmMapa()
         {
             InitializeComponent();
             

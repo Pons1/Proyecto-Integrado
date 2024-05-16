@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PROYECTO
 {
-    public partial class Añadir_recluso : Form
+    public partial class FrmAñadir_recluso : Form
     {
-        public Añadir_recluso()
+        public FrmAñadir_recluso()
         {
             InitializeComponent();
         }
