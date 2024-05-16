@@ -1,99 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centralis_Presos</title>
+    <title>Prisioneros de Centralis</title>
 
     <style>
         body {
-          margin: 0px;
-          font-family: Arial, sans-serif;
-          background-color: rgb(108, 108, 116);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: flex-start;
-          height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #6c6c74;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding-top: 6.2vh; /* Ajustado para la altura del menú */
         }
 
         #div-menu {
-          width: 100%;
-          height: 6.2vh;
-          text-align: center;
-          background-color: #004AAD;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 6.2vh;
+            background-color: #004aad;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Ajustado la alineación */
+            z-index: 1000; /* Asegura que el menú esté siempre arriba */
+            padding: 0 20px; /* Añadido espacio para mejorar el espaciado */
         }
 
         .logo {
-          max-width: 80%;
-          max-height: 100%;
-          margin-right: 20px;
+            max-width: 80%;
+            max-height: 100%;
         }
 
         .link-1 {
-          color: #ffffff;
-          font-size: 20px;
-          text-decoration: none;
-          padding: 10px 20px;
-          margin: 0 5px;
-          position: relative;
-          overflow: hidden;
-          z-index: 1;
+            color: #ffffff;
+            font-size: 16px; /* Tamaño de fuente ajustado */
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            position: relative;
         }
 
         .link-1::before,
         .link-1::after {
-          content: "";
-          position: absolute;
-          background-color: #ffffff;
-          width: 100%;
-          height: 2px;
-          transform: scaleX(0);
-          transition: transform 0.4s;
-        }
-
-        .link-1::before {
-          top: 0;
-          left: 0;
-          transform-origin: left;
-        }
-
-        .link-1::after {
-          bottom: 0;
-          right: 0;
-          transform-origin: right;
+            content: "";
+            position: absolute;
+            background-color: #ffffff;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            transition: width 0.4s;
         }
 
         .link-1:hover::before,
         .link-1:hover::after {
-          transform: scaleX(1);
+            width: 100%;
         }
-        .fle {
-            transition: transform 0.5s ease;
 
+        .link-1 img {
+            height: 24px; /* Altura ajustada */
+            width: auto; /* Asegura la proporción */
+            margin-right: 5px; /* Margen añadido para mejor espaciado */
         }
-        .fle:hover {
-            transform: rotate(-360deg);
+
+        .content-wrapper {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px; /* Margen añadido para separación */
+            width: 80%; /* Ajusta el ancho según necesites */
+        }
+
+        .content {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 70%; /* Ajusta el ancho según necesites */
+        }
+
+        .content h1 {
+            font-size: 24px; /* Tamaño de fuente ajustado */
+            color: #000000; /* Cambia el color de la fuente para mejorar la visibilidad */
+        }
+
+        .content p {
+            color: #000000; /* Cambia el color de la fuente para mejorar la visibilidad */
+            line-height: 1.6; /* Mejora la legibilidad */
+        }
+
+        .image {
+            flex: 1;
+            margin-right: 20px; /* Margen añadido para el espaciado */
+        }
+
+        .image img {
+            width: 100%;
+            border-radius: 10px; /* Esquinas redondeadas para la imagen */
         }
     </style>
 </head>
 <body>
     <div id="div-menu">
-        <a href="index.html"><img class="fle" src="Flecha_Atras.png" style="height: 40px; width: 40px; float: left; margin-left: 20px;"></a>
-        <img class="logo" src="LogoCentralis.png" alt="Logo Centralis">
-        <a class="link-1" href="Pagina_Sobre_Centralis.html">Sobre Centralis</a>
-        <a class="link-1" href="Pagina_mapa.html">Mapa</a>
-        <a class="link-1" href="#" style="background-color: rgb(59, 48, 113);">Presos</a>
-        <a class="link-1" href="Pagina_Personal.html">Personal</a>
-        <a class="link-1" href="Pagina_Horarios.html">Horarios</a>
-        <a class="link-1" href="Pagina_Registros.html">Registros</a>
-        <a class="link-1" href="Pagina_sobre_nosotros.html">Sobre Nosotros</a>
-        <a class="link-1" href="Pagina_Contactanos.html">Contactanos</a>
-        <a href="index.html"><img src="España.png" style="height: 44px; width: 80px;"></a>
-      </div>
-<p>PRESOS</p>
+        <a href="index.html"><img class="fle" src="Back_Arrow.png"></a>
+        <img class="logo" src="Centralis_Logo.png" alt="Logo de Centralis">
+        <a class="link-1" href="About_Centralis_Page.html">Acerca de Centralis</a>
+        <a class="link-1" href="Map_Page.html">Mapa</a>
+        <a class="link-1" href="#" style="background-color: rgb(59, 48, 113);">Prisioneros</a>
+        <a class="link-1" href="Staff_Page.html">Personal</a>
+        <a class="link-1" href="Schedule_Page.html">Horario</a>
+        <a class="link-1" href="Records_Page.html">Registros</a>
+        <a class="link-1" href="About_Us_Page.html">Sobre Nosotros</a>
+        <a class="link-1" href="Contact_Us_Page.html">Contáctanos</a>
+        <a href="index.html"><img src="Spain.png"></a>
+    </div>
+    <div class="content-wrapper">
+        <div class="image">
+            <img src="prisionero.jpeg" alt="Tu imagen">
+        </div>
+        <div class="content">
+            <h1>Prisioneros:</h1>
+            <p>
+                Los prisioneros tendrán una serie de datos, entre ellos:<br><br>
+                &emsp;• Número de identificación.<br>
+                &emsp;• Nombre.<br>
+                &emsp;• Delito.<br>
+                &emsp;• Celda.<br>
+                &emsp;• Una imagen.<br><br>
+                Entre otros datos.<br><br>
+                Podremos realizar diferentes acciones con cada prisionero, como:<br><br>
+                &emsp;• Agregar un prisionero.<br>
+                &emsp;• Editar un prisionero.<br>
+                &emsp;• Eliminar un prisionero.<br><br>
+                Además, cada prisionero podrá entrar y salir del centro bajo ciertas circunstancias,<br>
+                lo cual será registrado en los <a href="Records_Page.html">registros</a>.
+            </p>
+        </div>
+    </div>
 </body>
 </html>
