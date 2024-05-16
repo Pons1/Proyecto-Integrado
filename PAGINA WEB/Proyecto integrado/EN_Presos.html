@@ -7,58 +7,69 @@
 
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #6c6c74;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-            padding-top: 6.2vh; /* Adjusted for menu height */
+          margin: 0px;
+          font-family: Arial, sans-serif;
+          background-color: rgb(108, 108, 116);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          height: 100vh;
         }
 
         #div-menu {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 6.2vh;
-            background-color: #004aad;
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /* Adjusted alignment */
-            z-index: 1000; /* Ensures menu stays on top */
-            padding: 0 20px; /* Added padding for better spacing */
+          width: 100%;
+          height: 6.2vh;
+          text-align: center;
+          background-color: #004AAD;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .logo {
-            max-width: 80%;
-            max-height: 100%;
+          max-width: 80%;
+          max-height: 100%;
+          margin-right: 20px;
         }
 
         .link-1 {
-            color: #ffffff;
-            font-size: 16px; /* Adjusted font size */
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            position: relative;
+          color: #ffffff;
+          font-size: 20px;
+          text-decoration: none;
+          padding: 10px 20px;
+          margin: 0 5px;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
         }
 
         .link-1::before,
         .link-1::after {
-            content: "";
-            position: absolute;
-            background-color: #ffffff;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            transition: width 0.4s;
+          content: "";
+          position: absolute;
+          background-color: #ffffff;
+          width: 100%;
+          height: 2px;
+          transform: scaleX(0);
+          transition: transform 0.4s;
+        }
+
+        .link-1::before {
+          top: 0;
+          left: 0;
+          transform-origin: left;
+        }
+
+        .link-1::after {
+          bottom: 0;
+          right: 0;
+          transform-origin: right;
         }
 
         .link-1:hover::before,
         .link-1:hover::after {
-            width: 100%;
+          transform: scaleX(1);
         }
 
         .link-1 img {
@@ -79,7 +90,6 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            text-align: center; /* Center-align content */
             width: 70%; /* Adjust width as needed */
         }
 
@@ -106,21 +116,21 @@
 </head>
 <body>
     <div id="div-menu">
-        <a href="index.html"><img class="fle" src="Back_Arrow.png"></a>
-        <img class="logo" src="Centralis_Logo.png" alt="Centralis Logo">
-        <a class="link-1" href="About_Centralis_Page.html">About Centralis</a>
-        <a class="link-1" href="Map_Page.html">Map</a>
-        <a class="link-1" href="#" style="background-color: rgb(59, 48, 113);">Prisoners</a>
-        <a class="link-1" href="Staff_Page.html">Staff</a>
-        <a class="link-1" href="Schedule_Page.html">Schedule</a>
-        <a class="link-1" href="Records_Page.html">Records</a>
-        <a class="link-1" href="About_Us_Page.html">About Us</a>
-        <a class="link-1" href="Contact_Us_Page.html">Contact Us</a>
-        <a href="index.html"><img src="Spain.png"></a>
+        <a href="index.html"><img class="fle" src="Flecha_Atras.png" style="height: 40px; width: 40px; float: left; margin-left: 20px;"></a>
+        <img class="logo" src="LogoCentralis.png" alt="Centralis Logo">
+        <a class="link-1" href="EN_Sobre_Centralis.html">About Centralis</a>
+        <a class="link-1" href="EN_mapa.html">Map</a>
+        <a class="link-1" href="EN_Presos.html" style="background-color: rgb(59, 48, 113);">Prisoners</a>
+        <a class="link-1" href="EN_Personal.html">Staff</a>
+        <a class="link-1" href="EN_Horarios.html">Schedule</a>
+        <a class="link-1" href="EN_Registros.html">Records</a>
+        <a class="link-1" href="EN_Sobre_Nosotros.html">About Us</a>
+        <a class="link-1" href="EN_Contactanos.html">Contact Us</a>
+        <a href="index.html"><img src="Reino Unido.png" style="height: 45px; width: 80px;"></a>
     </div>
     <div class="content-wrapper">
         <div class="image">
-            <img src="your_image.jpg" alt="Your Image">
+            <img src="prisionero.jpeg" alt="Your Image">
         </div>
         <div class="content">
             <h1>Prisoners:</h1>

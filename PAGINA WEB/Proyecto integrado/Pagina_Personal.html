@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centralis_Personal</title>
+    <title>Prisioneros de Centralis</title>
 
     <style>
         body {
@@ -71,29 +71,83 @@
         .link-1:hover::after {
           transform: scaleX(1);
         }
-        .fle {
-            transition: transform 0.5s ease;
 
+        .link-1 img {
+            height: 24px; /* Altura ajustada */
+            width: auto; /* Asegura la proporción */
+            margin-right: 5px; /* Margen añadido para mejor espaciado */
         }
-        .fle:hover {
-            transform: rotate(-360deg);
+
+        .content-wrapper {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px; /* Margen añadido para separación */
+            width: 80%; /* Ajusta el ancho según necesites */
+        }
+
+        .content {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 70%; /* Ajusta el ancho según necesites */
+        }
+
+        .content h1 {
+            font-size: 24px; /* Tamaño de fuente ajustado */
+            color: #000000; /* Cambia el color de la fuente para mejorar la visibilidad */
+        }
+
+        .content p {
+            color: #000000; /* Cambia el color de la fuente para mejorar la visibilidad */
+            line-height: 1.6; /* Mejora la legibilidad */
+        }
+
+        .image {
+            flex: 1;
+            margin-right: 20px; /* Margen añadido para el espaciado */
+        }
+
+        .image img {
+            width: 100%;
+            border-radius: 10px; /* Esquinas redondeadas para la imagen */
         }
     </style>
 </head>
 <body>
-    <div id="div-menu">
-        <a href="index.html"><img class="fle" src="Flecha_Atras.png" style="height: 40px; width: 40px; float: left; margin-left: 20px;"></a>
-        <img class="logo" src="LogoCentralis.png" alt="Logo Centralis">
-        <a class="link-1" href="Pagina_Sobre_Centralis.html">Sobre Centralis</a>
-        <a class="link-1" href="Pagina_mapa.html">Mapa</a>
-        <a class="link-1" href="Pagina_Presos.html">Presos</a>
-        <a class="link-1" href="#" style="background-color: rgb(59, 48, 113);">Personal</a>
-        <a class="link-1" href="Pagina_Horarios.html">Horarios</a>
-        <a class="link-1" href="Pagina_Registros.html">Registros</a>
-        <a class="link-1" href="Pagina_sobre_nosotros.html">Sobre Nosotros</a>
-        <a class="link-1" href="Pagina_Contactanos.html">Contactanos</a>
-        <a href="index.html"><img src="España.png" style="height: 44px; width: 80px;"></a>
-      </div>
-<p>PERSONAL</p>
+  <div id="div-menu">
+    <a href="index.html"><img class="fle" src="Flecha_Atras.png" style="height: 40px; width: 40px; float: left; margin-left: 20px;"></a>
+    <img class="logo" src="LogoCentralis.png" alt="Logo Centralis">
+    <a class="link-1" href="Pagina_Sobre_Centralis.html">Sobre Centralis</a>
+    <a class="link-1" href="Pagina_mapa.html">Mapa</a>
+    <a class="link-1" href="#" style="background-color: rgb(59, 48, 113);">Presos</a>
+    <a class="link-1" href="Pagina_Personal.html">Personal</a>
+    <a class="link-1" href="Pagina_Horarios.html">Horarios</a>
+    <a class="link-1" href="Pagina_Registros.html">Registros</a>
+    <a class="link-1" href="Pagina_sobre_nosotros.html">Sobre Nosotros</a>
+    <a class="link-1" href="Pagina_Contactanos.html">Contactanos</a>
+    <a href="index.html"><img src="España.png" style="height: 44px; width: 80px;"></a>
+  </div>
+    <div class="content-wrapper">
+        <div class="image">
+            <img src="policia.jpeg" alt="Tu imagen">
+        </div>
+        <div class="content">
+            <h1>Prisioneros:</h1>
+            <p>
+                Cada miembro del personal tendra una serie de datos, entre ellos:<br><br>
+                &emsp;• DNI.<br>
+                &emsp;• Nombre.<br>
+                &emsp;• Apellidos.<br>
+                &emsp;• Una imagen.<br><br>
+                Entre otros datos.<br><br>
+                Podremos realizar diferentes acciones con el personal, como:<br><br>
+                &emsp;• Agregar personal.<br>
+                &emsp;• Editar personal.<br>
+                &emsp;• Eliminar personal.<br><br>
+                Además, cada miembro del personal estara asignado a un turno.
+            </p>
+        </div>
+    </div>
 </body>
 </html>
