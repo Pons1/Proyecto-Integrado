@@ -133,6 +133,16 @@ namespace PROYECTO.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap def {
+            get {
+                object obj = ResourceManager.GetObject("def", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap horario {
             get {
                 object obj = ResourceManager.GetObject("horario", resourceCulture);

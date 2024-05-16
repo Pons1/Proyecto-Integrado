@@ -42,7 +42,7 @@
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.cmbDireccion = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodigopostal = new System.Windows.Forms.TextBox();
             this.lblCodigoPos = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -50,13 +50,14 @@
             this.lblCelda = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
+            this.btnAñadir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcboxFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_añadir_foto
             // 
             this.btn_añadir_foto.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_añadir_foto.Location = new System.Drawing.Point(48, 193);
+            this.btn_añadir_foto.Location = new System.Drawing.Point(59, 194);
             this.btn_añadir_foto.Margin = new System.Windows.Forms.Padding(4);
             this.btn_añadir_foto.Name = "btn_añadir_foto";
             this.btn_añadir_foto.Size = new System.Drawing.Size(115, 34);
@@ -79,6 +80,7 @@
             // pcboxFoto
             // 
             this.pcboxFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pcboxFoto.Image = global::PROYECTO.Properties.Resources.def;
             this.pcboxFoto.Location = new System.Drawing.Point(48, 36);
             this.pcboxFoto.Margin = new System.Windows.Forms.Padding(4);
             this.pcboxFoto.Name = "pcboxFoto";
@@ -183,7 +185,7 @@
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(354, 333);
+            this.txtDireccion.Location = new System.Drawing.Point(364, 230);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(264, 27);
@@ -193,27 +195,27 @@
             // 
             this.cmbDireccion.AutoSize = true;
             this.cmbDireccion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDireccion.Location = new System.Drawing.Point(253, 339);
+            this.cmbDireccion.Location = new System.Drawing.Point(263, 236);
             this.cmbDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cmbDireccion.Name = "cmbDireccion";
             this.cmbDireccion.Size = new System.Drawing.Size(93, 21);
             this.cmbDireccion.TabIndex = 12;
             this.cmbDireccion.Text = "Direccion:";
             // 
-            // textBox1
+            // txtCodigopostal
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(394, 378);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(264, 27);
-            this.textBox1.TabIndex = 15;
+            this.txtCodigopostal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigopostal.Location = new System.Drawing.Point(404, 275);
+            this.txtCodigopostal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodigopostal.Name = "txtCodigopostal";
+            this.txtCodigopostal.Size = new System.Drawing.Size(264, 27);
+            this.txtCodigopostal.TabIndex = 15;
             // 
             // lblCodigoPos
             // 
             this.lblCodigoPos.AutoSize = true;
             this.lblCodigoPos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoPos.Location = new System.Drawing.Point(254, 381);
+            this.lblCodigoPos.Location = new System.Drawing.Point(264, 278);
             this.lblCodigoPos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodigoPos.Name = "lblCodigoPos";
             this.lblCodigoPos.Size = new System.Drawing.Size(132, 21);
@@ -225,7 +227,7 @@
             // 
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreo.Location = new System.Drawing.Point(252, 414);
+            this.lblCorreo.Location = new System.Drawing.Point(262, 311);
             this.lblCorreo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(169, 21);
@@ -235,7 +237,7 @@
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(430, 414);
+            this.txtCorreo.Location = new System.Drawing.Point(440, 311);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(264, 27);
@@ -264,7 +266,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(430, 460);
+            this.txtTelefono.Location = new System.Drawing.Point(440, 357);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(264, 27);
@@ -274,26 +276,39 @@
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.Location = new System.Drawing.Point(252, 460);
+            this.lblTelefono.Location = new System.Drawing.Point(346, 360);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(85, 21);
             this.lblTelefono.TabIndex = 20;
             this.lblTelefono.Text = "Teléfono:";
             // 
-            // Añadir_recluso
+            // btnAñadir
+            // 
+            this.btnAñadir.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAñadir.Location = new System.Drawing.Point(636, 421);
+            this.btnAñadir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAñadir.Name = "btnAñadir";
+            this.btnAñadir.Size = new System.Drawing.Size(115, 34);
+            this.btnAñadir.TabIndex = 22;
+            this.btnAñadir.Text = "Añadir";
+            this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
+            // 
+            // FrmAñadir_recluso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(190)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(813, 564);
+            this.ClientSize = new System.Drawing.Size(813, 478);
+            this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.cmbCelda);
             this.Controls.Add(this.lblCelda);
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.lblCorreo);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCodigopostal);
             this.Controls.Add(this.lblCodigoPos);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.cmbDireccion);
@@ -310,7 +325,7 @@
             this.Controls.Add(this.btn_añadir_foto);
             this.Controls.Add(this.pcboxFoto);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Añadir_recluso";
+            this.Name = "FrmAñadir_recluso";
             this.Text = "Añadir_recluso";
             this.Load += new System.EventHandler(this.Añadir_recluso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcboxFoto)).EndInit();
@@ -335,7 +350,7 @@
         private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label cmbDireccion;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodigopostal;
         private System.Windows.Forms.Label lblCodigoPos;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.TextBox txtCorreo;
@@ -343,5 +358,6 @@
         private System.Windows.Forms.Label lblCelda;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.Button btnAñadir;
     }
 }

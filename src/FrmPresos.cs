@@ -27,12 +27,30 @@ namespace PROYECTO
         private void Presos_Load(object sender, EventArgs e)
         {
             dgvPresos.DataSource = Preso.MostrarPresos();
+
                
         }
 
         private void cmb_modulo_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgvPresos.DataSource = Preso.MostrarPresosPorModulo(cmb_modulo.Text);
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            dgvPresos.DataSource = Preso.MostrarPresos();
+
+        }
+
+        private void p_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void txt_buscar_TextChanged(object sender, EventArgs e)
+        {
+            dgvPresos.DataSource = Preso.MostrarPresosPorNombre(txt_buscar.Text);
         }
     }
 }

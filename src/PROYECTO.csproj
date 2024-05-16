@@ -208,5 +208,8 @@
   <ItemGroup>
     <None Include="Resources\horario.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\def.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -39,7 +39,7 @@ namespace PROYECTO
         public Image Foto { get { return foto; } }
 
 
-        public Preso(string Nif, string Nombre, string Apellidos, int Crimen, string Sexo, string Direccion, int CodigoPostal, string Correo, int Celda, Image fot)
+        public Preso(string Nif, string Nombre, string Apellidos, int Crimen, string Sexo, string Direccion, int CodigoPostal, string Correo, int Celda, Image fot,int tel)
         {
             this.nif = Nif;
             this.nombre = Nombre;
@@ -51,6 +51,7 @@ namespace PROYECTO
             this.correo = Correo;
             this.celda = Celda;
             this.foto = fot;
+            telefono = tel;
 
 
         }
@@ -80,7 +81,7 @@ namespace PROYECTO
                         Image foto = Image.FromStream(ms);
 
                         Preso user = new Preso(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                        reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8),foto);
+                        reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8),foto, reader.GetInt32(9));
                         lista.Add(user);
                     }
                     ConexionBD.CerrarConexion();
@@ -108,7 +109,7 @@ namespace PROYECTO
 
                 ConexionBD.AbrirConexion();
 
-                string c = String.Format("Select * from presos inner join celdas where celdas.Modulo='{0}';",mod);
+                string c = String.Format("SELECT * FROM presos INNER JOIN celdas ON presos.celda = celdas.CodigoCelda WHERE celdas.Modulo = '{0}';", mod);
 
                 MySqlCommand com = new MySqlCommand(c, ConexionBD.Conexion);
                 MySqlDataReader reader = com.ExecuteReader();
@@ -123,7 +124,7 @@ namespace PROYECTO
                         Image foto = Image.FromStream(ms);
 
                         Preso user = new Preso(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                        reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8),foto);
+                        reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8),foto, reader.GetInt32(9));
                         lista.Add(user);
                     }
                     ConexionBD.CerrarConexion();
@@ -155,8 +156,8 @@ namespace PROYECTO
                     this.foto.Save(ms, ImageFormat.Jpeg);
                     byte[] aByte = ms.ToArray();
 
-                    string consulta = String.Format("INSERT INTO usuarios (nif,nombre,apellidos,crimen,sexo,direccion,codigopostal,correo,celda,telefono,foto) VALUES " +
-                        "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}',@imagen)",this.nombre,this.apellidos, crimen, sexo, direccion, codigoPostal, correo, celda, telefono);
+                    string consulta = String.Format("INSERT INTO presos (nif,nombre,apellidos,crimen,sexo,direccion,codigopostal,correo,celda,telefono,foto) VALUES " +
+                        "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}',@imagen)",this.nif,this.nombre,this.apellidos, crimen, sexo, direccion, codigoPostal, correo, celda, telefono);
 
 
                     MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
@@ -169,15 +170,61 @@ namespace PROYECTO
                 }
                 catch (Exception ex)
                 {
+                    ConexionBD.CerrarConexion();
 
                     MessageBox.Show(ex.Message);
                     return -1;
                 }
+                ConexionBD.CerrarConexion();
+
                 return -1;
 
 
             }
             return -1;
+
+
+        }
+        public static List<Preso> MostrarPresosPorNombre(string nom)
+        {
+            List<Preso> lista = new List<Preso>();
+
+            if (ConexionBD.Conexion != null)
+            {
+
+                ConexionBD.AbrirConexion();
+
+                string c = String.Format("SELECT * FROM presos WHERE nombre LIKE '%{0}%';", nom);
+
+                MySqlCommand com = new MySqlCommand(c, ConexionBD.Conexion);
+                MySqlDataReader reader = com.ExecuteReader();
+
+                if (reader.HasRows)   // En caso que se hayan registros en el objeto reader
+                {
+                    // Recorremos el reader (registro por registro) y cargamos la lista de usuarios.
+                    while (reader.Read())
+                    {
+                        byte[] img = (byte[])reader["foto"];
+                        MemoryStream ms = new MemoryStream(img);
+                        Image foto = Image.FromStream(ms);
+
+                        Preso user = new Preso(reader.GetString(0), reader.GetString(1), reader.GetString(2),
+                        reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8), foto, reader.GetInt32(9));
+                        lista.Add(user);
+                    }
+                    ConexionBD.CerrarConexion();
+
+                    return lista;
+
+                }
+
+                // devolvemos la lista cargada con los usuarios.
+                ConexionBD.CerrarConexion();
+
+            }
+
+            return lista;
+
 
 
         }
