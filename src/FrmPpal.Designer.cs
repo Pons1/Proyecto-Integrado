@@ -1,6 +1,6 @@
 ﻿namespace PROYECTO
 {
-    partial class Form1
+    partial class FrmPpal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -81,7 +81,7 @@
             this.btn_registro.Image = global::PROYECTO.Properties.Resources.paper_32;
             this.btn_registro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_registro.Location = new System.Drawing.Point(0, 391);
-            this.btn_registro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_registro.Margin = new System.Windows.Forms.Padding(4);
             this.btn_registro.Name = "btn_registro";
             this.btn_registro.Size = new System.Drawing.Size(251, 62);
             this.btn_registro.TabIndex = 5;
@@ -100,7 +100,7 @@
             this.btn_horario.Image = global::PROYECTO.Properties.Resources.time_8_32;
             this.btn_horario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_horario.Location = new System.Drawing.Point(0, 322);
-            this.btn_horario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_horario.Margin = new System.Windows.Forms.Padding(4);
             this.btn_horario.Name = "btn_horario";
             this.btn_horario.Size = new System.Drawing.Size(251, 62);
             this.btn_horario.TabIndex = 4;
@@ -119,7 +119,7 @@
             this.btn_personal.Image = global::PROYECTO.Properties.Resources.worker_32;
             this.btn_personal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_personal.Location = new System.Drawing.Point(0, 254);
-            this.btn_personal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_personal.Margin = new System.Windows.Forms.Padding(4);
             this.btn_personal.Name = "btn_personal";
             this.btn_personal.Size = new System.Drawing.Size(251, 62);
             this.btn_personal.TabIndex = 3;
@@ -138,7 +138,7 @@
             this.btn_presos.Image = global::PROYECTO.Properties.Resources.add_user_32;
             this.btn_presos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_presos.Location = new System.Drawing.Point(0, 185);
-            this.btn_presos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_presos.Margin = new System.Windows.Forms.Padding(4);
             this.btn_presos.Name = "btn_presos";
             this.btn_presos.Size = new System.Drawing.Size(251, 62);
             this.btn_presos.TabIndex = 2;
@@ -157,7 +157,7 @@
             this.btn_mapa.Image = global::PROYECTO.Properties.Resources.map_4_32;
             this.btn_mapa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_mapa.Location = new System.Drawing.Point(0, 116);
-            this.btn_mapa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_mapa.Margin = new System.Windows.Forms.Padding(4);
             this.btn_mapa.Name = "btn_mapa";
             this.btn_mapa.Size = new System.Drawing.Size(251, 62);
             this.btn_mapa.TabIndex = 1;
@@ -197,7 +197,7 @@
             this.pic_normal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pic_normal.Image = global::PROYECTO.Properties.Resources.minimizar;
             this.pic_normal.Location = new System.Drawing.Point(997, 4);
-            this.pic_normal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pic_normal.Margin = new System.Windows.Forms.Padding(4);
             this.pic_normal.Name = "pic_normal";
             this.pic_normal.Size = new System.Drawing.Size(20, 18);
             this.pic_normal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -211,7 +211,7 @@
             this.pic_maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pic_maximizar.Image = global::PROYECTO.Properties.Resources.cuadrado;
             this.pic_maximizar.Location = new System.Drawing.Point(997, 4);
-            this.pic_maximizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pic_maximizar.Margin = new System.Windows.Forms.Padding(4);
             this.pic_maximizar.Name = "pic_maximizar";
             this.pic_maximizar.Size = new System.Drawing.Size(20, 18);
             this.pic_maximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -224,7 +224,7 @@
             this.pic_minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pic_minimizar.Image = global::PROYECTO.Properties.Resources.minimizar_signo;
             this.pic_minimizar.Location = new System.Drawing.Point(969, 4);
-            this.pic_minimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pic_minimizar.Margin = new System.Windows.Forms.Padding(4);
             this.pic_minimizar.Name = "pic_minimizar";
             this.pic_minimizar.Size = new System.Drawing.Size(20, 18);
             this.pic_minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -237,7 +237,7 @@
             this.pic_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pic_cerrar.Image = global::PROYECTO.Properties.Resources.cerrar;
             this.pic_cerrar.Location = new System.Drawing.Point(1025, 4);
-            this.pic_cerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pic_cerrar.Margin = new System.Windows.Forms.Padding(4);
             this.pic_cerrar.Name = "pic_cerrar";
             this.pic_cerrar.Size = new System.Drawing.Size(20, 18);
             this.pic_cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

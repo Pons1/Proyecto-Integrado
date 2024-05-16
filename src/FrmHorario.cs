@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PROYECTO
 {
-    public partial class Registro : Form
+    public partial class FrmHorario : Form
     {
-        public Registro()
+        public FrmHorario()
         {
             InitializeComponent();
         }

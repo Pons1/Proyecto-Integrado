@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PROYECTO
 {
-    public partial class Personal : Form
+    public partial class FrmRegistro : Form
     {
-        public Personal()
+        public FrmRegistro()
         {
             InitializeComponent();
         }

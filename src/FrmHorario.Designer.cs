@@ -1,6 +1,6 @@
 ﻿namespace PROYECTO
 {
-    partial class Horario
+    partial class FrmHorario
     {
         /// <summary>
         /// Required designer variable.

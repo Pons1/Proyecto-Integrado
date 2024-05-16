@@ -11,13 +11,13 @@ using System.Runtime.InteropServices;
 
 namespace PROYECTO
 {
-    public partial class Form1 : Form
+    public partial class FrmPpal : Form
     {
         
         
 
 
-        public Form1()
+        public FrmPpal()
         {
             InitializeComponent();
         }
@@ -99,27 +99,27 @@ namespace PROYECTO
 
         private void btn_mapa_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new Mapa());    
+            AbrirFormulario(new FrmMapa());    
         }
 
         private void btn_presos_Click(object sender, EventArgs e)
         {
-           AbrirFormulario(new Presos());
+           AbrirFormulario(new FrmPresos());
         }
 
         private void btn_personal_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new Personal());
+            AbrirFormulario(new FrmPersonal());
         }
 
         private void btn_horario_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new Horario());
+            AbrirFormulario(new FrmHorario());
         }
 
         private void btn_registro_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new Registro());
+            AbrirFormulario(new FrmRegistro());
         }
 
         private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)

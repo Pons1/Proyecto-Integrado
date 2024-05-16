@@ -1,6 +1,6 @@
 ﻿namespace PROYECTO
 {
-    partial class Registro
+    partial class FrmRegistro
     {
         /// <summary>
         /// Required designer variable.

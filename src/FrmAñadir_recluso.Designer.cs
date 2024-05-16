@@ -1,6 +1,6 @@
 ﻿namespace PROYECTO
 {
-    partial class Añadir_recluso
+    partial class FrmAñadir_recluso
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace PROYECTO
 {
-    partial class Mapa
+    partial class FrmMapa
     {
         /// <summary>
         /// Required designer variable.
