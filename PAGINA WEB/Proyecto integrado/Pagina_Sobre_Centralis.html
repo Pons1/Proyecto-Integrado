@@ -71,13 +71,23 @@
         .link-1:hover::after {
           transform: scaleX(1);
         }
+
+        /* Estilos adicionales para los divs con texto */
+        .text-container {
+          width: 80%; /* Ancho deseado */
+          margin: 20px auto; /* Margen para centrarlos */
+          background-color: #ffffff;
+          padding: 20px;
+        }
         
     </style>
 </head>
 <body>
     <div id="div-menu">
+        <a href="index.html"><img src="Flecha_Atras.png" style="height: 40px; width: 40px; float: left; margin-left: 20px;"></a>
         <img class="logo" src="LogoCentralis.png" alt="Logo Centralis">
         <a class="link-1" href="#" style="background-color: rgb(59, 48, 113);">Sobre Centralis</a>
+        <a class="link-1" href="Pagina_mapa.html">Funcionalidades y Caracteristicas</a>
         <a class="link-1" href="Pagina_mapa.html">Mapa</a>
         <a class="link-1" href="Pagina_Presos.html">Presos</a>
         <a class="link-1" href="Pagina_Personal.html">Personal</a>
@@ -86,6 +96,30 @@
         <a class="link-1" href="Pagina_sobre_nosotros.html">Sobre Nosotros</a>
         <a class="link-1" href="Pagina_Contactanos.html">Contactanos</a>
     </div>
-<p>SOBRE CENTRALIS</p>
+    <div class="text-container">
+        <h1>Que es?</h1>
+        <p>
+            Centralis es una aplicación centrada en la gestión/administración de un centro penitenciario,
+             es decir, el personal, los internos y las instalaciónes, centralis permite hacerlo todo de forma centralizada
+             desde un mismo lugar.
+        </p>
+    </div>
+    <div class="text-container">
+        <h1>Funcionalidades & Caracteristicas</h1>
+        <p>
+            Las principales funcionalidades y caracteristicas se basan en la agregación, edición y eliminacion de personas 
+            (<a href="Pagina_Presos.html">Presos</a> / <a href="Pagina_Personal.html">Personal</a>), ademas de la capaciad de interactuar con las 
+            instalaciones a traves del <a href="Pagina_mapa.html">mapa</a> de la aplicación y de acceder tanto a los <a href="Pagina_Horarios.html">horarios</a> del centro
+            como a los <a href="Pagina_Registros.html">registros</a> de acceso.
+            
+        </p>
+    </div>
+    <div class="text-container">
+        <h1>Por que decidimos crear centralis?</h1>
+        <p>
+            Decidimos crear este proyecto debido a que vimos la falta de sistemas que se encargen de la gestion de un centro penitenciario, asi que pensamos que seria una
+            buena oportundiad para traer una aplicacion nueva a un mercado no acostumbrado a tener muchas opciones.
+        </p>
+    </div>
 </body>
 </html>
