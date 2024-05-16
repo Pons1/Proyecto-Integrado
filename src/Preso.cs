@@ -59,6 +59,7 @@ namespace PROYECTO
         {
             List<Preso> lista = new List<Preso>();
 
+
             if (ConexionBD.Conexion != null)
             {
 
@@ -74,9 +75,12 @@ namespace PROYECTO
                     // Recorremos el reader (registro por registro) y cargamos la lista de usuarios.
                     while (reader.Read())
                     {
-                    
+                        byte[] img = (byte[])reader["foto"];
+                        MemoryStream ms = new MemoryStream(img);
+                        Image foto = Image.FromStream(ms);
+
                         Preso user = new Preso(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                        reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8));
+                        reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8),foto);
                         lista.Add(user);
                     }
                     ConexionBD.CerrarConexion();
@@ -114,9 +118,12 @@ namespace PROYECTO
                     // Recorremos el reader (registro por registro) y cargamos la lista de usuarios.
                     while (reader.Read())
                     {
+                        byte[] img = (byte[])reader["foto"];
+                        MemoryStream ms = new MemoryStream(img);
+                        Image foto = Image.FromStream(ms);
 
                         Preso user = new Preso(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                        reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8));
+                        reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8),foto);
                         lista.Add(user);
                     }
                     ConexionBD.CerrarConexion();
@@ -149,7 +156,7 @@ namespace PROYECTO
                     byte[] aByte = ms.ToArray();
 
                     string consulta = String.Format("INSERT INTO usuarios (nif,nombre,apellidos,crimen,sexo,direccion,codigopostal,correo,celda,telefono,foto) VALUES " +
-                        "('{0}','{1}','{2}','{3}','{4}','{5}','{6}',@imagen)",);
+                        "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}',@imagen)",this.nombre,this.apellidos, crimen, sexo, direccion, codigoPostal, correo, celda, telefono);
 
 
                     MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
@@ -157,18 +164,22 @@ namespace PROYECTO
                     retorno = comando.ExecuteNonQuery();
 
                     ConexionBD.CerrarConexion();
-                    MessageBox.Show("Empleado añadido correctamente");
+                    MessageBox.Show("Recluso añadido correctamente");
 
                 }
                 catch (Exception ex)
                 {
 
                     MessageBox.Show(ex.Message);
+                    return -1;
                 }
+                return -1;
+
 
             }
+            return -1;
 
-            
+
         }
 
 

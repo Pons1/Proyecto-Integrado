@@ -37,5 +37,18 @@ namespace PROYECTO
         {
 
         }
+
+        private void btn_añadir_foto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofdSeleccionar = new OpenFileDialog();
+            ofdSeleccionar.Filter = "Imagenes |*.jpg; *.png";
+            ofdSeleccionar.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            ofdSeleccionar.Title = "Seleccionar Imagen";
+
+            if (ofdSeleccionar.ShowDialog() == DialogResult.OK)
+            {
+                pcboxFoto.Image = Image.FromFile(ofdSeleccionar.FileName);
+            }
+        }
     }
 }

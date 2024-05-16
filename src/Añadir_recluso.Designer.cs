@@ -30,7 +30,7 @@
         {
             this.btn_añadir_foto = new System.Windows.Forms.Button();
             this.lblNom = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pcboxFoto = new System.Windows.Forms.PictureBox();
             this.txt_pnombre = new System.Windows.Forms.TextBox();
             this.lblApellidos = new System.Windows.Forms.Label();
             this.txt_apellidos = new System.Windows.Forms.TextBox();
@@ -50,19 +50,20 @@
             this.lblCelda = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcboxFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_añadir_foto
             // 
             this.btn_añadir_foto.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_añadir_foto.Location = new System.Drawing.Point(48, 193);
-            this.btn_añadir_foto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_añadir_foto.Margin = new System.Windows.Forms.Padding(4);
             this.btn_añadir_foto.Name = "btn_añadir_foto";
             this.btn_añadir_foto.Size = new System.Drawing.Size(115, 34);
             this.btn_añadir_foto.TabIndex = 1;
             this.btn_añadir_foto.Text = "Añadir Foto";
             this.btn_añadir_foto.UseVisualStyleBackColor = true;
+            this.btn_añadir_foto.Click += new System.EventHandler(this.btn_añadir_foto_Click);
             // 
             // lblNom
             // 
@@ -75,21 +76,22 @@
             this.lblNom.TabIndex = 2;
             this.lblNom.Text = "Nombre:";
             // 
-            // pictureBox1
+            // pcboxFoto
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pictureBox1.Location = new System.Drawing.Point(48, 36);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 150);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pcboxFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pcboxFoto.Location = new System.Drawing.Point(48, 36);
+            this.pcboxFoto.Margin = new System.Windows.Forms.Padding(4);
+            this.pcboxFoto.Name = "pcboxFoto";
+            this.pcboxFoto.Size = new System.Drawing.Size(135, 150);
+            this.pcboxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcboxFoto.TabIndex = 0;
+            this.pcboxFoto.TabStop = false;
             // 
             // txt_pnombre
             // 
             this.txt_pnombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_pnombre.Location = new System.Drawing.Point(355, 32);
-            this.txt_pnombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_pnombre.Margin = new System.Windows.Forms.Padding(4);
             this.txt_pnombre.Name = "txt_pnombre";
             this.txt_pnombre.Size = new System.Drawing.Size(132, 27);
             this.txt_pnombre.TabIndex = 3;
@@ -109,7 +111,7 @@
             // 
             this.txt_apellidos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_apellidos.Location = new System.Drawing.Point(355, 73);
-            this.txt_apellidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_apellidos.Margin = new System.Windows.Forms.Padding(4);
             this.txt_apellidos.Name = "txt_apellidos";
             this.txt_apellidos.Size = new System.Drawing.Size(264, 27);
             this.txt_apellidos.TabIndex = 5;
@@ -173,7 +175,7 @@
             "Hombre",
             "Mujer",
             "Otro"});
-            this.cmbSexo.Location = new System.Drawing.Point(603, 127);
+            this.cmbSexo.Location = new System.Drawing.Point(568, 121);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(132, 24);
             this.cmbSexo.TabIndex = 11;
@@ -306,12 +308,12 @@
             this.Controls.Add(this.txt_pnombre);
             this.Controls.Add(this.lblNom);
             this.Controls.Add(this.btn_añadir_foto);
-            this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.pcboxFoto);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Añadir_recluso";
             this.Text = "Añadir_recluso";
             this.Load += new System.EventHandler(this.Añadir_recluso_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcboxFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,7 +321,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pcboxFoto;
         private System.Windows.Forms.Button btn_añadir_foto;
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.TextBox txt_pnombre;
