@@ -56,7 +56,9 @@
     <Compile Include="Añadir_recluso.Designer.cs">
       <DependentUpon>Añadir_recluso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Celda.cs" />
     <Compile Include="ConexionBD.cs" />
+    <Compile Include="Crimen.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

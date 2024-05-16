@@ -29,5 +29,10 @@ namespace PROYECTO
             dgvPresos.DataSource = Preso.MostrarPresos();
                
         }
+
+        private void cmb_modulo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgvPresos.DataSource = Preso.MostrarPresosPorModulo(cmb_modulo.Text);
+        }
     }
 }
