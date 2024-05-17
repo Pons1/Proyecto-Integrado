@@ -13,21 +13,40 @@ namespace PROYECTO
     public partial class FrmFichaPreso : Form
     {
         private Preso p1;
+        private FrmPresos form;
 
-        public FrmFichaPreso(Preso p1)
+
+        public FrmFichaPreso(Preso p1, FrmPresos form)
         {
             InitializeComponent();
             this.p1 = p1;
+            this.form = form;
         }
+
 
         private void FrmFichaPreso_Load(object sender, EventArgs e)
         {
+            List<int> lista = Crimen.MostrarIdCrimenes();
+            for (int i = 0; i < lista.Count; i++)
+            {
+                cmbCrimen.Items.Add(lista[i].ToString());
+            }
+
+            List<int> celdas = Celda.MostrarIdCeldas();
+            for (int i = 0; i < lista.Count; i++)
+            {
+                cmbCelda.Items.Add(lista[i].ToString());
+            }
+
             txt_pnombre.Text=p1.Nombre;
             txt_nifPreso.Text = p1.Nif;
             txt_apellidos.Text=p1.Apellidos;
             txtCelda.Text=p1.Celda.ToString();
+            cmbCelda.Text= p1.Celda.ToString();
             txtSexo.Text=p1.Sexo.ToString();
+            cmbSexo.Text = p1.Sexo.ToString();
             txtcrimen.Text=p1.Crimen.ToString();
+            cmbCrimen.Text= p1.Crimen.ToString();
             txtDireccion.Text=p1.Direccion.ToString();
             txtCodigopostal.Text=p1.CodigoPostal.ToString();
             txtCorreo.Text=p1.Correo.ToString();
@@ -149,8 +168,118 @@ namespace PROYECTO
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            Preso.BorrarPreso(txt_nifPreso.Text);
-            this.Dispose();
+            erpFichasPresos.Clear();
+            if (Preso.DNICorrecto(txt_nifPreso.Text))
+            {
+                if (Preso.BorrarPreso(txt_nifPreso.Text) == -1)
+                {
+                    MessageBox.Show("No se ha encontrado ningún preso con dicho NIF");
+                }
+                else
+                {
+                    MessageBox.Show("Preso borrado correctamente");
+
+                }
+                form.Actualizardgv();
+                this.Dispose();
+            }
+            else
+            {
+                erpFichasPresos.SetError(txt_nifPreso, "Nif incorrecto");
+
+            }
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (btnInsertar.Visible == true)
+            {
+                btnInsertar.Visible = false;
+                txtCelda.Enabled = false;
+                txt_nifPreso.Enabled = false;
+                txt_apellidos.Enabled = false;
+                txt_pnombre.Enabled = false;
+                txtcrimen.Visible = true;
+                txtCodigopostal.Enabled = false;
+                txtSexo.Visible = true;
+                txtCelda.Visible = true;
+                txtCorreo.Enabled = false;
+                txtDireccion.Enabled = false;
+                txtTelefono.Enabled = false;
+
+                cmbCelda.Visible = false;
+                cmbCrimen.Visible = false;
+                cmbSexo.Visible = false;
+                btnBorrar.Visible = true;
+
+            }
+            else
+            {
+                btnInsertar.Visible = true;
+                txtCelda.Enabled = true;
+                txt_apellidos.Enabled = true;
+                txt_pnombre.Enabled = true;
+                txtcrimen.Visible = false;
+                txtCodigopostal.Enabled = true;
+                txtSexo.Visible = false;
+                txtCelda.Visible = false;
+                txtCorreo.Enabled = true;
+                txtDireccion.Enabled = true;
+                txtTelefono.Enabled = true;
+
+                cmbCelda.Visible = true;
+                cmbCrimen.Visible = true;
+                cmbSexo.Visible = true;
+                btnBorrar.Visible = false;
+
+
+
+            }
+        }
+
+        private void cmbSexo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCrimen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            erpFichasPresos.Clear();
+            if (Preso.DNICorrecto(txt_nifPreso.Text))
+            {
+                try
+                {
+                    if (Preso.EditarPreso(txt_nifPreso.Text, txt_pnombre.Text, txt_apellidos.Text, int.Parse(cmbCrimen.Text), cmbSexo.Text, txtDireccion.Text,
+                   int.Parse(txtCodigopostal.Text), txtCorreo.Text, int.Parse(cmbCelda.Text), int.Parse(txtTelefono.Text)) == -1)
+                    {
+                        MessageBox.Show("No se ha encontrado ningún preso con dicho NIF");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Preso editado correctamente");
+
+                    }
+                    form.Actualizardgv();
+                    this.Dispose();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+               
+            }
+            else
+            {
+                erpFichasPresos.SetError(txt_nifPreso, "Nif incorrecto");
+
+            }
         }
     }
 }

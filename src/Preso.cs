@@ -299,7 +299,7 @@ namespace PROYECTO
 
         public static int BorrarPreso(string ni)
         {
-            int retorno=-1;
+            int retorno = -1;
             if (ConexionBD.Conexion != null)
             {
                 
@@ -313,11 +313,11 @@ namespace PROYECTO
 
 
                     MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
-                    retorno = comando.ExecuteNonQuery();
-                    
-                    ConexionBD.CerrarConexion();
+                     retorno = comando.ExecuteNonQuery();
 
-                    MessageBox.Show("Recluso Borrado correctamente");
+                    ConexionBD.CerrarConexion();
+                    return retorno;
+
 
 
                 }
@@ -326,17 +326,90 @@ namespace PROYECTO
                     ConexionBD.CerrarConexion();
 
                     MessageBox.Show(ex.Message);
-                    retorno= -1;
                 }
                 ConexionBD.CerrarConexion();
-
-                retorno= - 1;
 
 
             }
             return retorno;
         }
 
+        public static int EditarPreso(string ni,string nom, string ap, int crim, string sex, string dir, int cod,string corr, int cel, int tel)
+        {
+            int retorno = -1;
+            if (ConexionBD.Conexion != null)
+            {
 
+                try
+                {
+
+                    ConexionBD.AbrirConexion();
+
+
+                    string consulta = String.Format("UPDATE presos SET nombre = '{1}',Apellidos = '{2}',Crimen = '{3}',Sexo = '{4}',Direccion = '{5}'," +
+                        "CodigoPostal = '{6}',Correo = '{7}',Celda = '{8}',telefono = '{9}' WHERE nif='{0}' ", ni,nom,ap,crim,sex,dir,cod,corr,cel,tel); ;
+
+
+                    MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+                    retorno = comando.ExecuteNonQuery();
+
+                    ConexionBD.CerrarConexion();
+                    return retorno;
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    ConexionBD.CerrarConexion();
+
+                    MessageBox.Show(ex.Message);
+                }
+                ConexionBD.CerrarConexion();
+
+
+            }
+            return retorno;
+        }
+
+        public static List<string> MostrarModulos()
+        {
+            List<string> lista = new List<string>();
+
+            if (ConexionBD.Conexion != null)
+            {
+
+                ConexionBD.AbrirConexion();
+
+                string c = String.Format("Select CodigoModulo from modulos;");
+
+                MySqlCommand com = new MySqlCommand(c, ConexionBD.Conexion);
+                MySqlDataReader reader = com.ExecuteReader();
+
+                if (reader.HasRows)   // En caso que se hayan registros en el objeto reader
+                {
+                    // Recorremos el reader (registro por registro) y cargamos la lista de usuarios.
+                    while (reader.Read())
+                    {
+
+
+                        lista.Add(reader.GetString(0));
+                    }
+                    ConexionBD.CerrarConexion();
+
+                    return lista;
+
+                }
+
+                // devolvemos la lista cargada con los usuarios.
+                ConexionBD.CerrarConexion();
+
+            }
+
+            return lista;
+
+
+
+        }
     }
 }

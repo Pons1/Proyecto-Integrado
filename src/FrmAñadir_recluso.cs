@@ -12,8 +12,10 @@ namespace PROYECTO
 {
     public partial class FrmAñadir_recluso : Form
     {
-        public FrmAñadir_recluso()
+        FrmPresos frm;
+        public FrmAñadir_recluso(FrmPresos form)
         {
+             frm = form;
             InitializeComponent();
         }
 
@@ -66,6 +68,7 @@ namespace PROYECTO
 
                     List<int> lista = Crimen.MostrarIdCrimenes();
 
+                    frm.Actualizardgv();
                     this.Dispose();
                 }
                 catch (Exception ex)

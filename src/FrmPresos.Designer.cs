@@ -72,11 +72,6 @@
             this.cmb_modulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_modulo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_modulo.FormattingEnabled = true;
-            this.cmb_modulo.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D"});
             this.cmb_modulo.Location = new System.Drawing.Point(793, 76);
             this.cmb_modulo.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_modulo.Name = "cmb_modulo";

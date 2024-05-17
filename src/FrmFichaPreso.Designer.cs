@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSalir = new System.Windows.Forms.Button();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
@@ -53,7 +54,12 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnInsertar = new System.Windows.Forms.Button();
+            this.cmbCelda = new System.Windows.Forms.ComboBox();
+            this.cmbSexo = new System.Windows.Forms.ComboBox();
+            this.cmbCrimen = new System.Windows.Forms.ComboBox();
+            this.erpFichasPresos = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pcboxFoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpFichasPresos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalir
@@ -77,7 +83,6 @@
             this.txtTelefono.Location = new System.Drawing.Point(176, 387);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.ReadOnly = true;
             this.txtTelefono.Size = new System.Drawing.Size(264, 34);
             this.txtTelefono.TabIndex = 45;
             this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
@@ -116,7 +121,6 @@
             this.txtCorreo.Location = new System.Drawing.Point(280, 340);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.ReadOnly = true;
             this.txtCorreo.Size = new System.Drawing.Size(264, 34);
             this.txtCorreo.TabIndex = 41;
             this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
@@ -142,7 +146,6 @@
             this.txtCodigopostal.Location = new System.Drawing.Point(223, 298);
             this.txtCodigopostal.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigopostal.Name = "txtCodigopostal";
-            this.txtCodigopostal.ReadOnly = true;
             this.txtCodigopostal.Size = new System.Drawing.Size(264, 34);
             this.txtCodigopostal.TabIndex = 39;
             this.txtCodigopostal.TextChanged += new System.EventHandler(this.txtCodigopostal_TextChanged);
@@ -168,7 +171,6 @@
             this.txtDireccion.Location = new System.Drawing.Point(170, 256);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.ReadOnly = true;
             this.txtDireccion.Size = new System.Drawing.Size(264, 34);
             this.txtDireccion.TabIndex = 37;
             this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
@@ -191,7 +193,7 @@
             this.lblSexo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSexo.AutoSize = true;
             this.lblSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSexo.Location = new System.Drawing.Point(344, 174);
+            this.lblSexo.Location = new System.Drawing.Point(346, 171);
             this.lblSexo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(79, 29);
@@ -217,11 +219,11 @@
             this.txt_nifPreso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_nifPreso.Enabled = false;
             this.txt_nifPreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nifPreso.Location = new System.Drawing.Point(432, 66);
+            this.txt_nifPreso.Location = new System.Drawing.Point(400, 66);
             this.txt_nifPreso.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nifPreso.MaxLength = 9;
             this.txt_nifPreso.Name = "txt_nifPreso";
-            this.txt_nifPreso.ReadOnly = true;
-            this.txt_nifPreso.Size = new System.Drawing.Size(132, 34);
+            this.txt_nifPreso.Size = new System.Drawing.Size(188, 34);
             this.txt_nifPreso.TabIndex = 31;
             this.txt_nifPreso.TextChanged += new System.EventHandler(this.txt_nifPreso_TextChanged);
             // 
@@ -230,7 +232,7 @@
             this.lblNif.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNif.AutoSize = true;
             this.lblNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNif.Location = new System.Drawing.Point(345, 71);
+            this.lblNif.Location = new System.Drawing.Point(313, 71);
             this.lblNif.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNif.Name = "lblNif";
             this.lblNif.Size = new System.Drawing.Size(64, 29);
@@ -246,7 +248,6 @@
             this.txt_apellidos.Location = new System.Drawing.Point(176, 110);
             this.txt_apellidos.Margin = new System.Windows.Forms.Padding(4);
             this.txt_apellidos.Name = "txt_apellidos";
-            this.txt_apellidos.ReadOnly = true;
             this.txt_apellidos.Size = new System.Drawing.Size(264, 34);
             this.txt_apellidos.TabIndex = 29;
             this.txt_apellidos.TextChanged += new System.EventHandler(this.txt_apellidos_TextChanged);
@@ -272,7 +273,6 @@
             this.txt_pnombre.Location = new System.Drawing.Point(158, 68);
             this.txt_pnombre.Margin = new System.Windows.Forms.Padding(4);
             this.txt_pnombre.Name = "txt_pnombre";
-            this.txt_pnombre.ReadOnly = true;
             this.txt_pnombre.Size = new System.Drawing.Size(132, 34);
             this.txt_pnombre.TabIndex = 27;
             this.txt_pnombre.TextChanged += new System.EventHandler(this.txt_pnombre_TextChanged);
@@ -367,6 +367,7 @@
             this.btnEditar.TabIndex = 52;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnInsertar
             // 
@@ -379,12 +380,62 @@
             this.btnInsertar.TabIndex = 54;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Visible = false;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
+            // 
+            // cmbCelda
+            // 
+            this.cmbCelda.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cmbCelda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCelda.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCelda.FormattingEnabled = true;
+            this.cmbCelda.Location = new System.Drawing.Point(158, 209);
+            this.cmbCelda.Name = "cmbCelda";
+            this.cmbCelda.Size = new System.Drawing.Size(132, 37);
+            this.cmbCelda.TabIndex = 57;
+            this.cmbCelda.Visible = false;
+            // 
+            // cmbSexo
+            // 
+            this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSexo.FormattingEnabled = true;
+            this.cmbSexo.Items.AddRange(new object[] {
+            "Hombre",
+            "Mujer",
+            "Otro"});
+            this.cmbSexo.Location = new System.Drawing.Point(432, 163);
+            this.cmbSexo.Name = "cmbSexo";
+            this.cmbSexo.Size = new System.Drawing.Size(132, 37);
+            this.cmbSexo.TabIndex = 56;
+            this.cmbSexo.Visible = false;
+            this.cmbSexo.SelectedIndexChanged += new System.EventHandler(this.cmbSexo_SelectedIndexChanged);
+            // 
+            // cmbCrimen
+            // 
+            this.cmbCrimen.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cmbCrimen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCrimen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCrimen.FormattingEnabled = true;
+            this.cmbCrimen.Location = new System.Drawing.Point(158, 163);
+            this.cmbCrimen.Name = "cmbCrimen";
+            this.cmbCrimen.Size = new System.Drawing.Size(132, 37);
+            this.cmbCrimen.TabIndex = 55;
+            this.cmbCrimen.Visible = false;
+            this.cmbCrimen.SelectedIndexChanged += new System.EventHandler(this.cmbCrimen_SelectedIndexChanged);
+            // 
+            // erpFichasPresos
+            // 
+            this.erpFichasPresos.ContainerControl = this;
             // 
             // FrmFichaPreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 500);
+            this.Controls.Add(this.cmbCelda);
+            this.Controls.Add(this.cmbSexo);
+            this.Controls.Add(this.cmbCrimen);
             this.Controls.Add(this.btnInsertar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnBorrar);
@@ -414,6 +465,7 @@
             this.Text = "Ficha Preso";
             this.Load += new System.EventHandler(this.FrmFichaPreso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcboxFoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpFichasPresos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,5 +498,9 @@
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnInsertar;
+        private System.Windows.Forms.ComboBox cmbCelda;
+        private System.Windows.Forms.ComboBox cmbSexo;
+        private System.Windows.Forms.ComboBox cmbCrimen;
+        private System.Windows.Forms.ErrorProvider erpFichasPresos;
     }
 }

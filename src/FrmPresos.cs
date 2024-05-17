@@ -17,30 +17,51 @@ namespace PROYECTO
             InitializeComponent();
         }
 
+        public void Actualizardgv()
+        {
+            dgvPresos.DataSource = Preso.MostrarPresos();
+            cmb_modulo.Text = "Todos";
+        }
 
         private void btn_añadir_recluso_Click(object sender, EventArgs e)
         {
-            FrmAñadir_recluso r1 = new FrmAñadir_recluso();
+            FrmAñadir_recluso r1 = new FrmAñadir_recluso(this);
             r1.Show();
         }
 
         private void Presos_Load(object sender, EventArgs e)
         {
             dgvPresos.DataSource = Preso.MostrarPresos();
+            ((DataGridViewImageColumn)dgvPresos.Columns[dgvPresos.Columns.Count-1]).ImageLayout=DataGridViewImageCellLayout.Stretch;
+            List<string> lista = Preso.MostrarModulos();
+            for (int i = 0; i < lista.Count; i++)
+            {
+                cmb_modulo.Items.Add(lista[i].ToString());
+            }
+            cmb_modulo.Items.Add("Todos");
+            cmb_modulo.Text= "Todos";
 
 
         }
 
         private void cmb_modulo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvPresos.DataSource = Preso.MostrarPresosPorModulo(cmb_modulo.Text);
+            if (cmb_modulo.Text=="Todos")
+            {
+                dgvPresos.DataSource = Preso.MostrarPresos();
+            }
+            else
+            {
+                dgvPresos.DataSource = Preso.MostrarPresosPorModulo(cmb_modulo.Text);
+
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
 
             dgvPresos.DataSource = Preso.MostrarPresos();
-            cmb_modulo.Text = "";
+            cmb_modulo.Text = "Todos";
         }
 
         private void p_Click(object sender, EventArgs e)
@@ -81,7 +102,7 @@ namespace PROYECTO
 
                 Preso p1 =new Preso(id,nombre,apellidos,crimen,sexo,direccion,codigoPostal,correo,celda,img,tel);
 
-                FrmFichaPreso frmFichaPreso = new FrmFichaPreso(p1);
+                FrmFichaPreso frmFichaPreso = new FrmFichaPreso(p1,this);
                 frmFichaPreso.Show();
 
             }

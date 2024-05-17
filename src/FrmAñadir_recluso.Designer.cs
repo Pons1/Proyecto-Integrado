@@ -127,8 +127,9 @@
             this.txt_nifPreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nifPreso.Location = new System.Drawing.Point(446, 52);
             this.txt_nifPreso.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nifPreso.MaxLength = 9;
             this.txt_nifPreso.Name = "txt_nifPreso";
-            this.txt_nifPreso.Size = new System.Drawing.Size(132, 34);
+            this.txt_nifPreso.Size = new System.Drawing.Size(199, 34);
             this.txt_nifPreso.TabIndex = 7;
             // 
             // lblCrimen
