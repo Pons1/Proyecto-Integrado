@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PROYECTO
 {
-    public partial class FrmAñadir_recluso : Form
+    public partial class Añadir_recluso : Form
     {
-        public FrmAñadir_recluso()
+        public Añadir_recluso()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace PROYECTO
         private void Añadir_recluso_Load(object sender, EventArgs e)
         {
             List<int> lista = Crimen.MostrarIdCrimenes();
-            for (int i = 0; i < lista.Count; i++)
+            for (int i = 0;i <lista.Count; i++) 
             {
                 cmbCrimen.Items.Add(lista[i].ToString());
             }
@@ -49,43 +49,6 @@ namespace PROYECTO
             {
                 pcboxFoto.Image = Image.FromFile(ofdSeleccionar.FileName);
             }
-        }
-
-        private void btnAñadir_Click(object sender, EventArgs e)
-        {
-            if (Preso.DNICorrecto(txt_nifPreso.Text))
-            {
-                erpPresos.Clear();
-                try
-                {
-
-
-                    Preso p1 = new Preso(txt_nifPreso.Text, txt_pnombre.Text, txt_apellidos.Text, int.Parse(cmbCrimen.Text), cmbSexo.Text
-                        , txtDireccion.Text, int.Parse(txtCodigopostal.Text), txtCorreo.Text, int.Parse(cmbCelda.Text), pcboxFoto.Image, int.Parse(txtTelefono.Text));
-                    p1.AgregarPreso();
-
-                    List<int> lista = Crimen.MostrarIdCrimenes();
-
-                    this.Dispose();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Fallo en los datos", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                }
-            }
-            else
-            {
-                erpPresos.SetError(txt_nifPreso, "Nif incorrecto");
-            }
-            
-
-
-
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

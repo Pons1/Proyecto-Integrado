@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PROYECTO
 {
-    internal class Preso
+    public class Preso
     {
         private string nif;
         private string nombre;
@@ -36,6 +36,8 @@ namespace PROYECTO
         public int CodigoPostal { get { return codigoPostal; } }
         public string Correo { get { return correo; } }
         public int Celda { get { return celda; } }
+        public int Telefono { get { return telefono; } }
+
         public Image Foto { get { return foto; } }
 
 
@@ -55,6 +57,7 @@ namespace PROYECTO
 
 
         }
+     
 
         public static List<Preso> MostrarPresos()
         {
@@ -150,6 +153,7 @@ namespace PROYECTO
             {
                 try
                 {
+
                     ConexionBD.AbrirConexion();
                     int retorno;
                     MemoryStream ms = new MemoryStream();
@@ -227,6 +231,110 @@ namespace PROYECTO
 
 
 
+        }
+        public static Image ConsultarImagenPreso( string ni)
+        {
+            Image foto=null;
+
+
+            if (ConexionBD.Conexion != null)
+            {
+                try
+                {
+                    ConexionBD.AbrirConexion();
+
+                    string c = String.Format("Select foto from presos where nif='{0}';", ni);
+
+                    MySqlCommand com = new MySqlCommand(c, ConexionBD.Conexion);
+                    object fot = com.ExecuteScalar();
+
+                    byte[] img = (byte[])fot;
+                    MemoryStream ms = new MemoryStream(img);
+                    foto = Image.FromStream(ms);
+
+
+                    ConexionBD.CerrarConexion();
+                    ConexionBD.CerrarConexion();
+
+                    return foto;
+
+                }catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message); return null;
+                }
+
+            }
+
+            return foto;
+        }
+        public static bool DNICorrecto(string dni)
+        {
+            //Comprueba si el DNI tiene 9 digitos
+            if (dni.Length != 9)
+            {
+                return false;
+            }
+
+            string dniNumbers = dni.Substring(0, dni.Length - 1);
+            string dniLeter = dni.Substring(dni.Length - 1, 1).ToUpper();
+            //intenta parsear para comprobar si son numeros
+            var numbersValid = int.TryParse(dniNumbers, out int dniInteger);
+            if (!numbersValid)
+            {
+                //No se pudo convertir los números a formato númerico
+                return false;
+            }
+
+            string[] control = { "T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E" };
+            var mod = dniInteger % 23;
+
+            if (control[mod] != dniLeter)
+            {
+                return false;
+            }
+
+            //DNI Valido
+            return true;
+        }
+
+        public static int BorrarPreso(string ni)
+        {
+            int retorno=-1;
+            if (ConexionBD.Conexion != null)
+            {
+                
+                try
+                {
+
+                    ConexionBD.AbrirConexion();
+
+
+                    string consulta = String.Format("Delete from presos where nif='{0}'", ni); ;
+
+
+                    MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+                    retorno = comando.ExecuteNonQuery();
+                    
+                    ConexionBD.CerrarConexion();
+
+                    MessageBox.Show("Recluso Borrado correctamente");
+
+
+                }
+                catch (Exception ex)
+                {
+                    ConexionBD.CerrarConexion();
+
+                    MessageBox.Show(ex.Message);
+                    retorno= -1;
+                }
+                ConexionBD.CerrarConexion();
+
+                retorno= - 1;
+
+
+            }
+            return retorno;
         }
 
 

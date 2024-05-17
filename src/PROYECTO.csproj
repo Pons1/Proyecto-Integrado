@@ -59,6 +59,12 @@
     <Compile Include="Celda.cs" />
     <Compile Include="ConexionBD.cs" />
     <Compile Include="Crimen.cs" />
+    <Compile Include="FrmFichaPreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFichaPreso.Designer.cs">
+      <DependentUpon>FrmFichaPreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPpal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </Compile>
     <EmbeddedResource Include="FrmAñadir_recluso.resx">
       <DependentUpon>FrmAñadir_recluso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFichaPreso.resx">
+      <DependentUpon>FrmFichaPreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPpal.resx">
       <DependentUpon>FrmPpal.cs</DependentUpon>
