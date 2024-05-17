@@ -3,101 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horarios</title>
+    <title>Centralis_Registros</title>
 
     <style>
         body {
-          margin: 0px;
-          font-family: Arial, sans-serif;
-          background: linear-gradient(to bottom right, #6e90ff, #ffffff, #6e90ff); /* Fondo con degradado */
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: flex-start;
-          height: 100vh;
+            margin: 0px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #6e90ff, #ffffff, #6e90ff);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
         }
 
         #div-menu {
-          width: 100%;
-          height: 6.2vh;
-          text-align: center;
-          background-color: #004AAD;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+            width: 100%;
+            height: 6.2vh;
+            text-align: center;
+            background-color: #004AAD;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .logo {
-          max-width: 80%;
-          max-height: 100%;
-          margin-right: 20px;
+            max-width: 80%;
+            max-height: 100%;
+            margin-right: 20px;
         }
 
         .link-1 {
-          color: #ffffff;
-          font-size: 20px;
-          text-decoration: none;
-          padding: 10px 20px;
-          position: relative;
-          overflow: hidden;
-          z-index: 1;
+            color: #ffffff;
+            font-size: 20px;
+            text-decoration: none;
+            padding: 10px 20px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
 
         .link-1::before,
         .link-1::after {
-          content: "";
-          position: absolute;
-          background-color: #ffffff;
-          width: 100%;
-          height: 2px;
-          transform: scaleX(0);
-          transition: transform 0.4s;
+            content: "";
+            position: absolute;
+            background-color: #ffffff;
+            width: 100%;
+            height: 2px;
+            transform: scaleX(0);
+            transition: transform 0.4s;
         }
 
         .link-1::before {
-          top: 0;
-          left: 0;
-          transform-origin: left;
+            top: 0;
+            left: 0;
+            transform-origin: left;
         }
 
         .link-1::after {
-          bottom: 0;
-          right: 0;
-          transform-origin: right;
+            bottom: 0;
+            right: 0;
+            transform-origin: right;
         }
 
         .link-1:hover::before,
         .link-1:hover::after {
-          transform: scaleX(1);
+            transform: scaleX(1);
         }
-        .fle {
-            transition: transform 0.5s ease;
 
+        .link-1 img {
+            height: 24px;
+            width: auto;
+            margin-right: 5px;
         }
-        .fle:hover {
+
+        .content-wrapper {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+            width: 80%;
+        }
+
+        .content {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 70%;
+        }
+
+        .content h1 {
+            font-size: 24px;
+            color: #000000;
+        }
+
+        .content p {
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        .image {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .file {
+            transition: transform 0.5s ease;
+        }
+
+        .file:hover {
             transform: rotate(-360deg);
         }
     </style>
 </head>
 <body>
-    <div id="div-menu">
-        <a href="index.html"><img class="fle" src="Flecha_Atras.png" style="height: 40px; width: 40px; float: left; margin-left: 20px;"></a>
-        <img class="logo" src="LogoCentralis.png" alt="Logo Centralis">
-        <a class="link-1" href="ES_Sobre_Centralis.html">Sobre Centralis</a>
-        <a class="link-1" href="ES_mapa.html">Mapa</a>
-        <a class="link-1" href="ES_Presos.html">Presos</a>
-        <a class="link-1" href="ES_Personal.html">Personal</a>
-        <a class="link-1" href="#" style="background-color: rgb(59, 48, 113);">Horarios</a>
-        <a class="link-1" href="ES_Registros.html">Registros</a>
-        <a class="link-1" href="ES_sobre_nosotros.html">Sobre Nosotros</a>
-        <a class="link-1" href="ES_Contactanos.html">Contactanos</a>
-        <a href="ES_Sobre_Nosotros.html" style="margin-right: 10px; margin-left:10px;">
-          <img src="España.png" style="height: 34px; width: 68px; margin-top: 3.5px; border-radius: 10px; border: 3px solid rgb(12, 222, 26); box-shadow: 0 0 15px 5px rgba(12, 222, 26, 0.5);">
-        </a>
-        <a href="EN_Sobre_Nosotros.html">
-          <img src="Reino Unido.png" style="height: 34px; width: 68px; border-radius: 10px; margin-top: 3.5px; border: 1px solid rgb(255, 255, 255);">
-        </a>
-      </div>
-<p>HORARIOS</p>
+  <div id="div-menu">
+    <a href="index.html"><img class="fle" src="Flecha_Atras.png" style="height: 40px; width: 40px; float: left; margin-left: 20px;"></a>
+    <img class="logo" src="LogoCentralis.png" alt="Logo Centralis">
+    <a class="link-1" href="ES_Sobre_Centralis.html">Sobre Centralis</a>
+    <a class="link-1" href="ES_mapa.html">Mapa</a>
+    <a class="link-1" href="ES_Presos.html">Presos</a>
+    <a class="link-1" href="ES_Personal.html">Personal</a>
+    <a class="link-1" href="#" style="background-color: rgb(59, 48, 113);">Horarios</a>
+    <a class="link-1" href="ES_Registros.html">Registros</a>
+    <a class="link-1" href="ES_sobre_nosotros.html">Sobre Nosotros</a>
+    <a class="link-1" href="ES_Contactanos.html">Contactanos</a>
+    <a href="ES_Horarios.html" style="margin-right: 10px; margin-left:10px;">
+      <img src="España.png" style="height: 34px; width: 68px; margin-top: 3.5px; border-radius: 10px; border: 3px solid rgb(12, 222, 26); box-shadow: 0 0 15px 5px rgba(12, 222, 26, 0.5);">
+    </a>
+    <a href="EN_Horarios.html">
+      <img src="Reino Unido.png" style="height: 34px; width: 68px; border-radius: 10px; margin-top: 3.5px; border: 2px solid rgb(255, 255, 255);">
+    </a>
+  </div>
+    <div class="content-wrapper">
+        <div class="image">
+            <img src="horario.jpg" alt="Imagen de registros">
+        </div>
+        <div class="content">
+            <h1>Horario:</h1>
+            <p>
+                El horario guardara las principales actividades y su duración, como por ejemplo:<br><br>
+                &emsp;• Hora de despertarse/dormirse.<br>
+                &emsp;• Llamada y recuento.<br>
+                &emsp;• Desayuno/Comida/Cena.<br>
+                &emsp;• Actividades varias.<br>
+                &emsp;• Hora de volver a las celdas.<br><br>
+                Entre muchas mas actividades.<br>
+            </p>
+        </div>
+    </div>
 </body>
 </html>

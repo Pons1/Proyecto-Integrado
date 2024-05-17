@@ -7,9 +7,9 @@
 
     <style>
         body {
+            background: linear-gradient(to bottom right, #6e90ff, #ffffff, #6e90ff); /* Fondo con degradado */
             margin: 0px;
             font-family: Arial, sans-serif;
-            background-color: rgb(108, 108, 116);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -18,13 +18,13 @@
         }
 
         #div-menu {
-            width: 100%;
-            height: 6.2vh;
-            text-align: center;
-            background-color: #004AAD;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+          width: 100%;
+          height: 6.2vh;
+          text-align: center;
+          background-color: #004AAD;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .logo {
@@ -41,7 +41,6 @@
             font-size: 20px;
             text-decoration: none;
             padding: 10px 20px;
-            margin: 0 5px;
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -108,56 +107,62 @@
             width: 100%;
             max-width: 1200px; /* Limita el ancho del contenido */
         }
-        .fle {
+        .file {
             transition: transform 0.5s ease;
 
         }
-        .fle:hover {
+        .file:hover {
             transform: rotate(-360deg);
         }
 
     </style>
 </head>
 <body>
-    <div id="div-menu">
-        <a href="index.html"><img class="fle" src="Flecha_Atras.png" style="height: 40px; width: 40px; float: left; margin-left: 20px;"></a>
-        <img src="LogoCentralis.png" alt="Centralis Logo" style="height: 50px; width: 50px;">
-        <a class="link-1" href="EN_Sobre_Centralis.html" style="background-color: rgb(59, 48, 113);">About Centralis</a>
-        <a class="link-1" href="EN_mapa.html">Map</a>
-        <a class="link-1" href="EN_Presos.html">Prisoners</a>
-        <a class="link-1" href="EN_Personal.html">Staff</a>
-        <a class="link-1" href="EN_Horarios.html">Schedule</a>
-        <a class="link-1" href="EN_Registros.html">Records</a>
-        <a class="link-1" href="EN_Sobre_Nosotros.html">About Us</a>
-        <a class="link-1" href="EN_Contactanos.html">Contact Us</a>
-        <a href="ES_Sobre_Centralis.html"><img src="España.png" style="height: 45px; width: 80px;"></a>
-    </div>
+<div id="div-menu">
+    <a href="index.html"><img class="file" src="Flecha_Atras.png" style="height: 40px; width: 40px; float: left; margin-left: 20px;"></a>
+    <img src="LogoCentralis.png" alt="Logo Centralis" style="height: 50px; width: 50px;">
+    <a class="link-1" href="#" style="background-color: rgb(59, 48, 113);">About Centralis</a>
+    <a class="link-1" href="EN_mapa.html">Map</a>
+    <a class="link-1" href="EN_Presos.html">Inmates</a>
+    <a class="link-1" href="EN_Personal.html">Staff</a>
+    <a class="link-1" href="EN_Horarios.html">Schedule</a>
+    <a class="link-1" href="EN_Registros.html">Records</a>
+    <a class="link-1" href="EN_sobre_nosotros.html">About us</a>
+    <a class="link-1" href="EN_Contactanos.html">Contact us</a>
+    <a href="ES_Sobre_Centralis.html" style="margin-right: 10px; margin-left:10px;">
+        <img src="España.png" style="height: 34px; width: 68px; margin-top: 3.5px; border-radius: 10px; border: 2px solid rgb(255, 255, 255);">
+    </a>
+    <a href="EN_Sobre_Centralis.html">
+        <img src="Reino Unido.png" style="height: 34px; width: 68px; border-radius: 10px; margin-top: 3.5px; border: 3px solid rgb(12, 222, 26); box-shadow: 0 0 15px 5px rgba(12, 222, 26, 0.5);">
+    </a>
+</div>
 <div class="content-container">
     <img class="logo" src="LogoCentralis.png" alt="Logo Centralis">
     <div class="divtext">
-        <h1>Que es centralis?</h1>
+        <h1>What is Centralis?</h1>
         <p>
-            Centralis es una aplicación centrada en la gestión/administración de un centro penitenciario,
-             es decir, el personal, los internos y las instalaciónes, centralis permite hacerlo todo de forma centralizada
-             desde un mismo lugar.
+            Centralis is an application focused on the management/administration of a penitentiary center,
+            that is, the staff, the inmates, and the facilities. Centralis allows you to do everything in a centralized manner
+            from one place.
         </p>
     </div>
     <div class="divtext">
-        <h1>Funcionalidades & Caracteristicas</h1>
+        <h1>Features & Characteristics</h1>
         <p>
-            Las principales funcionalidades y caracteristicas se basan en la agregación, edición y eliminacion de personas
-            (<a href="Pagina_Presos.html">Presos</a> / <a href="Pagina_Personal.html">Personal</a>), ademas de la capaciad de interactuar con las
-            instalaciones a traves del <a href="Pagina_mapa.html">mapa</a> de la aplicación y de acceder tanto a los <a href="Pagina_Horarios.html">horarios</a> del centro
-            como a los <a href="Pagina_Registros.html">registros</a> de acceso.
+            The main features and characteristics are based on the addition, editing, and deletion of people
+            (<a href="EN_Presos.html">Inmates</a> / <a href="EN_Personal.html">Staff</a>), in addition to the ability to interact with the
+            facilities through the application's <a href="EN_mapa.html">map</a> and access both the center's <a href="EN_Horarios.html">schedules</a>
+            and the <a href="EN_Registros.html">access records</a>.
         </p>
     </div>
     <div class="divtext">
-        <h1>Por que decidimos crear centralis?</h1>
+        <h1>Why did we decide to create Centralis?</h1>
         <p>
-            Decidimos crear este proyecto debido a que vimos la falta de sistemas que se encargen de la gestion de un centro penitenciario, asi que pensamos que seria una
-            buena oportundiad para traer una aplicacion nueva a un mercado no acostumbrado a tener muchas opciones.
+            We decided to create this project because we saw a lack of systems dedicated to the management of a penitentiary center, so we thought it would be a
+            good opportunity to bring a new application to a market not accustomed to having many options.
         </p>
     </div>
+    
 </div>
 </body>
 </html>
