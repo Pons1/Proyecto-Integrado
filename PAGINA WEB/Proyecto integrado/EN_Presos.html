@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centralis_Prisoners</title>
+    <title>Prisioneros de Centralis</title>
 
     <style>
         body {
           margin: 0px;
           font-family: Arial, sans-serif;
-          background-color: rgb(108, 108, 116);
+          background: linear-gradient(to bottom right, #6e90ff, #ffffff, #6e90ff); /* Fondo con degradado */
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -38,7 +38,6 @@
           font-size: 20px;
           text-decoration: none;
           padding: 10px 20px;
-          margin: 0 5px;
           position: relative;
           overflow: hidden;
           z-index: 1;
@@ -73,16 +72,16 @@
         }
 
         .link-1 img {
-            height: 24px; /* Adjusted height */
-            width: auto; /* Ensures aspect ratio */
-            margin-right: 5px; /* Added margin for better spacing */
+            height: 24px; /* Altura ajustada */
+            width: auto; /* Asegura la proporción */
+            margin-right: 5px; /* Margen añadido para mejor espaciado */
         }
 
         .content-wrapper {
             display: flex;
             justify-content: flex-end;
-            margin-top: 20px; /* Added margin for separation */
-            width: 80%; /* Adjust width as needed */
+            margin-top: 20px; /* Margen añadido para separación */
+            width: 80%; /* Ajusta el ancho según necesites */
         }
 
         .content {
@@ -90,66 +89,82 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            width: 70%; /* Adjust width as needed */
+            width: 70%; /* Ajusta el ancho según necesites */
         }
 
         .content h1 {
-            font-size: 24px; /* Adjusted font size */
-            color: #000000; /* Changed font color to improve visibility */
+            font-size: 24px; /* Tamaño de fuente ajustado */
+            color: #000000; /* Cambia el color de la fuente para mejorar la visibilidad */
         }
 
         .content p {
-            color: #000000; /* Changed font color to improve visibility */
-            line-height: 1.6; /* Improved readability */
+            color: #000000; /* Cambia el color de la fuente para mejorar la visibilidad */
+            line-height: 1.6; /* Mejora la legibilidad */
         }
 
         .image {
             flex: 1;
-            margin-right: 20px; /* Added margin for spacing */
+            margin-right: 20px; /* Margen añadido para el espaciado */
+
         }
 
         .image img {
             width: 100%;
-            border-radius: 10px; /* Rounded corners for image */
+            border-radius: 10px; /* Esquinas redondeadas para la imagen */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .fle {
+            transition: transform 0.5s ease;
+
+        }
+        .fle:hover {
+            transform: rotate(-360deg);
         }
     </style>
 </head>
 <body>
-    <div id="div-menu">
-        <a href="index.html"><img class="fle" src="Flecha_Atras.png" style="height: 40px; width: 40px; float: left; margin-left: 20px;"></a>
-        <img class="logo" src="LogoCentralis.png" alt="Centralis Logo">
-        <a class="link-1" href="EN_Sobre_Centralis.html">About Centralis</a>
-        <a class="link-1" href="EN_mapa.html">Map</a>
-        <a class="link-1" href="EN_Presos.html" style="background-color: rgb(59, 48, 113);">Prisoners</a>
-        <a class="link-1" href="EN_Personal.html">Staff</a>
-        <a class="link-1" href="EN_Horarios.html">Schedule</a>
-        <a class="link-1" href="EN_Registros.html">Records</a>
-        <a class="link-1" href="EN_Sobre_Nosotros.html">About Us</a>
-        <a class="link-1" href="EN_Contactanos.html">Contact Us</a>
-        <a href="ES_Presos.html"><img src="España.png" style="height: 45px; width: 80px;"></a>
-    </div>
-    <div class="content-wrapper">
-        <div class="image">
-            <img src="prisionero.jpeg" alt="Your Image">
-        </div>
-        <div class="content">
-            <h1>Prisoners:</h1>
-            <p>
-                The prisoners will hold a series of data, among them:<br><br>
-                &emsp;• ID number.<br>
-                &emsp;• Name.<br>
-                &emsp;• Crime.<br>
-                &emsp;• Cell.<br>
-                &emsp;• A picture.<br><br>
-                Among other data.<br><br>
-                We will be able to perform different actions with each prisoner, such as:<br><br>
-                &emsp;• Add a prisoner.<br>
-                &emsp;• Edit a prisoner.<br>
-                &emsp;• Delete a prisoner.<br><br>
-                Additionally, each prisoner will be able to enter and exit the center under certain circumstances,<br>
-                which will be recorded in the <a href="Records_Page.html">records</a>.
-            </p>
-        </div>
-    </div>
+  <div id="div-menu">
+      <a href="index.html"><img class="fle" src="Flecha_Atras.png" style="height: 40px; width: 40px; float: left; margin-left: 20px;"></a>
+      <img class="logo" src="LogoCentralis.png" alt="Centralis Logo">
+      <a class="link-1" href="EN_Sobre_Centralis.html">About Centralis</a>
+      <a class="link-1" href="EN_mapa.html">Map</a>
+      <a class="link-1" href="EN_Presos.html" style="background-color: rgb(59, 48, 113);">Inmates</a>
+      <a class="link-1" href="EN_Personal.html">Staff</a>
+      <a class="link-1" href="EN_Horarios.html">Schedule</a>
+      <a class="link-1" href="EN_Registros.html">Records</a>
+      <a class="link-1" href="EN_Sobre_Nosotros.html">About Us</a>
+      <a class="link-1" href="EN_Contactanos.html">Contact Us</a>
+      <a href="ES_Presos.html" style="margin-right: 10px; margin-left:10px;">
+        <img src="España.png" style="height: 34px; width: 68px; margin-top: 3.5px; border-radius: 10px; border: 2px solid rgb(255, 255, 255);">
+    </a>
+    <a href="EN_Presos.html">
+        <img src="Reino Unido.png" style="height: 34px; width: 68px; border-radius: 10px; margin-top: 3.5px; border: 3px solid rgb(12, 222, 26); box-shadow: 0 0 15px 5px rgba(12, 222, 26, 0.5);">
+    </a>    
+  </div>
+  <div class="content-wrapper">
+      <div class="image">
+          <img src="prisionero.jpeg" alt="Your Image">
+      </div>
+      <div class="content">
+          <h1>Inmates:</h1>
+          <p>
+              The prisoners will hold a series of data, among them:<br><br>
+              &emsp;• ID number.<br>
+              &emsp;• Name.<br>
+              &emsp;• Crime.<br>
+              &emsp;• Cell.<br>
+              &emsp;• A picture.<br><br>
+              Among other data.<br><br>
+              We will be able to perform different actions with each prisoner, such as:<br><br>
+              &emsp;• Add a prisoner.<br>
+              &emsp;• Edit a prisoner.<br>
+              &emsp;• Delete a prisoner.<br><br>
+              Additionally, each prisoner will be able to enter and exit the center under certain circumstances,<br>
+              which will be recorded in the <a href="EN_Registros.html">records</a>.
+          </p>
+      </div>
+  </div>
 </body>
 </html>

@@ -7,16 +7,19 @@
 
     <style>
         body {
+            background: linear-gradient(to bottom right, #6e90ff, #ffffff, #6e90ff); /* Fondo con degradado */
             margin: 0px;
             font-family: Arial, sans-serif; /* Agregamos una fuente genérica */
-            background-color: rgb(165, 165, 170);
         }
 
         #div-menu {
-            width: 100%; /* Hace que el div ocupe todo el ancho disponible */
-            height: 6.2vh; /* Hace que el div ocupe el 20% del alto de la página */
-            text-align: center; /* Centra horizontalmente los elementos dentro del div */
-            background-color: #004AAD; /* Cambia el color de fondo del div a azul */
+          width: 100%;
+          height: 6.2vh;
+          text-align: center;
+          background-color: #004AAD;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .logo {
@@ -30,7 +33,6 @@
             font-size: 20px;
             text-decoration: none;
             padding: 10px 20px;
-            margin: 0 5px;
             display: inline-block;
             position: relative;
             overflow: hidden;
@@ -93,28 +95,34 @@
         .card p {
             margin: 5px 0; /* Espacio entre los párrafos */
         }
-        .fle {
+        .file {
             transition: transform 0.5s ease;
 
         }
-        .fle:hover {
+        .file:hover {
             transform: rotate(-360deg);
         }
     </style>
 </head>
 <body>
     <div id="div-menu">
-        <a href="index.html"><img class="fle" src="Flecha_Atras.png" style="height: 40px; width: 40px; margin-left: 20px;"></a>
-        <img class="logo" src="LogoCentralis.png" alt="Centralis Logo">
-        <a class="link-1" href="EN_Sobre_Centralis.html">About Centralis</a>
-        <a class="link-1" href="EN_mapa.html">Map</a>
-        <a class="link-1" href="EN_Presos.html">Prisoners</a>
-        <a class="link-1" href="EN_Personal.html">Staff</a>
-        <a class="link-1" href="EN_Horarios.html">Schedule</a>
-        <a class="link-1" href="EN_Registros.html">Records</a>
-        <a class="link-1" href="EN_Sobre_Nosotros.html" style="background-color: rgb(59, 48, 113);">About Us</a>
-        <a class="link-1" href="EN_Contactanos.html">Contact Us</a>
-        <a href="ES_sobre_nosotros.html"><img src="España.png" style="height: 45px; width: 80px;"></a>
+      <a href="index.html"><img class="file" src="Flecha_Atras.png" style="height: 40px; width: 40px;"></a>
+      <img class="logo" src="LogoCentralis.png" alt="Logo Centralis">
+      <a class="link-1" href="EN_Sobre_Centralis.html">About Centralis</a>
+      <a class="link-1" href="EN_mapa.html">Map</a>
+      <a class="link-1" href="EN_Presos.html">Inmates</a>
+      <a class="link-1" href="EN_Personal.html">Staff</a>
+      <a class="link-1" href="EN_Horarios.html">Schedule</a>
+      <a class="link-1" href="EN_Registros.html">Records</a>
+      <a class="link-1" href="EN_Sobre_Nosotros.html" style="background-color: rgb(59, 48, 113);">About Us</a>
+      <a class="link-1" href="EN_Contactanos.html">Contact Us</a>
+      <a href="ES_sobre_nosotros.html" style="margin-right: 10px; margin-left:10px;">
+        <img src="España.png" style="height: 34px; width: 68px; margin-top: 3.5px; border-radius: 10px; border: 2px solid rgb(255, 255, 255);">
+      </a>
+      <a href="EN_Sobre_Nosotros.html">
+        <img src="Reino Unido.png" style="height: 34px; width: 68px; border-radius: 10px; margin-top: 3.5px; border: 3px solid rgb(12, 222, 26); box-shadow: 0 0 15px 5px rgba(12, 222, 26, 0.5);">
+      </a>
+   
     </div>
     <div class="cards-container" style="float: right; width: 590px;">
       <div class="card">

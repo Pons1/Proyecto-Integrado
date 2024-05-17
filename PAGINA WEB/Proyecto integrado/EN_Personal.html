@@ -6,79 +6,122 @@
     <title>Centralis_Personal</title>
 
     <style>
-        body {
-          margin: 0px;
-          font-family: Arial, sans-serif;
-          background-color: rgb(108, 108, 116);
+      body {
+        margin: 0px;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom right, #6e90ff, #ffffff, #6e90ff); /* Fondo con degradado */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100vh;
+      }
+
+      #div-menu {
+        width: 100%;
+        height: 6.2vh;
+        text-align: center;
+        background-color: #004AAD;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logo {
+        max-width: 80%;
+        max-height: 100%;
+        margin-right: 20px;
+      }
+
+      .link-1 {
+        color: #ffffff;
+        font-size: 20px;
+        text-decoration: none;
+        padding: 10px 20px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .link-1::before,
+      .link-1::after {
+        content: "";
+        position: absolute;
+        background-color: #ffffff;
+        width: 100%;
+        height: 2px;
+        transform: scaleX(0);
+        transition: transform 0.4s;
+      }
+
+      .link-1::before {
+        top: 0;
+        left: 0;
+        transform-origin: left;
+      }
+
+      .link-1::after {
+        bottom: 0;
+        right: 0;
+        transform-origin: right;
+      }
+
+      .link-1:hover::before,
+      .link-1:hover::after {
+        transform: scaleX(1);
+      }
+
+      .link-1 img {
+          height: 24px; /* Altura ajustada */
+          width: auto; /* Asegura la proporción */
+          margin-right: 5px; /* Margen añadido para mejor espaciado */
+      }
+
+      .content-wrapper {
           display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: flex-start;
-          height: 100vh;
-        }
+          justify-content: flex-end;
+          margin-top: 20px; /* Margen añadido para separación */
+          width: 80%; /* Ajusta el ancho según necesites */
+      }
 
-        #div-menu {
-          width: 100%;
-          height: 6.2vh;
-          text-align: center;
-          background-color: #004AAD;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .logo {
-          max-width: 80%;
-          max-height: 100%;
-          margin-right: 20px;
-        }
-
-        .link-1 {
-          color: #ffffff;
-          font-size: 20px;
-          text-decoration: none;
-          padding: 10px 20px;
-          margin: 0 5px;
-          position: relative;
-          overflow: hidden;
-          z-index: 1;
-        }
-
-        .link-1::before,
-        .link-1::after {
-          content: "";
-          position: absolute;
+      .content {
           background-color: #ffffff;
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          width: 70%; /* Ajusta el ancho según necesites */
+      }
+
+      .content h1 {
+          font-size: 24px; /* Tamaño de fuente ajustado */
+          color: #000000; /* Cambia el color de la fuente para mejorar la visibilidad */
+      }
+
+      .content p {
+          color: #000000; /* Cambia el color de la fuente para mejorar la visibilidad */
+          line-height: 1.6; /* Mejora la legibilidad */
+      }
+
+      .image {
+          flex: 1;
+          margin-right: 20px; /* Margen añadido para el espaciado */
+      }
+
+      .image img {
           width: 100%;
-          height: 2px;
-          transform: scaleX(0);
-          transition: transform 0.4s;
-        }
+          border-radius: 10px; /* Esquinas redondeadas para la imagen */
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
 
-        .link-1::before {
-          top: 0;
-          left: 0;
-          transform-origin: left;
-        }
+      .fle {
+          transition: transform 0.5s ease;
 
-        .link-1::after {
-          bottom: 0;
-          right: 0;
-          transform-origin: right;
-        }
+      }
+      .fle:hover {
+          transform: rotate(-360deg);
+      }
 
-        .link-1:hover::before,
-        .link-1:hover::after {
-          transform: scaleX(1);
-        }
-        .fle {
-            transition: transform 0.5s ease;
-
-        }
-        .fle:hover {
-            transform: rotate(-360deg);
-        }
-    </style>
+  </style>
 </head>
 <body>
     <div id="div-menu">
@@ -86,14 +129,40 @@
         <img class="logo" src="LogoCentralis.png" alt="Centralis Logo">
         <a class="link-1" href="EN_Sobre_Centralis.html">About Centralis</a>
         <a class="link-1" href="EN_mapa.html">Map</a>
-        <a class="link-1" href="EN_Presos.html">Prisoners</a>
+        <a class="link-1" href="EN_Presos.html">Inmates</a>
         <a class="link-1" href="EN_Personal.html" style="background-color: rgb(59, 48, 113);">Staff</a>
         <a class="link-1" href="EN_Horarios.html">Schedule</a>
         <a class="link-1" href="EN_Registros.html">Records</a>
         <a class="link-1" href="EN_Sobre_Nosotros.html">About Us</a>
         <a class="link-1" href="EN_Contactanos.html">Contact Us</a>
-        <a href="ES_Personal.html"><img src="España.png" style="height: 45px; width: 80px;"></a>
+        <a href="ES_Personal.html" style="margin-right: 10px; margin-left:10px;">
+          <img src="España.png" style="height: 34px; width: 68px; margin-top: 3.5px; border-radius: 10px; border: 2px solid rgb(255, 255, 255);">
+      </a>
+      <a href="EN_Personal.html">
+          <img src="Reino Unido.png" style="height: 34px; width: 68px; border-radius: 10px; margin-top: 3.5px; border: 3px solid rgb(12, 222, 26); box-shadow: 0 0 15px 5px rgba(12, 222, 26, 0.5);">
+      </a>
     </div>
-<p>PERSONAL</p>
-</body>
+  </div>
+  <div class="content-wrapper">
+      <div class="image">
+          <img src="policia.jpeg" alt="Your image">
+      </div>
+      <div class="content">
+          <h1>Staff:</h1>
+          <p>
+              Each staff member will have a series of data, including:<br><br>
+              &emsp;• ID.<br>
+              &emsp;• First name.<br>
+              &emsp;• Last name.<br>
+              &emsp;• An image.<br><br>
+              Among other data.<br><br>
+              We can perform different actions with the staff, such as:<br><br>
+              &emsp;• Add staff.<br>
+              &emsp;• Edit staff.<br>
+              &emsp;• Delete staff.<br><br>
+              In addition, each staff member will be assigned to a shift.
+          </p>
+      </div>
+  </div>
+  </body>
 </html>
