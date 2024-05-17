@@ -7,9 +7,9 @@
 
     <style>
         body {
+            background: linear-gradient(to bottom right, #6e90ff, #ffffff, #6e90ff); /* Fondo con degradado */
             margin: 0px;
             font-family: Arial, sans-serif;
-            background-color: rgb(108, 108, 116);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -18,13 +18,13 @@
         }
 
         #div-menu {
-            width: 100%;
-            height: 6.2vh;
-            text-align: center;
-            background-color: #004AAD;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+          width: 100%;
+          height: 6.2vh;
+          text-align: center;
+          background-color: #004AAD;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .logo {
@@ -41,7 +41,6 @@
             font-size: 20px;
             text-decoration: none;
             padding: 10px 20px;
-            margin: 0 5px;
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -108,11 +107,11 @@
             width: 100%;
             max-width: 1200px; /* Limita el ancho del contenido */
         }
-        .fle {
+        .file {
             transition: transform 0.5s ease;
 
         }
-        .fle:hover {
+        .file:hover {
             transform: rotate(-360deg);
         }
 
@@ -120,17 +119,22 @@
 </head>
 <body>
 <div id="div-menu">
-    <a href="index.html"><img class="fle" src="Flecha_Atras.png" style="height: 40px; width: 40px; float: left; margin-left: 20px;"></a>
+    <a href="index.html"><img class="file" src="Flecha_Atras.png" style="height: 40px; width: 40px; float: left; margin-left: 20px;"></a>
     <img src="LogoCentralis.png" alt="Logo Centralis" style="height: 50px; width: 50px;">
     <a class="link-1" href="#" style="background-color: rgb(59, 48, 113);">Sobre Centralis</a>
-    <a class="link-1" href="Pagina_mapa.html">Mapa</a>
-    <a class="link-1" href="Pagina_Presos.html">Presos</a>
-    <a class="link-1" href="Pagina_Personal.html">Personal</a>
-    <a class="link-1" href="Pagina_Horarios.html">Horarios</a>
-    <a class="link-1" href="Pagina_Registros.html">Registros</a>
-    <a class="link-1" href="Pagina_sobre_nosotros.html">Sobre Nosotros</a>
-    <a class="link-1" href="Pagina_Contactanos.html">Contactanos</a>
-    <a href="index.html"><img src="España.png" style="height: 44px; width: 80px;"></a>
+    <a class="link-1" href="ES_mapa.html">Mapa</a>
+    <a class="link-1" href="ES_Presos.html">Presos</a>
+    <a class="link-1" href="ES_Personal.html">Personal</a>
+    <a class="link-1" href="ES_Horarios.html">Horarios</a>
+    <a class="link-1" href="ES_Registros.html">Registros</a>
+    <a class="link-1" href="ES_sobre_nosotros.html">Sobre Nosotros</a>
+    <a class="link-1" href="ES_Contactanos.html">Contactanos</a>
+    <a href="ES_Sobre_Nosotros.html" style="margin-right: 10px; margin-left:10px;">
+        <img src="España.png" style="height: 34px; width: 68px; margin-top: 3.5px; border-radius: 10px; border: 3px solid rgb(12, 222, 26); box-shadow: 0 0 15px 5px rgba(12, 222, 26, 0.5);">
+    </a>
+    <a href="EN_Sobre_Nosotros.html">
+        <img src="Reino Unido.png" style="height: 34px; width: 68px; border-radius: 10px; margin-top: 3.5px; border: 1px solid rgb(255, 255, 255);">
+    </a>
 </div>
 <div class="content-container">
     <img class="logo" src="LogoCentralis.png" alt="Logo Centralis">
