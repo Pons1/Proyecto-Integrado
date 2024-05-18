@@ -1,26 +1,35 @@
-﻿using System;
+﻿using System.Globalization;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+
 
 namespace PROYECTO
 {
     public partial class FrmPpal : Form
     {
         
-        
+        private void AplicarIdioma()
+        {
+           
+        }
 
 
         public FrmPpal()
         {
             InitializeComponent();
         }
+
+
+
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();

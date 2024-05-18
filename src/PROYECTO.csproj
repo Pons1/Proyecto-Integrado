@@ -35,7 +35,7 @@
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 8.3.0\MySql.Data.dll</HintPath>
+      <HintPath>..\..\OneDrive\Escritorio\DAM\Programacion\C#\Forms\AEV7\AEV7\bin\Debug\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -104,6 +104,21 @@
     <Compile Include="FrmRegistro.Designer.cs">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecursosIdiomas\StringRecursos.EN-GB - Copia %282%29.Designer.cs">
+      <DependentUpon>StringRecursos.EN-GB - Copia %282%29.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RecursosIdiomas\StringRecursos.EN-GB - Copia.Designer.cs">
+      <DependentUpon>StringRecursos.EN-GB - Copia.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RecursosIdiomas\StringRecursos.EN-GB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringRecursos.EN-GB.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmAñadir_recluso.resx">
       <DependentUpon>FrmAñadir_recluso.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +152,18 @@
     </Compile>
     <EmbeddedResource Include="FrmRegistro.resx">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosIdiomas\StringRecursos.EN-GB - Copia %282%29.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringRecursos.EN-GB - Copia %282%29.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosIdiomas\StringRecursos.EN-GB - Copia.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringRecursos.EN-GB - Copia.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosIdiomas\StringRecursos.EN-GB.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringRecursos.EN-GB.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

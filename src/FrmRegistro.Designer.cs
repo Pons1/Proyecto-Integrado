@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btn_añadir_registro = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblFiltrarPorFecha = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.entrada_salida = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,24 +46,26 @@
             this.btn_añadir_registro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_añadir_registro.Image = global::PROYECTO.Properties.Resources.anadir;
             this.btn_añadir_registro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_añadir_registro.Location = new System.Drawing.Point(27, 23);
+            this.btn_añadir_registro.Location = new System.Drawing.Point(36, 28);
+            this.btn_añadir_registro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_añadir_registro.Name = "btn_añadir_registro";
-            this.btn_añadir_registro.Size = new System.Drawing.Size(156, 49);
+            this.btn_añadir_registro.Size = new System.Drawing.Size(208, 60);
             this.btn_añadir_registro.TabIndex = 2;
             this.btn_añadir_registro.Text = "Añadir Registro";
             this.btn_añadir_registro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_añadir_registro.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblFiltrarPorFecha
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(485, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 18);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Filtrar por fecha:";
+            this.lblFiltrarPorFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFiltrarPorFecha.AutoSize = true;
+            this.lblFiltrarPorFecha.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltrarPorFecha.Location = new System.Drawing.Point(647, 44);
+            this.lblFiltrarPorFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFiltrarPorFecha.Name = "lblFiltrarPorFecha";
+            this.lblFiltrarPorFecha.Size = new System.Drawing.Size(159, 23);
+            this.lblFiltrarPorFecha.TabIndex = 5;
+            this.lblFiltrarPorFecha.Text = "Filtrar por fecha:";
             // 
             // dateTimePicker1
             // 
@@ -71,10 +73,10 @@
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.CustomFormat = "";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(617, 36);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(823, 44);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(96, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(127, 22);
             this.dateTimePicker1.TabIndex = 6;
             // 
             // dataGridView1
@@ -92,22 +94,25 @@
             this.apell,
             this.motivo,
             this.fecha});
-            this.dataGridView1.Location = new System.Drawing.Point(27, 88);
+            this.dataGridView1.Location = new System.Drawing.Point(36, 108);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(686, 301);
+            this.dataGridView1.Size = new System.Drawing.Size(915, 370);
             this.dataGridView1.TabIndex = 7;
             // 
             // entrada_salida
             // 
             this.entrada_salida.HeaderText = "Entrada / Salida";
+            this.entrada_salida.MinimumWidth = 6;
             this.entrada_salida.Name = "entrada_salida";
             this.entrada_salida.ReadOnly = true;
             // 
             // id
             // 
             this.id.HeaderText = "Id";
+            this.id.MinimumWidth = 6;
             this.id.Name = "id";
             this.id.ReadOnly = true;
             // 
@@ -128,28 +133,30 @@
             // motivo
             // 
             this.motivo.HeaderText = "Motivo";
+            this.motivo.MinimumWidth = 6;
             this.motivo.Name = "motivo";
             this.motivo.ReadOnly = true;
             // 
             // fecha
             // 
             this.fecha.HeaderText = "Fecha";
+            this.fecha.MinimumWidth = 6;
             this.fecha.Name = "fecha";
             this.fecha.ReadOnly = true;
             // 
-            // Registro
+            // FrmRegistro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(190)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(758, 410);
+            this.ClientSize = new System.Drawing.Size(1011, 505);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblFiltrarPorFecha);
             this.Controls.Add(this.btn_añadir_registro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Registro";
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "FrmRegistro";
             this.Text = "Registro";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -160,7 +167,7 @@
         #endregion
 
         private System.Windows.Forms.Button btn_añadir_registro;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblFiltrarPorFecha;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn entrada_salida;

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.txt_buscar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblPuesto = new System.Windows.Forms.Label();
             this.cmb_modulo = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.foto = new System.Windows.Forms.DataGridViewImageColumn();
@@ -39,7 +39,7 @@
             this.puesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.info = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_añadir_recluso = new System.Windows.Forms.Button();
+            this.btn_añadir_empleado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,22 +49,22 @@
             this.txt_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_buscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_buscar.Location = new System.Drawing.Point(703, 30);
-            this.txt_buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_buscar.Margin = new System.Windows.Forms.Padding(4);
             this.txt_buscar.Name = "txt_buscar";
             this.txt_buscar.Size = new System.Drawing.Size(224, 30);
             this.txt_buscar.TabIndex = 2;
             // 
-            // label1
+            // lblPuesto
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(699, 76);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 23);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Puesto: ";
+            this.lblPuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPuesto.AutoSize = true;
+            this.lblPuesto.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPuesto.Location = new System.Drawing.Point(699, 76);
+            this.lblPuesto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPuesto.Name = "lblPuesto";
+            this.lblPuesto.Size = new System.Drawing.Size(80, 23);
+            this.lblPuesto.TabIndex = 4;
+            this.lblPuesto.Text = "Puesto: ";
             // 
             // cmb_modulo
             // 
@@ -77,7 +77,7 @@
             "Limpiador",
             "Administrador"});
             this.cmb_modulo.Location = new System.Drawing.Point(789, 73);
-            this.cmb_modulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_modulo.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_modulo.Name = "cmb_modulo";
             this.cmb_modulo.Size = new System.Drawing.Size(137, 31);
             this.cmb_modulo.TabIndex = 5;
@@ -98,7 +98,7 @@
             this.puesto,
             this.info});
             this.dataGridView1.Location = new System.Drawing.Point(47, 134);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -159,21 +159,21 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // btn_añadir_recluso
+            // btn_añadir_empleado
             // 
-            this.btn_añadir_recluso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_añadir_recluso.Image = global::PROYECTO.Properties.Resources.anadir;
-            this.btn_añadir_recluso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_añadir_recluso.Location = new System.Drawing.Point(47, 38);
-            this.btn_añadir_recluso.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_añadir_recluso.Name = "btn_añadir_recluso";
-            this.btn_añadir_recluso.Size = new System.Drawing.Size(233, 60);
-            this.btn_añadir_recluso.TabIndex = 1;
-            this.btn_añadir_recluso.Text = "Añadir Empleado";
-            this.btn_añadir_recluso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_añadir_recluso.UseVisualStyleBackColor = true;
+            this.btn_añadir_empleado.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_añadir_empleado.Image = global::PROYECTO.Properties.Resources.anadir;
+            this.btn_añadir_empleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_añadir_empleado.Location = new System.Drawing.Point(47, 38);
+            this.btn_añadir_empleado.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_añadir_empleado.Name = "btn_añadir_empleado";
+            this.btn_añadir_empleado.Size = new System.Drawing.Size(233, 60);
+            this.btn_añadir_empleado.TabIndex = 1;
+            this.btn_añadir_empleado.Text = "Añadir Empleado";
+            this.btn_añadir_empleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_añadir_empleado.UseVisualStyleBackColor = true;
             // 
-            // Personal
+            // FrmPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -181,13 +181,13 @@
             this.ClientSize = new System.Drawing.Size(1028, 551);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cmb_modulo);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPuesto);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txt_buscar);
-            this.Controls.Add(this.btn_añadir_recluso);
+            this.Controls.Add(this.btn_añadir_empleado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Personal";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "FrmPersonal";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -197,10 +197,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_añadir_recluso;
+        private System.Windows.Forms.Button btn_añadir_empleado;
         private System.Windows.Forms.TextBox txt_buscar;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblPuesto;
         private System.Windows.Forms.ComboBox cmb_modulo;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewImageColumn foto;

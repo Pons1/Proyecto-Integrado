@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btn_añadir_foto = new System.Windows.Forms.Button();
-            this.lblNom = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.txt_pnombre = new System.Windows.Forms.TextBox();
             this.lblApellidos = new System.Windows.Forms.Label();
             this.txt_apellidos = new System.Windows.Forms.TextBox();
@@ -71,16 +71,16 @@
             this.btn_añadir_foto.UseVisualStyleBackColor = true;
             this.btn_añadir_foto.Click += new System.EventHandler(this.btn_añadir_foto_Click);
             // 
-            // lblNom
+            // lblNombre
             // 
-            this.lblNom.AutoSize = true;
-            this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNom.Location = new System.Drawing.Point(50, 57);
-            this.lblNom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(114, 29);
-            this.lblNom.TabIndex = 2;
-            this.lblNom.Text = "Nombre:";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(50, 57);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(114, 29);
+            this.lblNombre.TabIndex = 2;
+            this.lblNombre.Text = "Nombre:";
             // 
             // txt_pnombre
             // 
@@ -362,7 +362,7 @@
             this.Controls.Add(this.txt_apellidos);
             this.Controls.Add(this.lblApellidos);
             this.Controls.Add(this.txt_pnombre);
-            this.Controls.Add(this.lblNom);
+            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btn_añadir_foto);
             this.Controls.Add(this.pcboxFoto);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -380,7 +380,7 @@
 
         private System.Windows.Forms.PictureBox pcboxFoto;
         private System.Windows.Forms.Button btn_añadir_foto;
-        private System.Windows.Forms.Label lblNom;
+        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txt_pnombre;
         private System.Windows.Forms.Label lblApellidos;
         private System.Windows.Forms.TextBox txt_apellidos;

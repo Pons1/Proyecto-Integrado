@@ -117,22 +117,106 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="entrada_salida.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="nom.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="apell.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="motivo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="fecha.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="apell" xml:space="preserve">
+    <value>Surnames</value>
+  </data>
+  <data name="btnBorrar" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="btnEditar" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="btnInsertar" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="btnSalir" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="btn_añadir_empleado" xml:space="preserve">
+    <value>Add Employee</value>
+  </data>
+  <data name="btn_añadir_foto" xml:space="preserve">
+    <value>Add Photo</value>
+  </data>
+  <data name="btn_añadir_registro" xml:space="preserve">
+    <value>Add Register</value>
+  </data>
+  <data name="btn_horario" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="btn_mapa" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="btn_personal" xml:space="preserve">
+    <value>Employees</value>
+  </data>
+  <data name="btn_presos" xml:space="preserve">
+    <value>Prisioners</value>
+  </data>
+  <data name="btn_registro" xml:space="preserve">
+    <value>Records</value>
+  </data>
+  <data name="entrada_salida" xml:space="preserve">
+    <value>In/Out</value>
+  </data>
+  <data name="fecha" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="foto" xml:space="preserve">
+    <value>Picture</value>
+  </data>
+  <data name="info" xml:space="preserve">
+    <value>See Info</value>
+  </data>
+  <data name="lblApellidos" xml:space="preserve">
+    <value>Surnames:</value>
+  </data>
+  <data name="lblAñadir" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="lblCelda" xml:space="preserve">
+    <value>Cell:</value>
+  </data>
+  <data name="lblCodigoPos" xml:space="preserve">
+    <value>Postal Cose:</value>
+  </data>
+  <data name="lblCorreo" xml:space="preserve">
+    <value>Email Address:</value>
+  </data>
+  <data name="lblCrimen" xml:space="preserve">
+    <value>Crime:</value>
+  </data>
+  <data name="lblDireccion" xml:space="preserve">
+    <value>Address:</value>
+  </data>
+  <data name="lblFiltrarPorFecha" xml:space="preserve">
+    <value>Filter By Date:</value>
+  </data>
+  <data name="lblNif" xml:space="preserve">
+    <value>ID:</value>
+  </data>
+  <data name="lblNombre" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="lblPuesto" xml:space="preserve">
+    <value>Job:</value>
+  </data>
+  <data name="lblSexo" xml:space="preserve">
+    <value>Gender:</value>
+  </data>
+  <data name="lblTelefono" xml:space="preserve">
+    <value>Phone Nº:</value>
+  </data>
+  <data name="motivo" xml:space="preserve">
+    <value>Motive</value>
+  </data>
+  <data name="nom" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="puesto" xml:space="preserve">
+    <value>Job</value>
+  </data>
+  <data name="turno" xml:space="preserve">
+    <value>Shift</value>
+  </data>
 </root>
