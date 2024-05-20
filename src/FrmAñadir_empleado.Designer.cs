@@ -78,6 +78,7 @@
             this.btnAñadir.TabIndex = 46;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // txtTelefono
             // 

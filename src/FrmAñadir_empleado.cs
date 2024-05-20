@@ -26,5 +26,10 @@ namespace PROYECTO
         private void FrmAñadir_empleado_Load(object sender, EventArgs e)
         {
         }
+
+        private void btnAñadir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
