@@ -104,16 +104,6 @@
     <Compile Include="FrmRegistro.Designer.cs">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
     </Compile>
-    <Compile Include="RecursosIdiomas\StringRecursos.EN-GB - Copia %282%29.Designer.cs">
-      <DependentUpon>StringRecursos.EN-GB - Copia %282%29.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="RecursosIdiomas\StringRecursos.EN-GB - Copia.Designer.cs">
-      <DependentUpon>StringRecursos.EN-GB - Copia.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="RecursosIdiomas\StringRecursos.EN-GB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -152,14 +142,6 @@
     </Compile>
     <EmbeddedResource Include="FrmRegistro.resx">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RecursosIdiomas\StringRecursos.EN-GB - Copia %282%29.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>StringRecursos.EN-GB - Copia %282%29.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RecursosIdiomas\StringRecursos.EN-GB - Copia.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>StringRecursos.EN-GB - Copia.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RecursosIdiomas\StringRecursos.EN-GB.resx">
       <Generator>ResXFileCodeGenerator</Generator>

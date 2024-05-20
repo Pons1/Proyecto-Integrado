@@ -16,12 +16,6 @@ namespace PROYECTO
 {
     public partial class FrmPpal : Form
     {
-        
-        private void AplicarIdioma()
-        {
-           
-        }
-
 
         public FrmPpal()
         {
