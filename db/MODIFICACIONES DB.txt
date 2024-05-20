@@ -2,7 +2,7 @@ CREATE DATABASE centralis;
 USE centralis;
 
 CREATE TABLE modulos (
-    Modulo ENUM('A','B') PRIMARY KEY
+    CodigoModulo ENUM('A','B') PRIMARY KEY
 );
 
 CREATE TABLE zonas (
@@ -21,7 +21,7 @@ CREATE TABLE celdas (
     Modulo ENUM('A','B'),
     Abierta TINYINT,
     PRIMARY KEY (CodigoCelda),
-    FOREIGN KEY (Modulo) REFERENCES modulos(Modulo) ON DELETE CASCADE
+    FOREIGN KEY (Modulo) REFERENCES modulos(CodigoModulo) ON DELETE CASCADE
 );
 
 CREATE TABLE turnos (

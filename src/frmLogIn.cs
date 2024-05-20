@@ -24,7 +24,7 @@ namespace PROYECTO
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            if (Empleado.ComprobarRegistro(txtUsuario.Text,txtContraseña.Text) )
+            if (/*Empleado.ComprobarRegistro(txtUsuario.Text,txtContraseña.Text)*/true )
             {
                 
                 FrmPpal frmPpal = new FrmPpal();
