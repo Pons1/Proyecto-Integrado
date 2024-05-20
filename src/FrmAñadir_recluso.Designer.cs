@@ -54,128 +54,150 @@
             this.erpPresos = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnSalir = new System.Windows.Forms.Button();
             this.pcboxFoto = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.erpPresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcboxFoto)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_añadir_foto
             // 
             this.btn_añadir_foto.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_añadir_foto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_añadir_foto.Location = new System.Drawing.Point(635, 171);
-            this.btn_añadir_foto.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_añadir_foto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
+            this.btn_añadir_foto.FlatAppearance.BorderSize = 0;
+            this.btn_añadir_foto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_añadir_foto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_añadir_foto.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_añadir_foto.Location = new System.Drawing.Point(70, 248);
+            this.btn_añadir_foto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_añadir_foto.Name = "btn_añadir_foto";
-            this.btn_añadir_foto.Size = new System.Drawing.Size(165, 34);
+            this.btn_añadir_foto.Size = new System.Drawing.Size(136, 30);
             this.btn_añadir_foto.TabIndex = 1;
             this.btn_añadir_foto.Text = "Insertar Foto";
-            this.btn_añadir_foto.UseVisualStyleBackColor = true;
+            this.btn_añadir_foto.UseVisualStyleBackColor = false;
             this.btn_añadir_foto.Click += new System.EventHandler(this.btn_añadir_foto_Click);
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(50, 57);
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblNombre.Location = new System.Drawing.Point(32, 26);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(114, 29);
+            this.lblNombre.Size = new System.Drawing.Size(80, 20);
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "Nombre:";
             // 
             // txt_pnombre
             // 
-            this.txt_pnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pnombre.Location = new System.Drawing.Point(172, 54);
-            this.txt_pnombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_pnombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
+            this.txt_pnombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_pnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pnombre.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_pnombre.Location = new System.Drawing.Point(35, 49);
+            this.txt_pnombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_pnombre.Name = "txt_pnombre";
-            this.txt_pnombre.Size = new System.Drawing.Size(132, 34);
+            this.txt_pnombre.Size = new System.Drawing.Size(237, 23);
             this.txt_pnombre.TabIndex = 3;
             // 
             // lblApellidos
             // 
             this.lblApellidos.AutoSize = true;
-            this.lblApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellidos.Location = new System.Drawing.Point(48, 101);
+            this.lblApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblApellidos.Location = new System.Drawing.Point(287, 26);
             this.lblApellidos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(130, 29);
+            this.lblApellidos.Size = new System.Drawing.Size(92, 20);
             this.lblApellidos.TabIndex = 4;
             this.lblApellidos.Text = "Apellidos:";
             // 
             // txt_apellidos
             // 
-            this.txt_apellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_apellidos.Location = new System.Drawing.Point(190, 96);
-            this.txt_apellidos.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_apellidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
+            this.txt_apellidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_apellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_apellidos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_apellidos.Location = new System.Drawing.Point(291, 52);
+            this.txt_apellidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_apellidos.Name = "txt_apellidos";
-            this.txt_apellidos.Size = new System.Drawing.Size(264, 34);
+            this.txt_apellidos.Size = new System.Drawing.Size(380, 23);
             this.txt_apellidos.TabIndex = 5;
             // 
             // lblNif
             // 
             this.lblNif.AutoSize = true;
-            this.lblNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNif.Location = new System.Drawing.Point(359, 57);
+            this.lblNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNif.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblNif.Location = new System.Drawing.Point(31, 105);
             this.lblNif.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNif.Name = "lblNif";
-            this.lblNif.Size = new System.Drawing.Size(64, 29);
+            this.lblNif.Size = new System.Drawing.Size(41, 18);
             this.lblNif.TabIndex = 6;
             this.lblNif.Text = "DNI:";
             // 
             // txt_nifPreso
             // 
-            this.txt_nifPreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nifPreso.Location = new System.Drawing.Point(446, 52);
-            this.txt_nifPreso.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nifPreso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
+            this.txt_nifPreso.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_nifPreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nifPreso.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.txt_nifPreso.Location = new System.Drawing.Point(35, 127);
+            this.txt_nifPreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_nifPreso.MaxLength = 9;
             this.txt_nifPreso.Name = "txt_nifPreso";
-            this.txt_nifPreso.Size = new System.Drawing.Size(199, 34);
+            this.txt_nifPreso.Size = new System.Drawing.Size(156, 23);
             this.txt_nifPreso.TabIndex = 7;
             // 
             // lblCrimen
             // 
             this.lblCrimen.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblCrimen.AutoSize = true;
-            this.lblCrimen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCrimen.Location = new System.Drawing.Point(44, 157);
+            this.lblCrimen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCrimen.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblCrimen.Location = new System.Drawing.Point(215, 341);
             this.lblCrimen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCrimen.Name = "lblCrimen";
-            this.lblCrimen.Size = new System.Drawing.Size(104, 29);
+            this.lblCrimen.Size = new System.Drawing.Size(67, 18);
             this.lblCrimen.TabIndex = 8;
             this.lblCrimen.Text = "Crimen:";
             // 
             // cmbCrimen
             // 
             this.cmbCrimen.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cmbCrimen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCrimen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
             this.cmbCrimen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCrimen.FormattingEnabled = true;
-            this.cmbCrimen.Location = new System.Drawing.Point(155, 154);
+            this.cmbCrimen.Location = new System.Drawing.Point(201, 379);
+            this.cmbCrimen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbCrimen.Name = "cmbCrimen";
-            this.cmbCrimen.Size = new System.Drawing.Size(132, 37);
+            this.cmbCrimen.Size = new System.Drawing.Size(468, 37);
             this.cmbCrimen.TabIndex = 9;
             // 
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
-            this.lblSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSexo.Location = new System.Drawing.Point(358, 160);
+            this.lblSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSexo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblSexo.Location = new System.Drawing.Point(508, 105);
             this.lblSexo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSexo.Name = "lblSexo";
-            this.lblSexo.Size = new System.Drawing.Size(79, 29);
+            this.lblSexo.Size = new System.Drawing.Size(51, 18);
             this.lblSexo.TabIndex = 10;
             this.lblSexo.Text = "Sexo:";
             // 
             // cmbSexo
             // 
-            this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSexo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
             this.cmbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSexo.FormattingEnabled = true;
             this.cmbSexo.Items.AddRange(new object[] {
             "Hombre",
             "Mujer",
             "Otro"});
-            this.cmbSexo.Location = new System.Drawing.Point(444, 157);
+            this.cmbSexo.Location = new System.Drawing.Point(512, 126);
+            this.cmbSexo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(132, 37);
             this.cmbSexo.TabIndex = 11;
@@ -183,44 +205,53 @@
             // txtDireccion
             // 
             this.txtDireccion.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(184, 242);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
+            this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccion.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtDireccion.Location = new System.Drawing.Point(35, 213);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(264, 34);
+            this.txtDireccion.Size = new System.Drawing.Size(636, 23);
             this.txtDireccion.TabIndex = 13;
             // 
             // cmbDireccion
             // 
             this.cmbDireccion.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cmbDireccion.AutoSize = true;
-            this.cmbDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDireccion.Location = new System.Drawing.Point(44, 248);
+            this.cmbDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDireccion.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cmbDireccion.Location = new System.Drawing.Point(32, 183);
             this.cmbDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cmbDireccion.Name = "cmbDireccion";
-            this.cmbDireccion.Size = new System.Drawing.Size(131, 29);
+            this.cmbDireccion.Size = new System.Drawing.Size(85, 18);
             this.cmbDireccion.TabIndex = 12;
             this.cmbDireccion.Text = "Direccion:";
             // 
             // txtCodigopostal
             // 
             this.txtCodigopostal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtCodigopostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigopostal.Location = new System.Drawing.Point(237, 284);
-            this.txtCodigopostal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodigopostal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
+            this.txtCodigopostal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCodigopostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigopostal.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtCodigopostal.Location = new System.Drawing.Point(36, 288);
+            this.txtCodigopostal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigopostal.MaxLength = 5;
             this.txtCodigopostal.Name = "txtCodigopostal";
-            this.txtCodigopostal.Size = new System.Drawing.Size(264, 34);
+            this.txtCodigopostal.Size = new System.Drawing.Size(131, 23);
             this.txtCodigopostal.TabIndex = 15;
             // 
             // lblCodigoPos
             // 
             this.lblCodigoPos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCodigoPos.AutoSize = true;
-            this.lblCodigoPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoPos.Location = new System.Drawing.Point(44, 289);
+            this.lblCodigoPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoPos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblCodigoPos.Location = new System.Drawing.Point(32, 260);
             this.lblCodigoPos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodigoPos.Name = "lblCodigoPos";
-            this.lblCodigoPos.Size = new System.Drawing.Size(185, 29);
+            this.lblCodigoPos.Size = new System.Drawing.Size(120, 18);
             this.lblCodigoPos.TabIndex = 14;
             this.lblCodigoPos.Text = "Codigo Postal:";
             this.lblCodigoPos.Click += new System.EventHandler(this.label1_Click);
@@ -229,31 +260,35 @@
             // 
             this.lblCorreo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreo.Location = new System.Drawing.Point(43, 331);
+            this.lblCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblCorreo.Location = new System.Drawing.Point(197, 260);
             this.lblCorreo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(240, 29);
+            this.lblCorreo.Size = new System.Drawing.Size(157, 18);
             this.lblCorreo.TabIndex = 16;
             this.lblCorreo.Text = "Correo Electronico:";
             // 
             // txtCorreo
             // 
             this.txtCorreo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(294, 326);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
+            this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.Location = new System.Drawing.Point(201, 288);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(264, 34);
+            this.txtCorreo.Size = new System.Drawing.Size(469, 23);
             this.txtCorreo.TabIndex = 17;
             // 
             // cmbCelda
             // 
             this.cmbCelda.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cmbCelda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCelda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
             this.cmbCelda.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCelda.FormattingEnabled = true;
-            this.cmbCelda.Location = new System.Drawing.Point(140, 200);
+            this.cmbCelda.Location = new System.Drawing.Point(32, 379);
+            this.cmbCelda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbCelda.Name = "cmbCelda";
             this.cmbCelda.Size = new System.Drawing.Size(132, 37);
             this.cmbCelda.TabIndex = 19;
@@ -262,47 +297,56 @@
             // 
             this.lblCelda.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblCelda.AutoSize = true;
-            this.lblCelda.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCelda.Location = new System.Drawing.Point(44, 203);
+            this.lblCelda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCelda.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblCelda.Location = new System.Drawing.Point(32, 351);
             this.lblCelda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCelda.Name = "lblCelda";
-            this.lblCelda.Size = new System.Drawing.Size(89, 29);
+            this.lblCelda.Size = new System.Drawing.Size(56, 18);
             this.lblCelda.TabIndex = 18;
             this.lblCelda.Text = "Celda:";
             // 
             // txtTelefono
             // 
             this.txtTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(190, 373);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
+            this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtTelefono.Location = new System.Drawing.Point(219, 127);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(264, 34);
+            this.txtTelefono.Size = new System.Drawing.Size(265, 23);
             this.txtTelefono.TabIndex = 21;
             // 
             // lblTelefono
             // 
             this.lblTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.Location = new System.Drawing.Point(44, 378);
+            this.lblTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefono.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblTelefono.Location = new System.Drawing.Point(215, 105);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(125, 29);
+            this.lblTelefono.Size = new System.Drawing.Size(79, 18);
             this.lblTelefono.TabIndex = 20;
             this.lblTelefono.Text = "Teléfono:";
             // 
             // btnAñadir
             // 
             this.btnAñadir.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnAñadir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAñadir.Location = new System.Drawing.Point(673, 296);
-            this.btnAñadir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAñadir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(121)))), ((int)(((byte)(82)))));
+            this.btnAñadir.FlatAppearance.BorderSize = 0;
+            this.btnAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAñadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAñadir.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAñadir.Location = new System.Drawing.Point(32, 341);
+            this.btnAñadir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(115, 34);
+            this.btnAñadir.Size = new System.Drawing.Size(208, 46);
             this.btnAñadir.TabIndex = 22;
             this.btnAñadir.Text = "Añadir";
-            this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.UseVisualStyleBackColor = false;
             this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // erpPresos
@@ -312,14 +356,18 @@
             // btnSalir
             // 
             this.btnSalir.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(673, 354);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSalir.Location = new System.Drawing.Point(32, 414);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(115, 34);
+            this.btnSalir.Size = new System.Drawing.Size(208, 46);
             this.btnSalir.TabIndex = 23;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // pcboxFoto
@@ -327,22 +375,36 @@
             this.pcboxFoto.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pcboxFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pcboxFoto.Image = global::PROYECTO.Properties.Resources.def;
-            this.pcboxFoto.Location = new System.Drawing.Point(653, 13);
-            this.pcboxFoto.Margin = new System.Windows.Forms.Padding(4);
+            this.pcboxFoto.Location = new System.Drawing.Point(32, 26);
+            this.pcboxFoto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pcboxFoto.Name = "pcboxFoto";
-            this.pcboxFoto.Size = new System.Drawing.Size(135, 150);
+            this.pcboxFoto.Size = new System.Drawing.Size(223, 214);
             this.pcboxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcboxFoto.TabIndex = 0;
             this.pcboxFoto.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(82)))), ((int)(((byte)(124)))));
+            this.panel1.Controls.Add(this.pcboxFoto);
+            this.panel1.Controls.Add(this.btn_añadir_foto);
+            this.panel1.Controls.Add(this.btnSalir);
+            this.panel1.Controls.Add(this.btnAñadir);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(703, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(268, 487);
+            this.panel1.TabIndex = 24;
             // 
             // FrmAñadir_recluso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(190)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(813, 478);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnAñadir);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(54)))), ((int)(((byte)(94)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(971, 487);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.cmbCelda);
@@ -363,14 +425,13 @@
             this.Controls.Add(this.lblApellidos);
             this.Controls.Add(this.txt_pnombre);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.btn_añadir_foto);
-            this.Controls.Add(this.pcboxFoto);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmAñadir_recluso";
             this.Text = "Añadir_recluso";
             this.Load += new System.EventHandler(this.Añadir_recluso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.erpPresos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcboxFoto)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,5 +464,6 @@
         private System.Windows.Forms.Button btnAñadir;
         private System.Windows.Forms.ErrorProvider erpPresos;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Panel panel1;
     }
 }

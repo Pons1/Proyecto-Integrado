@@ -66,7 +66,7 @@ namespace PROYECTO
         }
 
 
-        private void AbrirFormulario(object formHijo)
+        public void AbrirFormulario(object formHijo)
         {
             Form formulario = null;
             foreach (Control control in this.PanelPrincipal.Controls)
@@ -132,6 +132,11 @@ namespace PROYECTO
         }
 
         private void PanelPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FrmPpal_Load(object sender, EventArgs e)
         {
 
         }
