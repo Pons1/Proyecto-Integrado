@@ -28,150 +28,129 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txt_buscar = new System.Windows.Forms.TextBox();
-            this.lblPuesto = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.dgvPresos = new System.Windows.Forms.DataGridView();
             this.cmb_modulo = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.foto = new System.Windows.Forms.DataGridViewImageColumn();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apell = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.puesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.info = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_añadir_empleado = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lblmod = new System.Windows.Forms.Label();
+            this.pcbLupa = new System.Windows.Forms.PictureBox();
+            this.txt_buscar = new System.Windows.Forms.TextBox();
+            this.btn_añadir_recluso = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPresos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLupa)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(45, 462);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(513, 16);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "*Doble click sobre la liena para ver la ficha personal/editar/borrar de cada empl" +
+    "eado";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(604, 25);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(90, 23);
+            this.lblNombre.TabIndex = 18;
+            this.lblNombre.Text = "Nombre:";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(766, 491);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(171, 42);
+            this.btnReset.TabIndex = 17;
+            this.btnReset.Text = "Actualizar";
+            this.btnReset.UseVisualStyleBackColor = true;
+            // 
+            // dgvPresos
+            // 
+            this.dgvPresos.AllowUserToDeleteRows = false;
+            this.dgvPresos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPresos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPresos.Location = new System.Drawing.Point(48, 111);
+            this.dgvPresos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPresos.Name = "dgvPresos";
+            this.dgvPresos.ReadOnly = true;
+            this.dgvPresos.RowHeadersWidth = 51;
+            this.dgvPresos.Size = new System.Drawing.Size(915, 347);
+            this.dgvPresos.TabIndex = 16;
+            // 
+            // cmb_modulo
+            // 
+            this.cmb_modulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_modulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_modulo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_modulo.FormattingEnabled = true;
+            this.cmb_modulo.Location = new System.Drawing.Point(790, 61);
+            this.cmb_modulo.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_modulo.Name = "cmb_modulo";
+            this.cmb_modulo.Size = new System.Drawing.Size(137, 31);
+            this.cmb_modulo.TabIndex = 15;
+            // 
+            // lblmod
+            // 
+            this.lblmod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblmod.AutoSize = true;
+            this.lblmod.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmod.Location = new System.Drawing.Point(700, 65);
+            this.lblmod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblmod.Name = "lblmod";
+            this.lblmod.Size = new System.Drawing.Size(85, 23);
+            this.lblmod.TabIndex = 14;
+            this.lblmod.Text = "Módulo:";
+            // 
+            // pcbLupa
+            // 
+            this.pcbLupa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcbLupa.Image = global::PROYECTO.Properties.Resources.search_engine_optimization;
+            this.pcbLupa.Location = new System.Drawing.Point(945, 22);
+            this.pcbLupa.Margin = new System.Windows.Forms.Padding(4);
+            this.pcbLupa.Name = "pcbLupa";
+            this.pcbLupa.Size = new System.Drawing.Size(39, 32);
+            this.pcbLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbLupa.TabIndex = 13;
+            this.pcbLupa.TabStop = false;
             // 
             // txt_buscar
             // 
             this.txt_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_buscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_buscar.Location = new System.Drawing.Point(703, 30);
+            this.txt_buscar.Location = new System.Drawing.Point(704, 22);
             this.txt_buscar.Margin = new System.Windows.Forms.Padding(4);
             this.txt_buscar.Name = "txt_buscar";
             this.txt_buscar.Size = new System.Drawing.Size(224, 30);
-            this.txt_buscar.TabIndex = 2;
+            this.txt_buscar.TabIndex = 12;
             // 
-            // lblPuesto
+            // btn_añadir_recluso
             // 
-            this.lblPuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPuesto.AutoSize = true;
-            this.lblPuesto.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPuesto.Location = new System.Drawing.Point(699, 76);
-            this.lblPuesto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPuesto.Name = "lblPuesto";
-            this.lblPuesto.Size = new System.Drawing.Size(80, 23);
-            this.lblPuesto.TabIndex = 4;
-            this.lblPuesto.Text = "Puesto: ";
-            // 
-            // cmb_modulo
-            // 
-            this.cmb_modulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmb_modulo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_modulo.FormattingEnabled = true;
-            this.cmb_modulo.Items.AddRange(new object[] {
-            "Guardia",
-            "Enfermero",
-            "Limpiador",
-            "Administrador"});
-            this.cmb_modulo.Location = new System.Drawing.Point(789, 73);
-            this.cmb_modulo.Margin = new System.Windows.Forms.Padding(4);
-            this.cmb_modulo.Name = "cmb_modulo";
-            this.cmb_modulo.Size = new System.Drawing.Size(137, 31);
-            this.cmb_modulo.TabIndex = 5;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.foto,
-            this.nom,
-            this.apell,
-            this.turno,
-            this.puesto,
-            this.info});
-            this.dataGridView1.Location = new System.Drawing.Point(47, 134);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(915, 370);
-            this.dataGridView1.TabIndex = 6;
-            // 
-            // foto
-            // 
-            this.foto.HeaderText = "Foto";
-            this.foto.MinimumWidth = 6;
-            this.foto.Name = "foto";
-            this.foto.ReadOnly = true;
-            // 
-            // nom
-            // 
-            this.nom.HeaderText = "Nombre";
-            this.nom.MinimumWidth = 6;
-            this.nom.Name = "nom";
-            this.nom.ReadOnly = true;
-            // 
-            // apell
-            // 
-            this.apell.HeaderText = "Apellidos";
-            this.apell.MinimumWidth = 6;
-            this.apell.Name = "apell";
-            this.apell.ReadOnly = true;
-            // 
-            // turno
-            // 
-            this.turno.HeaderText = "Turno";
-            this.turno.MinimumWidth = 6;
-            this.turno.Name = "turno";
-            this.turno.ReadOnly = true;
-            // 
-            // puesto
-            // 
-            this.puesto.HeaderText = "Puesto";
-            this.puesto.MinimumWidth = 6;
-            this.puesto.Name = "puesto";
-            this.puesto.ReadOnly = true;
-            // 
-            // info
-            // 
-            this.info.HeaderText = "Ver info";
-            this.info.MinimumWidth = 6;
-            this.info.Name = "info";
-            this.info.ReadOnly = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::PROYECTO.Properties.Resources.search_engine_optimization;
-            this.pictureBox1.Location = new System.Drawing.Point(923, 30);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(39, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btn_añadir_empleado
-            // 
-            this.btn_añadir_empleado.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_añadir_empleado.Image = global::PROYECTO.Properties.Resources.anadir;
-            this.btn_añadir_empleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_añadir_empleado.Location = new System.Drawing.Point(47, 38);
-            this.btn_añadir_empleado.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_añadir_empleado.Name = "btn_añadir_empleado";
-            this.btn_añadir_empleado.Size = new System.Drawing.Size(233, 60);
-            this.btn_añadir_empleado.TabIndex = 1;
-            this.btn_añadir_empleado.Text = "Añadir Empleado";
-            this.btn_añadir_empleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_añadir_empleado.UseVisualStyleBackColor = true;
+            this.btn_añadir_recluso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_añadir_recluso.Image = global::PROYECTO.Properties.Resources.anadir;
+            this.btn_añadir_recluso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_añadir_recluso.Location = new System.Drawing.Point(77, 28);
+            this.btn_añadir_recluso.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_añadir_recluso.Name = "btn_añadir_recluso";
+            this.btn_añadir_recluso.Size = new System.Drawing.Size(218, 60);
+            this.btn_añadir_recluso.TabIndex = 11;
+            this.btn_añadir_recluso.Text = "Añadir Recluso";
+            this.btn_añadir_recluso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_añadir_recluso.UseVisualStyleBackColor = true;
             // 
             // FrmPersonal
             // 
@@ -179,17 +158,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(190)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1028, 551);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.dgvPresos);
             this.Controls.Add(this.cmb_modulo);
-            this.Controls.Add(this.lblPuesto);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblmod);
+            this.Controls.Add(this.pcbLupa);
             this.Controls.Add(this.txt_buscar);
-            this.Controls.Add(this.btn_añadir_empleado);
+            this.Controls.Add(this.btn_añadir_recluso);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPersonal";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPresos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLupa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,17 +179,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_añadir_empleado;
-        private System.Windows.Forms.TextBox txt_buscar;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblPuesto;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.DataGridView dgvPresos;
         private System.Windows.Forms.ComboBox cmb_modulo;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewImageColumn foto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apell;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn puesto;
-        private System.Windows.Forms.DataGridViewButtonColumn info;
+        private System.Windows.Forms.Label lblmod;
+        private System.Windows.Forms.PictureBox pcbLupa;
+        private System.Windows.Forms.TextBox txt_buscar;
+        private System.Windows.Forms.Button btn_añadir_recluso;
     }
 }

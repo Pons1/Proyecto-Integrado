@@ -44,6 +44,69 @@ namespace PROYECTO
         public Image Foto { get { return foto; } }
 
 
+
+        public Empleado(string Nif, string Nombre, string Apellidos, string puesto, string Sexo, string turno,  string dir,int CodigoPostal, string Correo, int Celda, Image fot, int tel)
+        {
+            this.nif = Nif;
+            this.nombre = Nombre;
+            this.apellidos = Apellidos;
+            this.puesto = puesto;
+            this.sexo = Sexo;
+            this.turno=turno;
+            this.direccion = dir;
+            this.codigoPostal = CodigoPostal;
+            this.correo = Correo;
+            this.celda = Celda;
+            this.foto = fot;
+            telefono = tel;
+
+
+        }
+
+        public static List<Preso> MostrarEmpleados() { 
+            List<Empleado> lista = new List<Empleado>();
+
+
+            if (ConexionBD.Conexion != null)
+            {
+
+                ConexionBD.AbrirConexion();
+               
+
+                string c = String.Format("Select * from empleados;");
+
+                MySqlCommand com = new MySqlCommand(c, ConexionBD.Conexion);
+                MySqlDataReader reader = com.ExecuteReader();
+
+                if (reader.HasRows)   // En caso que se hayan registros en el objeto reader
+                {
+                    // Recorremos el reader (registro por registro) y cargamos la lista de usuarios.
+                    while (reader.Read())
+                    {
+                        byte[] img = (byte[])reader["foto"];
+                        MemoryStream ms = new MemoryStream(img);
+                        Image foto = Image.FromStream(ms);
+
+                        Empleado user = new Empleado(reader.GetString(0), reader.GetString(1), reader.GetString(2),
+                        reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8), foto, reader.GetInt32(9));
+                        lista.Add(user);
+                    }
+                    ConexionBD.CerrarConexion();
+
+                    return lista;
+
+                }
+
+                // devolvemos la lista cargada con los usuarios.
+                ConexionBD.CerrarConexion();
+
+            }
+
+            return lista;
+
+
+
+        }
         public static bool ComprobarRegistro(string nom, string con)
         {
 
