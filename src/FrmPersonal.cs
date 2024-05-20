@@ -26,10 +26,21 @@ namespace PROYECTO
         {
 
         }
-
-        private void FrmPersonal_Load(object sender, EventArgs e)
+        public void MostrarEmpleados()
         {
             dgvEmpleados.Rows.Clear();
+            dgvEmpleados.DataSource = Empleado.MostrarEmpleados();
+        }
+        private void FrmPersonal_Load(object sender, EventArgs e)
+        {
+            cmb_modulo.Text = "TODOS";
+
+            dgvEmpleados.DataSource = Empleado.MostrarEmpleados();
+            ((DataGridViewImageColumn)dgvEmpleados.Columns[dgvEmpleados.Columns.Count - 1]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+
+        }
+        public void Actualizardgv()
+        {
             dgvEmpleados.DataSource = Empleado.MostrarEmpleados();
         }
 
@@ -62,12 +73,38 @@ namespace PROYECTO
 
         private void btn_añadir_empleado_Click(object sender, EventArgs e)
         {
-            FrmAñadir_empleado frm=new FrmAñadir_empleado(this);
+            FrmAñadirEmpleado form = new FrmAñadirEmpleado(this);
+            form.ShowDialog();
         }
 
         private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txt_buscar_TextChanged(object sender, EventArgs e)
+        {
+            dgvEmpleados.DataSource = Empleado.MostrarEmpleadosPorNombre(txt_buscar.Text);
+
+        }
+
+        private void cmb_modulo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_modulo.Text == "TODOS")
+            {
+                dgvEmpleados.DataSource = Empleado.MostrarEmpleados();
+            }
+            else
+            {
+                dgvEmpleados.DataSource = Empleado.MostrarEmpleadosPorPuesto(cmb_modulo.Text);
+
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            dgvEmpleados.DataSource = Empleado.MostrarEmpleados();
+            cmb_modulo.Text = "TODOS";
         }
     }
 }

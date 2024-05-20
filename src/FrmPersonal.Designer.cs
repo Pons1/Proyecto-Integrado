@@ -33,7 +33,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.cmb_modulo = new System.Windows.Forms.ComboBox();
-            this.lblmod = new System.Windows.Forms.Label();
+            this.lblPuesto = new System.Windows.Forms.Label();
             this.pcbLupa = new System.Windows.Forms.PictureBox();
             this.txt_buscar = new System.Windows.Forms.TextBox();
             this.btn_añadir_empleado = new System.Windows.Forms.Button();
@@ -75,6 +75,7 @@
             this.btnReset.TabIndex = 17;
             this.btnReset.Text = "Actualizar";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // dgvEmpleados
             // 
@@ -100,23 +101,31 @@
             this.cmb_modulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_modulo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_modulo.FormattingEnabled = true;
+            this.cmb_modulo.Items.AddRange(new object[] {
+            "TODOS",
+            "VIGILANCIA",
+            "ADMINISTRACION",
+            "LIMPIEZA",
+            "COCINA",
+            "ENFERMERIA"});
             this.cmb_modulo.Location = new System.Drawing.Point(790, 61);
             this.cmb_modulo.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_modulo.Name = "cmb_modulo";
             this.cmb_modulo.Size = new System.Drawing.Size(137, 31);
             this.cmb_modulo.TabIndex = 15;
+            this.cmb_modulo.SelectedIndexChanged += new System.EventHandler(this.cmb_modulo_SelectedIndexChanged);
             // 
-            // lblmod
+            // lblPuesto
             // 
-            this.lblmod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblmod.AutoSize = true;
-            this.lblmod.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmod.Location = new System.Drawing.Point(700, 65);
-            this.lblmod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblmod.Name = "lblmod";
-            this.lblmod.Size = new System.Drawing.Size(85, 23);
-            this.lblmod.TabIndex = 14;
-            this.lblmod.Text = "Módulo:";
+            this.lblPuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPuesto.AutoSize = true;
+            this.lblPuesto.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPuesto.Location = new System.Drawing.Point(700, 65);
+            this.lblPuesto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPuesto.Name = "lblPuesto";
+            this.lblPuesto.Size = new System.Drawing.Size(75, 23);
+            this.lblPuesto.TabIndex = 14;
+            this.lblPuesto.Text = "Puesto:";
             // 
             // pcbLupa
             // 
@@ -139,6 +148,7 @@
             this.txt_buscar.Name = "txt_buscar";
             this.txt_buscar.Size = new System.Drawing.Size(224, 30);
             this.txt_buscar.TabIndex = 12;
+            this.txt_buscar.TextChanged += new System.EventHandler(this.txt_buscar_TextChanged);
             // 
             // btn_añadir_empleado
             // 
@@ -166,7 +176,7 @@
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.cmb_modulo);
-            this.Controls.Add(this.lblmod);
+            this.Controls.Add(this.lblPuesto);
             this.Controls.Add(this.pcbLupa);
             this.Controls.Add(this.txt_buscar);
             this.Controls.Add(this.btn_añadir_empleado);
@@ -188,7 +198,7 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.DataGridView dgvEmpleados;
         private System.Windows.Forms.ComboBox cmb_modulo;
-        private System.Windows.Forms.Label lblmod;
+        private System.Windows.Forms.Label lblPuesto;
         private System.Windows.Forms.PictureBox pcbLupa;
         private System.Windows.Forms.TextBox txt_buscar;
         private System.Windows.Forms.Button btn_añadir_empleado;

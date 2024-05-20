@@ -109,6 +109,7 @@
             this.Controls.Add(this.LBLNIF);
             this.Name = "frmLogIn";
             this.Text = "frmLogIn";
+            this.Load += new System.EventHandler(this.frmLogIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

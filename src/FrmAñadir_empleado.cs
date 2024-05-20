@@ -25,7 +25,6 @@ namespace PROYECTO
 
         private void FrmAñadir_empleado_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

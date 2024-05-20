@@ -36,9 +36,6 @@ namespace PROYECTO
         public string Puesto { get { return puesto; } }
         public string Sexo { get { return sexo; } }
         public string Turno { get { return turno; } }
-        public string Contraseña { get { return contraseña; } }
-
-
         public string Direccion { get { return direccion; } }
         public int CodigoPostal { get { return codigoPostal; } }
         public string Correo { get { return correo; } }
@@ -68,6 +65,45 @@ namespace PROYECTO
 
         }
 
+        public static List<string> MostrarTurnos()
+        {
+            List<string> lista = new List<string>();
+
+            if (ConexionBD.Conexion != null)
+            {
+
+                ConexionBD.AbrirConexion();
+
+                string c = String.Format("Select turno from turnos;");
+
+                MySqlCommand com = new MySqlCommand(c, ConexionBD.Conexion);
+                MySqlDataReader reader = com.ExecuteReader();
+
+                if (reader.HasRows)   // En caso que se hayan registros en el objeto reader
+                {
+                    // Recorremos el reader (registro por registro) y cargamos la lista de usuarios.
+                    while (reader.Read())
+                    {
+
+
+                        lista.Add(reader.GetString(0));
+                    }
+                    ConexionBD.CerrarConexion();
+
+                    return lista;
+
+                }
+
+                // devolvemos la lista cargada con los usuarios.
+                ConexionBD.CerrarConexion();
+
+            }
+
+            return lista;
+
+
+
+        }
         public static List<Empleado> MostrarEmpleados() { 
             List<Empleado> lista = new List<Empleado>();
 
@@ -143,6 +179,49 @@ namespace PROYECTO
                 ConexionBD.CerrarConexion();
             return false;
         }
+        public static List<Empleado> MostrarEmpleadosPorNombre(string nom)
+        {
+            List<Empleado> lista = new List<Empleado>();
+
+            if (ConexionBD.Conexion != null)
+            {
+
+                ConexionBD.AbrirConexion();
+
+                string c = String.Format("SELECT * FROM empleados WHERE nombre LIKE '%{0}%';", nom);
+
+                MySqlCommand com = new MySqlCommand(c, ConexionBD.Conexion);
+                MySqlDataReader reader = com.ExecuteReader();
+
+                if (reader.HasRows)   // En caso que se hayan registros en el objeto reader
+                {
+                    // Recorremos el reader (registro por registro) y cargamos la lista de usuarios.
+                    while (reader.Read())
+                    {
+                        byte[] img = (byte[])reader["foto"];
+                        MemoryStream ms = new MemoryStream(img);
+                        Image foto = Image.FromStream(ms);
+
+                        Empleado user = new Empleado(reader.GetString(0), reader.GetString(1), reader.GetString(2),
+                        reader.GetString(3), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetInt32(8), reader.GetString(9), reader.GetInt32(10), foto, reader.GetInt32(10), reader.GetString(4));
+                        lista.Add(user);
+                    }
+                    ConexionBD.CerrarConexion();
+
+                    return lista;
+
+                }
+
+                // devolvemos la lista cargada con los usuarios.
+                ConexionBD.CerrarConexion();
+
+            }
+
+            return lista;
+
+
+
+        }
         public int AgregarEmpleado()
         {
 
@@ -158,7 +237,7 @@ namespace PROYECTO
                     byte[] aByte = ms.ToArray();
 
                     string consulta = String.Format("INSERT INTO empleados (nif,nombre,apellidos,puesto,contraseña,sexo,turno,direccion,codigopostal,correo,celda,telefono,foto) VALUES " +
-                        "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}',@imagen)", this.nif, this.nombre, this.apellidos,puesto, contraseña, sexo, turno,direccion, codigoPostal, correo, celda, telefono);
+                        "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}',@imagen)", this.nif, this.nombre, this.apellidos,puesto, contraseña, sexo, turno,direccion, codigoPostal, correo, celda, telefono);
 
 
                     MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
@@ -183,6 +262,49 @@ namespace PROYECTO
 
             }
             return -1;
+
+
+        }
+        public static List<Empleado> MostrarEmpleadosPorPuesto(string pos)
+        {
+            List<Empleado> lista = new List<Empleado>();
+
+            if (ConexionBD.Conexion != null)
+            {
+
+                ConexionBD.AbrirConexion();
+
+                string c = String.Format("SELECT * FROM empleados WHERE puesto = '{0}';", pos);
+
+                MySqlCommand com = new MySqlCommand(c, ConexionBD.Conexion);
+                MySqlDataReader reader = com.ExecuteReader();
+
+                if (reader.HasRows)   // En caso que se hayan registros en el objeto reader
+                {
+                    // Recorremos el reader (registro por registro) y cargamos la lista de usuarios.
+                    while (reader.Read())
+                    {
+                        byte[] img = (byte[])reader["foto"];
+                        MemoryStream ms = new MemoryStream(img);
+                        Image foto = Image.FromStream(ms);
+
+                        Empleado user = new Empleado(reader.GetString(0), reader.GetString(1), reader.GetString(2),
+                        reader.GetString(3), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetInt32(8), reader.GetString(9), reader.GetInt32(10), foto, reader.GetInt32(10), reader.GetString(4));
+                        lista.Add(user);
+                    }
+                    ConexionBD.CerrarConexion();
+
+                    return lista;
+
+                }
+
+                // devolvemos la lista cargada con los usuarios.
+                ConexionBD.CerrarConexion();
+
+            }
+
+            return lista;
+
 
 
         }

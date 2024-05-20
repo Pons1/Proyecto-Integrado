@@ -58,11 +58,11 @@
     <Compile Include="FichaEmpleado.Designer.cs">
       <DependentUpon>FichaEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAñadir_empleado.cs">
+    <Compile Include="FrmAñadirEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAñadir_empleado.Designer.cs">
-      <DependentUpon>FrmAñadir_empleado.cs</DependentUpon>
+    <Compile Include="FrmAñadirEmpleado.Designer.cs">
+      <DependentUpon>FrmAñadirEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAñadir_recluso.cs">
       <SubType>Form</SubType>
@@ -78,6 +78,12 @@
     </Compile>
     <Compile Include="FrmFichaPreso.Designer.cs">
       <DependentUpon>FrmFichaPreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogIn.Designer.cs">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPpal.cs">
       <SubType>Form</SubType>
@@ -126,14 +132,17 @@
     <EmbeddedResource Include="FichaEmpleado.resx">
       <DependentUpon>FichaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAñadir_empleado.resx">
-      <DependentUpon>FrmAñadir_empleado.cs</DependentUpon>
+    <EmbeddedResource Include="FrmAñadirEmpleado.resx">
+      <DependentUpon>FrmAñadirEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAñadir_recluso.resx">
       <DependentUpon>FrmAñadir_recluso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFichaPreso.resx">
       <DependentUpon>FrmFichaPreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogIn.resx">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPpal.resx">
       <DependentUpon>FrmPpal.cs</DependentUpon>
