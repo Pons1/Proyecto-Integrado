@@ -85,3 +85,10 @@ CREATE TABLE registros (
     PRIMARY KEY (CodigoRegistro),
     FOREIGN KEY (Preso) REFERENCES presos(NIF) ON DELETE SET NULL
 );
+
+CREATE TRIGGER after_insert_presos
+AFTER INSERT ON presos
+FOR EACH ROW
+    INSERT INTO registros (Tipo, Preso, Motivo, Fecha)
+    VALUES ('ENTRADA', NEW.NIF, 'Ingreso inicial', NOW());
+
