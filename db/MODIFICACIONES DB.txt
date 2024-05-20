@@ -72,18 +72,19 @@ CREATE TABLE puertas (
     Modulo ENUM('A','B'),  
     PRIMARY KEY (CodigoPuerta),
     FOREIGN KEY (Zona) REFERENCES zonas(Zona) ON DELETE CASCADE,
-    FOREIGN KEY (Modulo) REFERENCES modulos(Modulo) ON DELETE CASCADE
+    FOREIGN KEY (Modulo) REFERENCES modulos(CodigoModulo) ON DELETE CASCADE
 );
 
 CREATE TABLE registros (
     CodigoRegistro INT auto_increment,
     Tipo ENUM('ENTRADA','SALIDA') NOT NULL,
-    Preso CHAR(9),
+    PresoNIF CHAR(9),
+    EmpleadoNIF CHAR(9),
     Motivo CHAR(30),
     Fecha DATETIME NOT NULL,
     PRIMARY KEY (CodigoRegistro),
-    FOREIGN KEY (Preso) REFERENCES presos(NIF) ON DELETE SET NULL,
-    FOREIGN KEY (empleados) REFERENCES empleados(NIF) ON DELETE SET NULL
+    FOREIGN KEY (PresoNIF) REFERENCES presos(NIF) ON DELETE SET NULL,
+    FOREIGN KEY (EmpleadoNIF) REFERENCES empleados(NIF) ON DELETE SET NULL
 );
 
 CREATE TRIGGER after_insert_presos
@@ -91,4 +92,3 @@ AFTER INSERT ON presos
 FOR EACH ROW
     INSERT INTO registros (Tipo, Preso, Motivo, Fecha)
     VALUES ('ENTRADA', NEW.NIF, 'Ingreso inicial', NOW());
-
