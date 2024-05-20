@@ -27,5 +27,10 @@ namespace PROYECTO
         {
 
         }
+
+        private void btnAñadir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

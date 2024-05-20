@@ -56,6 +56,7 @@ namespace PROYECTO
 
         }
 
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -133,7 +134,7 @@ namespace PROYECTO
 
         private void txt_nifPreso_TextChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void lblNif_Click(object sender, EventArgs e)

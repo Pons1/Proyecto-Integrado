@@ -47,13 +47,14 @@
             this.btn_añadir_registro.Image = global::PROYECTO.Properties.Resources.anadir;
             this.btn_añadir_registro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_añadir_registro.Location = new System.Drawing.Point(36, 28);
-            this.btn_añadir_registro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_añadir_registro.Margin = new System.Windows.Forms.Padding(4);
             this.btn_añadir_registro.Name = "btn_añadir_registro";
             this.btn_añadir_registro.Size = new System.Drawing.Size(208, 60);
             this.btn_añadir_registro.TabIndex = 2;
             this.btn_añadir_registro.Text = "Añadir Registro";
             this.btn_añadir_registro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_añadir_registro.UseVisualStyleBackColor = true;
+            this.btn_añadir_registro.Click += new System.EventHandler(this.btn_añadir_registro_Click);
             // 
             // lblFiltrarPorFecha
             // 
@@ -95,7 +96,7 @@
             this.motivo,
             this.fecha});
             this.dataGridView1.Location = new System.Drawing.Point(36, 108);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;

@@ -10,16 +10,13 @@ using System.Windows.Forms;
 
 namespace PROYECTO
 {
-    public partial class FrmRegistro : Form
+    public partial class FrmAñadirRegistro : Form
     {
-        public FrmRegistro()
+        public FrmAñadirRegistro()
         {
             InitializeComponent();
         }
 
-        private void btn_añadir_registro_Click(object sender, EventArgs e)
-        {
-
-        }
+    
     }
 }

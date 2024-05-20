@@ -57,9 +57,9 @@ CREATE TABLE empleados (
     Sexo CHAR(1) NOT NULL,
     Turno ENUM('MAÑANA','TARDE','NOCHE'),
     Direccion CHAR(50) NOT NULL,
+    Presente TINYINT,
     CodigoPostal CHAR(5) NOT NULL,
     Correo VARCHAR(50) NOT NULL,
-    Celda INT,
     Telefono VARCHAR(15) NOT NULL,
     Foto BLOB,
     PRIMARY KEY (NIF),
@@ -84,7 +84,6 @@ CREATE TABLE registros (
     Fecha DATETIME NOT NULL,
     PRIMARY KEY (CodigoRegistro),
     FOREIGN KEY (Preso) REFERENCES presos(NIF) ON DELETE SET NULL
-<<<<<<< HEAD
 );
 
 CREATE TRIGGER after_insert_presos
@@ -93,6 +92,3 @@ FOR EACH ROW
     INSERT INTO registros (Tipo, Preso, Motivo, Fecha)
     VALUES ('ENTRADA', NEW.NIF, 'Ingreso inicial', NOW());
 
-=======
-);
->>>>>>> cc8487e764b344893da203d761175099ec60eeb9

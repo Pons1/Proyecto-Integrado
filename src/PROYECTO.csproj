@@ -58,6 +58,12 @@
     <Compile Include="FichaEmpleado.Designer.cs">
       <DependentUpon>FichaEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAñadirRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAñadirRegistro.Designer.cs">
+      <DependentUpon>FrmAñadirRegistro.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAñadir_empleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="FrmFichaPreso.Designer.cs">
       <DependentUpon>FrmFichaPreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogIn.Designer.cs">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPpal.cs">
       <SubType>Form</SubType>
@@ -118,13 +130,23 @@
     <Compile Include="FrmRegistro.Designer.cs">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
     </Compile>
-    <Compile Include="RecursosIdiomas\StringRecursos.EN-GB.Designer.cs">
+    <Compile Include="Properties\Recursos.EN_GB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StringRecursos.EN-GB.resx</DependentUpon>
+      <DependentUpon>Recursos.EN_GB.resx</DependentUpon>
     </Compile>
+    <Compile Include="Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro.Designer.cs">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registros.cs" />
     <EmbeddedResource Include="FichaEmpleado.resx">
       <DependentUpon>FichaEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAñadirRegistro.resx">
+      <DependentUpon>FrmAñadirRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAñadir_empleado.resx">
       <DependentUpon>FrmAñadir_empleado.cs</DependentUpon>
@@ -134,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFichaPreso.resx">
       <DependentUpon>FrmFichaPreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogIn.resx">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPpal.resx">
       <DependentUpon>FrmPpal.cs</DependentUpon>
@@ -163,9 +188,12 @@
     <EmbeddedResource Include="FrmRegistro.resx">
       <DependentUpon>FrmRegistro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RecursosIdiomas\StringRecursos.EN-GB.resx">
+    <EmbeddedResource Include="Properties\Recursos.EN_GB.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>StringRecursos.EN-GB.Designer.cs</LastGenOutput>
+      <LastGenOutput>Recursos.EN_GB.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro.resx">
+      <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -248,6 +276,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\def.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RecursosIdiomas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

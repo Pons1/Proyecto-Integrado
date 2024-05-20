@@ -21,6 +21,7 @@ namespace PROYECTO
         private string direccion;
         private int codigoPostal;
         private string correo;
+        private bool presencia;
         private int celda;
         private int telefono;
         private Image foto;
@@ -40,6 +41,7 @@ namespace PROYECTO
 
         public Image Foto { get { return foto; } }
 
+        public bool Presencia { get => presencia; set => presencia = value; }
 
         public Preso(string Nif, string Nombre, string Apellidos, int Crimen, string Sexo, string Direccion, int CodigoPostal, string Correo, int Celda, Image fot,int tel)
         {
@@ -54,6 +56,7 @@ namespace PROYECTO
             this.celda = Celda;
             this.foto = fot;
             telefono = tel;
+            this.presencia = true;
 
 
         }
