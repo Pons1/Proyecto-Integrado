@@ -28,9 +28,9 @@ namespace PROYECTO
             }
 
             List<int> celdas = Celda.MostrarIdCeldas();
-            for (int i = 0; i < lista.Count; i++)
+            for (int i = 0; i < celdas.Count; i++)
             {
-                cmbCelda.Items.Add(lista[i].ToString());
+                cmbCelda.Items.Add(celdas[i].ToString());
             }
 
         }

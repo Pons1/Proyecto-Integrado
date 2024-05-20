@@ -387,7 +387,7 @@ namespace PROYECTO
                 MySqlDataReader reader = com.ExecuteReader();
 
                 if (reader.HasRows)   // En caso que se hayan registros en el objeto reader
-                {
+                { 
                     // Recorremos el reader (registro por registro) y cargamos la lista de usuarios.
                     while (reader.Read())
                     {
