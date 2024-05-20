@@ -50,7 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Empleado.cs" />
+    <Compile Include="Correo.cs" />
     <Compile Include="FrmAñadir_recluso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,12 +65,6 @@
     </Compile>
     <Compile Include="FrmFichaPreso.Designer.cs">
       <DependentUpon>FrmFichaPreso.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmLogIn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLogIn.Designer.cs">
-      <DependentUpon>frmLogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPpal.cs">
       <SubType>Form</SubType>
@@ -121,9 +115,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFichaPreso.resx">
       <DependentUpon>FrmFichaPreso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmLogIn.resx">
-      <DependentUpon>frmLogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPpal.resx">
       <DependentUpon>FrmPpal.cs</DependentUpon>
