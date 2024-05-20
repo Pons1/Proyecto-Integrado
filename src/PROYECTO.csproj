@@ -51,6 +51,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Correo.cs" />
+    <Compile Include="Empleado.cs" />
+    <Compile Include="FichaEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FichaEmpleado.Designer.cs">
+      <DependentUpon>FichaEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAñadir_empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAñadir_empleado.Designer.cs">
+      <DependentUpon>FrmAñadir_empleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAñadir_recluso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +123,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StringRecursos.EN-GB.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FichaEmpleado.resx">
+      <DependentUpon>FichaEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAñadir_empleado.resx">
+      <DependentUpon>FrmAñadir_empleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAñadir_recluso.resx">
       <DependentUpon>FrmAñadir_recluso.cs</DependentUpon>
     </EmbeddedResource>

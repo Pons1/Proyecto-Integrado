@@ -2,7 +2,7 @@ CREATE DATABASE centralis;
 USE centralis;
 
 CREATE TABLE modulos (
-    Modulo ENUM('A','B') PRIMARY KEY
+    CodigoModulo ENUM('A','B') PRIMARY KEY
 );
 
 CREATE TABLE zonas (
@@ -21,7 +21,7 @@ CREATE TABLE celdas (
     Modulo ENUM('A','B'),
     Abierta TINYINT,
     PRIMARY KEY (CodigoCelda),
-    FOREIGN KEY (Modulo) REFERENCES modulos(Modulo) ON DELETE CASCADE
+    FOREIGN KEY (Modulo) REFERENCES modulos(CodigoModulo) ON DELETE CASCADE
 );
 
 CREATE TABLE turnos (
@@ -84,6 +84,7 @@ CREATE TABLE registros (
     Fecha DATETIME NOT NULL,
     PRIMARY KEY (CodigoRegistro),
     FOREIGN KEY (Preso) REFERENCES presos(NIF) ON DELETE SET NULL
+<<<<<<< HEAD
 );
 
 CREATE TRIGGER after_insert_presos
@@ -92,3 +93,6 @@ FOR EACH ROW
     INSERT INTO registros (Tipo, Preso, Motivo, Fecha)
     VALUES ('ENTRADA', NEW.NIF, 'Ingreso inicial', NOW());
 
+=======
+);
+>>>>>>> cc8487e764b344893da203d761175099ec60eeb9

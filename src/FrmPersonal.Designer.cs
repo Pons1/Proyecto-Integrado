@@ -31,13 +31,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
-            this.dgvPresos = new System.Windows.Forms.DataGridView();
+            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.cmb_modulo = new System.Windows.Forms.ComboBox();
             this.lblmod = new System.Windows.Forms.Label();
             this.pcbLupa = new System.Windows.Forms.PictureBox();
             this.txt_buscar = new System.Windows.Forms.TextBox();
-            this.btn_añadir_recluso = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPresos)).BeginInit();
+            this.btn_añadir_empleado = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLupa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,21 +76,23 @@
             this.btnReset.Text = "Actualizar";
             this.btnReset.UseVisualStyleBackColor = true;
             // 
-            // dgvPresos
+            // dgvEmpleados
             // 
-            this.dgvPresos.AllowUserToDeleteRows = false;
-            this.dgvPresos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvEmpleados.AllowUserToDeleteRows = false;
+            this.dgvEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvPresos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPresos.Location = new System.Drawing.Point(48, 111);
-            this.dgvPresos.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvPresos.Name = "dgvPresos";
-            this.dgvPresos.ReadOnly = true;
-            this.dgvPresos.RowHeadersWidth = 51;
-            this.dgvPresos.Size = new System.Drawing.Size(915, 347);
-            this.dgvPresos.TabIndex = 16;
+            this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleados.Location = new System.Drawing.Point(48, 111);
+            this.dgvEmpleados.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvEmpleados.Name = "dgvEmpleados";
+            this.dgvEmpleados.ReadOnly = true;
+            this.dgvEmpleados.RowHeadersWidth = 51;
+            this.dgvEmpleados.Size = new System.Drawing.Size(915, 347);
+            this.dgvEmpleados.TabIndex = 16;
+            this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
+            this.dgvEmpleados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPresos_CellDoubleClick);
             // 
             // cmb_modulo
             // 
@@ -138,19 +140,20 @@
             this.txt_buscar.Size = new System.Drawing.Size(224, 30);
             this.txt_buscar.TabIndex = 12;
             // 
-            // btn_añadir_recluso
+            // btn_añadir_empleado
             // 
-            this.btn_añadir_recluso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_añadir_recluso.Image = global::PROYECTO.Properties.Resources.anadir;
-            this.btn_añadir_recluso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_añadir_recluso.Location = new System.Drawing.Point(77, 28);
-            this.btn_añadir_recluso.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_añadir_recluso.Name = "btn_añadir_recluso";
-            this.btn_añadir_recluso.Size = new System.Drawing.Size(218, 60);
-            this.btn_añadir_recluso.TabIndex = 11;
-            this.btn_añadir_recluso.Text = "Añadir Recluso";
-            this.btn_añadir_recluso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_añadir_recluso.UseVisualStyleBackColor = true;
+            this.btn_añadir_empleado.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_añadir_empleado.Image = global::PROYECTO.Properties.Resources.anadir;
+            this.btn_añadir_empleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_añadir_empleado.Location = new System.Drawing.Point(77, 28);
+            this.btn_añadir_empleado.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_añadir_empleado.Name = "btn_añadir_empleado";
+            this.btn_añadir_empleado.Size = new System.Drawing.Size(239, 60);
+            this.btn_añadir_empleado.TabIndex = 11;
+            this.btn_añadir_empleado.Text = "Añadir Empleado";
+            this.btn_añadir_empleado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_añadir_empleado.UseVisualStyleBackColor = true;
+            this.btn_añadir_empleado.Click += new System.EventHandler(this.btn_añadir_empleado_Click);
             // 
             // FrmPersonal
             // 
@@ -161,16 +164,17 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.dgvPresos);
+            this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.cmb_modulo);
             this.Controls.Add(this.lblmod);
             this.Controls.Add(this.pcbLupa);
             this.Controls.Add(this.txt_buscar);
-            this.Controls.Add(this.btn_añadir_recluso);
+            this.Controls.Add(this.btn_añadir_empleado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPersonal";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPresos)).EndInit();
+            this.Load += new System.EventHandler(this.FrmPersonal_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLupa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -182,11 +186,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.DataGridView dgvPresos;
+        private System.Windows.Forms.DataGridView dgvEmpleados;
         private System.Windows.Forms.ComboBox cmb_modulo;
         private System.Windows.Forms.Label lblmod;
         private System.Windows.Forms.PictureBox pcbLupa;
         private System.Windows.Forms.TextBox txt_buscar;
-        private System.Windows.Forms.Button btn_añadir_recluso;
+        private System.Windows.Forms.Button btn_añadir_empleado;
     }
 }

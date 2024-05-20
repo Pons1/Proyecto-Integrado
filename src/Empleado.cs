@@ -3,10 +3,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PROYECTO
 {
@@ -34,6 +36,8 @@ namespace PROYECTO
         public string Puesto { get { return puesto; } }
         public string Sexo { get { return sexo; } }
         public string Turno { get { return turno; } }
+        public string Contraseña { get { return contraseña; } }
+
 
         public string Direccion { get { return direccion; } }
         public int CodigoPostal { get { return codigoPostal; } }
@@ -45,7 +49,7 @@ namespace PROYECTO
 
 
 
-        public Empleado(string Nif, string Nombre, string Apellidos, string puesto, string Sexo, string turno,  string dir,int CodigoPostal, string Correo, int Celda, Image fot, int tel)
+        public Empleado(string Nif, string Nombre, string Apellidos, string puesto, string Sexo, string turno,  string dir,int CodigoPostal, string Correo, int Celda, Image fot, int tel,string contra)
         {
             this.nif = Nif;
             this.nombre = Nombre;
@@ -59,11 +63,12 @@ namespace PROYECTO
             this.celda = Celda;
             this.foto = fot;
             telefono = tel;
+            contraseña = contra;
 
 
         }
 
-        public static List<Preso> MostrarEmpleados() { 
+        public static List<Empleado> MostrarEmpleados() { 
             List<Empleado> lista = new List<Empleado>();
 
 
@@ -88,7 +93,7 @@ namespace PROYECTO
                         Image foto = Image.FromStream(ms);
 
                         Empleado user = new Empleado(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                        reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8), foto, reader.GetInt32(9));
+                        reader.GetString(3), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetInt32(8), reader.GetString(9), reader.GetInt32(10), foto, reader.GetInt32(10), reader.GetString(4));
                         lista.Add(user);
                     }
                     ConexionBD.CerrarConexion();
@@ -137,12 +142,50 @@ namespace PROYECTO
                 // devolvemos la lista cargada con los usuarios.
                 ConexionBD.CerrarConexion();
             return false;
+        }
+        public int AgregarEmpleado()
+        {
+
+            if (ConexionBD.Conexion != null)
+            {
+                try
+                {
+
+                    ConexionBD.AbrirConexion();
+                    int retorno;
+                    MemoryStream ms = new MemoryStream();
+                    this.foto.Save(ms, ImageFormat.Jpeg);
+                    byte[] aByte = ms.ToArray();
+
+                    string consulta = String.Format("INSERT INTO empleados (nif,nombre,apellidos,puesto,contraseña,sexo,turno,direccion,codigopostal,correo,celda,telefono,foto) VALUES " +
+                        "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}',@imagen)", this.nif, this.nombre, this.apellidos,puesto, contraseña, sexo, turno,direccion, codigoPostal, correo, celda, telefono);
+
+
+                    MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+                    comando.Parameters.AddWithValue("imagen", aByte);
+                    retorno = comando.ExecuteNonQuery();
+
+                    ConexionBD.CerrarConexion();
+                    MessageBox.Show("Empleado añadido correctamente");
+
+                }
+                catch (Exception ex)
+                {
+                    ConexionBD.CerrarConexion();
+
+                    MessageBox.Show(ex.Message);
+                    return -1;
+                }
+                ConexionBD.CerrarConexion();
+
+                return -1;
+
+
+            }
+            return -1;
+
 
         }
-
-
-
-
     }
     }
 
