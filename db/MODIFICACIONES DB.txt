@@ -63,7 +63,6 @@ CREATE TABLE empleados (
     Telefono VARCHAR(15) NOT NULL,
     Foto BLOB,
     PRIMARY KEY (NIF),
-    FOREIGN KEY (Celda) REFERENCES celdas(CodigoCelda) ON DELETE SET NULL,
     FOREIGN KEY (Turno) REFERENCES turnos(Turno) ON DELETE SET NULL
 );
 
@@ -80,10 +79,11 @@ CREATE TABLE registros (
     CodigoRegistro INT auto_increment,
     Tipo ENUM('ENTRADA','SALIDA') NOT NULL,
     Preso CHAR(9),
-    Motivo CHAR(30) NOT NULL,
+    Motivo CHAR(30),
     Fecha DATETIME NOT NULL,
     PRIMARY KEY (CodigoRegistro),
-    FOREIGN KEY (Preso) REFERENCES presos(NIF) ON DELETE SET NULL
+    FOREIGN KEY (Preso) REFERENCES presos(NIF) ON DELETE SET NULL,
+    FOREIGN KEY (empleados) REFERENCES empleados(NIF) ON DELETE SET NULL
 );
 
 CREATE TRIGGER after_insert_presos
