@@ -1,4 +1,6 @@
-﻿namespace PROYECTO
+﻿using System;
+
+namespace PROYECTO
 {
     partial class FrmRegistro
     {
@@ -182,6 +184,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void FrmRegistro_Load(object sender, EventArgs e)
+        {
+            
         }
 
         #endregion
