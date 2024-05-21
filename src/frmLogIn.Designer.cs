@@ -50,7 +50,7 @@
             this.LBLNIF.AutoSize = true;
             this.LBLNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBLNIF.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.LBLNIF.Location = new System.Drawing.Point(473, 60);
+            this.LBLNIF.Location = new System.Drawing.Point(474, 37);
             this.LBLNIF.Name = "LBLNIF";
             this.LBLNIF.Size = new System.Drawing.Size(53, 25);
             this.LBLNIF.TabIndex = 0;
@@ -168,8 +168,9 @@
             // 
             // mtxtNif
             // 
+            this.mtxtNif.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
             this.mtxtNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtNif.Location = new System.Drawing.Point(544, 69);
+            this.mtxtNif.Location = new System.Drawing.Point(478, 69);
             this.mtxtNif.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mtxtNif.Mask = "00000000-L";
             this.mtxtNif.Name = "mtxtNif";
