@@ -70,7 +70,8 @@ CREATE TABLE empleados (
 CREATE TABLE puertas (
     CodigoPuerta INT auto_increment,
     Zona ENUM('COMEDOR','BAÑO','PATIO','LIBRERIA','CONTROL','ENFERMERIA'),
-    Modulo ENUM('A','B'),  
+    Modulo ENUM('A','B'),
+Abierto TINYINT DEFAULT 0,  
     PRIMARY KEY (CodigoPuerta),
     FOREIGN KEY (Zona) REFERENCES zonas(Zona) ON DELETE CASCADE,
     FOREIGN KEY (Modulo) REFERENCES modulos(CodigoModulo) ON DELETE CASCADE
@@ -93,4 +94,3 @@ AFTER INSERT ON presos
 FOR EACH ROW
     INSERT INTO registros (Tipo, PresoNIF, Motivo, Fecha)
     VALUES ('ENTRADA', NEW.NIF, 'Ingreso inicial', NOW());
-    
