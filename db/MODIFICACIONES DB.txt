@@ -280,22 +280,22 @@ INSERT INTO celdas (Modulo, Abierta) VALUES
 
    
 
-INSERT INTO presos (NIF, Nombre, Apellidos, Crimen, Sexo, Direccion, CodigoPostal, Correo, Celda, Telefono, Foto) VALUES
-('12345678Z', 'Carlos', 'Gomez', 12, 'M', 'Calle Falsa 123', '28080', 'carlos.gomez@example.com', 10, '600123456', NULL),
-('23456789S', 'Luis', 'Perez', 21, 'M', 'Plaza Mayor 1', '28081', 'luis.perez@example.com', 12, '600234567', NULL),
-('34567890J', 'Jose', 'Lopez', 5, 'M', 'Calle Luna 3', '28082', 'jose.lopez@example.com', 3, '600345678', NULL),
-('45678901N', 'Juan', 'Garcia', 4, 'M', 'Calle Serrano 7', '28083', 'juan.garcia@example.com', 4, '600456789', NULL),
-('56789012Y', 'Antonio', 'Hernandez', 13, 'M', 'Calle Goya 9', '28084', 'antonio.hernandez@example.com', 5, '600567890', NULL),
-('67890123F', 'Pedro', 'Morales', 1, 'M', 'Avenida Gran Via 5', '28085', 'pedro.morales@example.com', 6, '600678901', NULL),
-('78901234D', 'Miguel', 'Ruiz', 8, 'M', 'Calle Castellana 11', '28086', 'miguel.ruiz@example.com', 7, '600789012', NULL),
-('89012345T', 'David', 'Navarro', 3, 'M', 'Calle Fuencarral 13', '28087', 'david.navarro@example.com', 3, '600890123', NULL),
-('90123456C', 'Javier', 'Martinez', 2, 'M', 'Calle Alcalá 6', '28088', 'javier.martinez@example.com', 10, '600901234', NULL),
-('01234567L', 'Ricardo', 'Blanco', 6, 'M', 'Calle Velazquez 10', '28089', 'ricardo.blanco@example.com', 12, '600012345', NULL),
-('12345678P', 'Hector', 'Fernandez', 14, 'M', 'Calle Preciados 12', '28090', 'hector.fernandez@example.com', 13, '600123456', NULL),
-('23456789Y', 'Alberto', 'Ortega', 9, 'M', 'Calle Serrano 15', '28091', 'alberto.ortega@example.com', 14, '600234567', NULL),
-('34567890U', 'Sergio', 'Ramirez', 11, 'M', 'Calle Mayor 8', '28092', 'sergio.ramirez@example.com', 15, '600345678', NULL),
-('45678901S', 'Francisco', 'Mendez', 7, 'M', 'Calle Goya 12', '28093', 'francisco.mendez@example.com', 16, '600456789', NULL),
-('56789012T', 'Raul', 'Suarez', 10, 'M', 'Calle Fuencarral 17', '28094', 'raul.suarez@example.com', 17, '600567890', NULL);
+INSERT INTO presos (NIF, Nombre, Apellidos, Crimen, Sexo, Presente, Direccion, CodigoPostal, Correo, Celda, Telefono, Foto) VALUES
+('12345678Z', 'Carlos', 'Gomez', 12, 'M', 1, 'Calle Falsa 123', '28080', 'carlos.gomez@example.com', 10, '600123456', NULL),
+('23456789S', 'Luis', 'Perez', 21, 'M', 1, 'Plaza Mayor 1', '28081', 'luis.perez@example.com', 12, '600234567', NULL),
+('34567890J', 'Jose', 'Lopez', 5, 'M', 1, 'Calle Luna 3', '28082', 'jose.lopez@example.com', 3, '600345678', NULL),
+('45678901N', 'Juan', 'Garcia', 4, 'M', 1, 'Calle Serrano 7', '28083', 'juan.garcia@example.com', 4, '600456789', NULL),
+('56789012Y', 'Antonio', 'Hernandez', 13, 'M', 1, 'Calle Goya 9', '28084', 'antonio.hernandez@example.com', 5, '600567890', NULL),
+('67890123F', 'Pedro', 'Morales', 1, 'M', 1, 'Avenida Gran Via 5', '28085', 'pedro.morales@example.com', 6, '600678901', NULL),
+('78901234D', 'Miguel', 'Ruiz', 8, 'M', 1, 'Calle Castellana 11', '28086', 'miguel.ruiz@example.com', 7, '600789012', NULL),
+('89012345T', 'David', 'Navarro', 3, 'M', 1, 'Calle Fuencarral 13', '28087', 'david.navarro@example.com', 3, '600890123', NULL),
+('90123456C', 'Javier', 'Martinez', 2, 'M', 1, 'Calle Alcalá 6', '28088', 'javier.martinez@example.com', 10, '600901234', NULL),
+('01234567L', 'Ricardo', 'Blanco', 6, 'M', 1, 'Calle Velazquez 10', '28089', 'ricardo.blanco@example.com', 12, '600012345', NULL),
+('12345678P', 'Hector', 'Fernandez', 14, 'M', 1, 'Calle Preciados 12', '28090', 'hector.fernandez@example.com', 13, '600123456', NULL),
+('23456789Y', 'Alberto', 'Ortega', 9, 'M', 1, 'Calle Serrano 15', '28091', 'alberto.ortega@example.com', 14, '600234567', NULL),
+('34567890U', 'Sergio', 'Ramirez', 11, 'M', 1, 'Calle Mayor 8', '28092', 'sergio.ramirez@example.com', 15, '600345678', NULL),
+('45678901S', 'Francisco', 'Mendez', 7, 'M', 1, 'Calle Goya 12', '28093', 'francisco.mendez@example.com', 16, '600456789', NULL),
+('56789012T', 'Raul', 'Suarez', 10, 'M', 1, 'Calle Fuencarral 17', '28094', 'raul.suarez@example.com', 17, '600567890', NULL);
 
 
 
