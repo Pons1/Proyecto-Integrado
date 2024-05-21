@@ -35,7 +35,7 @@
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\OneDrive\Escritorio\DAM\Programacion\C#\Forms\AEV7\AEV7\bin\Debug\MySql.Data.dll</HintPath>
+      <HintPath>..\..\DAM\Programacion\C#\Forms\AEV7\AEV7\bin\Debug\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -63,6 +63,12 @@
     </Compile>
     <Compile Include="FrmAñadirEmpleado.Designer.cs">
       <DependentUpon>FrmAñadirEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAñadirRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAñadirRegistro.Designer.cs">
+      <DependentUpon>FrmAñadirRegistro.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAñadir_recluso.cs">
       <SubType>Form</SubType>
@@ -129,11 +135,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StringRecursos.EN-GB.resx</DependentUpon>
     </Compile>
+    <Compile Include="Registros.cs" />
     <EmbeddedResource Include="FichaEmpleado.resx">
       <DependentUpon>FichaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAñadirEmpleado.resx">
       <DependentUpon>FrmAñadirEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAñadirRegistro.resx">
+      <DependentUpon>FrmAñadirRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAñadir_recluso.resx">
       <DependentUpon>FrmAñadir_recluso.cs</DependentUpon>
