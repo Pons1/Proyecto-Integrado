@@ -1,0 +1,96 @@
+CREATE DATABASE IF NOT EXISTS centralis;
+
+USE centralis;
+
+CREATE TABLE modulos (
+    CodigoModulo ENUM('A','B') PRIMARY KEY
+);
+
+CREATE TABLE zonas (
+    Zona ENUM('COMEDOR','BAÑO','PATIO','LIBRERIA','CONTROL','ENFERMERIA') PRIMARY KEY
+);
+
+CREATE TABLE crimenes (
+    IdCrimen INT auto_increment,
+    Descripcion VARCHAR(50),
+    Condena INT,
+    PRIMARY KEY (IdCrimen)
+);
+
+CREATE TABLE celdas (
+    CodigoCelda INT auto_increment,
+    Modulo ENUM('A','B'),
+    Abierta TINYINT,
+    PRIMARY KEY (CodigoCelda),
+    FOREIGN KEY (Modulo) REFERENCES modulos(CodigoModulo) ON DELETE CASCADE
+);
+
+CREATE TABLE turnos (
+    Turno ENUM('MAÑANA','TARDE','NOCHE') PRIMARY KEY,
+    HoraEntrada TIME NOT NULL,
+    HoraSalida TIME NOT NULL
+);
+
+CREATE TABLE presos (
+    NIF CHAR(9) NOT NULL,
+    Nombre CHAR(20) NOT NULL,
+    Apellidos CHAR(20) NOT NULL,
+    Crimen INT,
+    Sexo CHAR(1),
+    Direccion CHAR(50) NOT NULL,
+    CodigoPostal CHAR(5) NOT NULL,
+    Correo VARCHAR(50),
+    Celda INT,
+    Presente TINYINT,
+    Telefono VARCHAR(15),
+    Foto BLOB,
+    PRIMARY KEY (NIF),
+    FOREIGN KEY (Celda) REFERENCES celdas(CodigoCelda) ON DELETE SET NULL,
+    FOREIGN KEY (Crimen) REFERENCES crimenes(IdCrimen) ON DELETE SET NULL
+);
+
+CREATE TABLE empleados (
+    NIF CHAR(9) NOT NULL,
+    Nombre CHAR(20) NOT NULL,
+    Apellidos CHAR(20) NOT NULL,
+    Puesto ENUM('VIGILANCIA','LIMPIEZA','COCINA','ENFERMERIA','ADMINISTRACION') NOT NULL,
+    Contraseña VARCHAR(30),
+    Sexo CHAR(1) NOT NULL,
+    Turno ENUM('MAÑANA','TARDE','NOCHE'),
+    Direccion CHAR(50) NOT NULL,
+    Presente TINYINT,
+    CodigoPostal CHAR(5) NOT NULL,
+    Correo VARCHAR(50) NOT NULL,
+    Telefono VARCHAR(15) NOT NULL,
+    Foto BLOB,
+    PRIMARY KEY (NIF),
+    FOREIGN KEY (Turno) REFERENCES turnos(Turno) ON DELETE SET NULL
+);
+
+CREATE TABLE puertas (
+    CodigoPuerta INT auto_increment,
+    Zona ENUM('COMEDOR','BAÑO','PATIO','LIBRERIA','CONTROL','ENFERMERIA'),
+    Modulo ENUM('A','B'),  
+    PRIMARY KEY (CodigoPuerta),
+    FOREIGN KEY (Zona) REFERENCES zonas(Zona) ON DELETE CASCADE,
+    FOREIGN KEY (Modulo) REFERENCES modulos(CodigoModulo) ON DELETE CASCADE
+);
+
+CREATE TABLE registros (
+    CodigoRegistro INT auto_increment,
+    Tipo ENUM('ENTRADA','SALIDA') NOT NULL,
+    PresoNIF CHAR(9),
+    EmpleadoNIF CHAR(9),
+    Motivo CHAR(30),
+    Fecha DATETIME NOT NULL,
+    PRIMARY KEY (CodigoRegistro),
+    FOREIGN KEY (PresoNIF) REFERENCES presos(NIF) ON DELETE SET NULL,
+    FOREIGN KEY (EmpleadoNIF) REFERENCES empleados(NIF) ON DELETE SET NULL
+);
+
+CREATE TRIGGER after_insert_presos
+AFTER INSERT ON presos
+FOR EACH ROW
+    INSERT INTO registros (Tipo, PresoNIF, Motivo, Fecha)
+    VALUES ('ENTRADA', NEW.NIF, 'Ingreso inicial', NOW());
+    
