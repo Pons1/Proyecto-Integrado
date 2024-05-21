@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             this.btn_añadir_registro = new System.Windows.Forms.Button();
-            this.lblFiltrarPorFecha = new System.Windows.Forms.Label();
+            this.lblFiltrarPorTexto = new System.Windows.Forms.Label();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblFiltrarPorFecha = new System.Windows.Forms.Label();
+            this.pcbLupa = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLupa)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_añadir_registro
@@ -52,17 +55,17 @@
             this.btn_añadir_registro.UseVisualStyleBackColor = true;
             this.btn_añadir_registro.Click += new System.EventHandler(this.btn_añadir_registro_Click);
             // 
-            // lblFiltrarPorFecha
+            // lblFiltrarPorTexto
             // 
-            this.lblFiltrarPorFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFiltrarPorFecha.AutoSize = true;
-            this.lblFiltrarPorFecha.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltrarPorFecha.Location = new System.Drawing.Point(407, 28);
-            this.lblFiltrarPorFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFiltrarPorFecha.Name = "lblFiltrarPorFecha";
-            this.lblFiltrarPorFecha.Size = new System.Drawing.Size(159, 23);
-            this.lblFiltrarPorFecha.TabIndex = 5;
-            this.lblFiltrarPorFecha.Text = "Filtrar por fecha:";
+            this.lblFiltrarPorTexto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFiltrarPorTexto.AutoSize = true;
+            this.lblFiltrarPorTexto.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltrarPorTexto.Location = new System.Drawing.Point(266, 40);
+            this.lblFiltrarPorTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFiltrarPorTexto.Name = "lblFiltrarPorTexto";
+            this.lblFiltrarPorTexto.Size = new System.Drawing.Size(153, 23);
+            this.lblFiltrarPorTexto.TabIndex = 5;
+            this.lblFiltrarPorTexto.Text = "Filtrar por texto:";
             // 
             // dtpFechaInicio
             // 
@@ -70,7 +73,7 @@
             this.dtpFechaInicio.CalendarFont = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaInicio.CustomFormat = "";
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(824, 29);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(824, 28);
             this.dtpFechaInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(127, 22);
@@ -79,6 +82,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -109,11 +113,36 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(612, 28);
+            this.textBox1.Location = new System.Drawing.Point(478, 42);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(166, 22);
             this.textBox1.TabIndex = 9;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // lblFiltrarPorFecha
+            // 
+            this.lblFiltrarPorFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFiltrarPorFecha.AutoSize = true;
+            this.lblFiltrarPorFecha.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltrarPorFecha.Location = new System.Drawing.Point(642, 41);
+            this.lblFiltrarPorFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFiltrarPorFecha.Name = "lblFiltrarPorFecha";
+            this.lblFiltrarPorFecha.Size = new System.Drawing.Size(159, 23);
+            this.lblFiltrarPorFecha.TabIndex = 10;
+            this.lblFiltrarPorFecha.Text = "Filtrar por fecha:";
+            // 
+            // pcbLupa
+            // 
+            this.pcbLupa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcbLupa.Image = global::PROYECTO.Properties.Resources.search_engine_optimization;
+            this.pcbLupa.Location = new System.Drawing.Point(958, 40);
+            this.pcbLupa.Margin = new System.Windows.Forms.Padding(4);
+            this.pcbLupa.Name = "pcbLupa";
+            this.pcbLupa.Size = new System.Drawing.Size(39, 32);
+            this.pcbLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbLupa.TabIndex = 14;
+            this.pcbLupa.TabStop = false;
+            this.pcbLupa.Click += new System.EventHandler(this.pcbLupa_Click);
             // 
             // FrmRegistro
             // 
@@ -121,17 +150,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(190)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1011, 505);
+            this.Controls.Add(this.pcbLupa);
+            this.Controls.Add(this.lblFiltrarPorFecha);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dtpFechaFin);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dtpFechaInicio);
-            this.Controls.Add(this.lblFiltrarPorFecha);
+            this.Controls.Add(this.lblFiltrarPorTexto);
             this.Controls.Add(this.btn_añadir_registro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmRegistro";
             this.Text = "Registro";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLupa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,10 +172,12 @@
         #endregion
 
         private System.Windows.Forms.Button btn_añadir_registro;
-        private System.Windows.Forms.Label lblFiltrarPorFecha;
+        private System.Windows.Forms.Label lblFiltrarPorTexto;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblFiltrarPorFecha;
+        private System.Windows.Forms.PictureBox pcbLupa;
     }
 }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net;
 using System.Net.Mail;
 using System.Windows.Forms;
@@ -30,7 +26,7 @@ namespace PROYECTO
         }
 
 
-        public void EnviarCorreo()
+        public void EnviarCorreo(bool avisar)
         {
             MailAddress addressFrom = new MailAddress(this.MiCorreo, this.DisplayName);
             MailAddress addressTo = new MailAddress(this.destinatario);
@@ -38,7 +34,8 @@ namespace PROYECTO
 
             message.Subject = this.asunto;
             message.IsBodyHtml = true;
-            message.Body = this.Mensaje;
+            // Asegúrate de que el mensaje esté en negrita usando HTML
+            message.Body = $"<b>{this.Mensaje}</b>";
 
             SmtpClient cliente = new SmtpClient("smtp.gmail.com");
             cliente.Port = 587;
@@ -49,11 +46,17 @@ namespace PROYECTO
             try
             {
                 cliente.Send(message);
-                MessageBox.Show("Coreo enviado con exito");
+                if (avisar)
+                {
+                    MessageBox.Show("Correo enviado con éxito");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                if (avisar)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

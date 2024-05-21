@@ -210,7 +210,10 @@ INSERT INTO crimenes (Descripcion, Condena) VALUES
 ('Grooming: Acoso a un menor de edad con fines sexuales a través de medios informáticos o de comunicación.', 6);
 
 
-
+INSERT INTO turnos (Turno, HoraEntrada, HoraSalida) VALUES
+('MAÑANA', '06:00:00', '14:00:00'),
+('TARDE', '14:00:00', '22:00:00'),
+('NOCHE', '22:00:00', '06:00:00');
 
 
 INSERT INTO modulos (CodigoModulo) VALUES ('A'), ('B');
@@ -278,7 +281,44 @@ INSERT INTO celdas (Modulo, Abierta) VALUES
 ('B', 0),
 ('B', 0);
 
-   
+
+
+INSERT INTO empleados (NIF, Nombre, Apellidos, Puesto, Contraseña, Sexo, Turno, Direccion, Presente, CodigoPostal, Correo, Telefono) VALUES
+('53879548R', 'Adrian', 'Pons', 'ADMINISTRACION', 12345, 'M', 'MAÑANA', 'Calle 1', 1, '28001', 'adrianpons21@gmail.com', '622230884'),
+('29222260R', 'Manuel', 'Garcia Muañache', 'ADMINISTRACION', 12345, 'M', 'MAÑANA', 'Calle 1', 1, '28001', 'manugamu@gmail.com', '667975089'),
+('98765432B', 'Maria', 'Garcia', 'LIMPIEZA', NULL, 'F', 'TARDE', 'Calle 2', 1, '28002', 'maria.garcia@example.com', '600123457'),
+('45678912C', 'Carlos', 'Lopez', 'COCINA', NULL, 'M', 'NOCHE', 'Calle 3', 1, '28003', 'carlos.lopez@example.com', '600123458'),
+('65432198D', 'Ana', 'Martinez', 'ENFERMERIA', NULL, 'F', 'MAÑANA', 'Calle 4', 1, '28004', 'ana.martinez@example.com', '600123459'),
+('11223344E', 'Luis', 'Gomez', 'ADMINISTRACION', 'password5', 'M', 'TARDE', 'Calle 5', 1, '28005', 'luis.gomez@example.com', '600123460'),
+('99887766F', 'Elena', 'Diaz', 'VIGILANCIA', NULL, 'F', 'NOCHE', 'Calle 6', 1, '28006', 'elena.diaz@example.com', '600123461'),
+('44332211G', 'Pedro', 'Fernandez', 'LIMPIEZA', NULL, 'M', 'MAÑANA', 'Calle 7', 1, '28007', 'pedro.fernandez@example.com', '600123462'),
+('66778899H', 'Laura', 'Sanchez', 'COCINA', NULL, 'F', 'TARDE', 'Calle 8', 1, '28008', 'laura.sanchez@example.com', '600123463'),
+('22446688I', 'Jose', 'Ramirez', 'ENFERMERIA', NULL, 'M', 'NOCHE', 'Calle 9', 1, '28009', 'jose.ramirez@example.com', '600123464'),
+('33557799J', 'Marta', 'Cruz', 'ADMINISTRACION', 'password10', 'F', 'MAÑANA', 'Calle 10', 1, '28010', 'marta.cruz@example.com', '600123465'),
+('44556677K', 'Miguel', 'Moreno', 'VIGILANCIA', NULL, 'M', 'TARDE', 'Calle 11', 1, '28011', 'miguel.moreno@example.com', '600123466'),
+('77889900L', 'Sara', 'Rojas', 'LIMPIEZA', NULL, 'F', 'NOCHE', 'Calle 12', 1, '28012', 'sara.rojas@example.com', '600123467'),
+('55667788M', 'Alberto', 'Castro', 'COCINA', NULL, 'M', 'MAÑANA', 'Calle 13', 1, '28013', 'alberto.castro@example.com', '600123468'),
+('11224466N', 'Isabel', 'Ortiz', 'ENFERMERIA', NULL, 'F', 'TARDE', 'Calle 14', 1, '28014', 'isabel.ortiz@example.com', '600123469'),
+('99886655O', 'David', 'Silva', 'ADMINISTRACION', 'password15', 'M', 'NOCHE', 'Calle 15', 1, '28015', 'david.silva@example.com', '600123470'),
+('22334455P', 'Natalia', 'Mendoza', 'VIGILANCIA', NULL, 'F', 'MAÑANA', 'Calle 16', 1, '28016', 'natalia.mendoza@example.com', '600123471'),
+('77665544Q', 'Ricardo', 'Guerrero', 'LIMPIEZA', NULL, 'M', 'TARDE', 'Calle 17', 1, '28017', 'ricardo.guerrero@example.com', '600123472'),
+('33445566R', 'Patricia', 'Romero', 'COCINA', NULL, 'F', 'NOCHE', 'Calle 18', 1, '28018', 'patricia.romero@example.com', '600123473'),
+('88776655S', 'Fernando', 'Vargas', 'ENFERMERIA', NULL, 'M', 'MAÑANA', 'Calle 19', 1, '28019', 'fernando.vargas@example.com', '600123474'),
+('66554433T', 'Cristina', 'Flores', 'ADMINISTRACION', 'password20', 'F', 'TARDE', 'Calle 20', 1, '28020', 'cristina.flores@example.com', '600123475'),
+('22445566U', 'Andres', 'Navarro', 'VIGILANCIA', NULL, 'M', 'NOCHE', 'Calle 21', 1, '28021', 'andres.navarro@example.com', '600123476'),
+('77886655V', 'Sofia', 'Peña', 'LIMPIEZA', NULL, 'F', 'MAÑANA', 'Calle 22', 1, '28022', 'sofia.pena@example.com', '600123477'),
+('33225544W', 'Rafael', 'Lorenzo', 'COCINA', NULL, 'M', 'TARDE', 'Calle 23', 1, '28023', 'rafael.lorenzo@example.com', '600123478'),
+('44332222X', 'Gloria', 'Ruiz', 'ENFERMERIA', NULL, 'F', 'NOCHE', 'Calle 24', 1, '28024', 'gloria.ruiz@example.com', '600123479'),
+('55668877Y', 'Alfonso', 'Reyes', 'ADMINISTRACION', 'password25', 'M', 'MAÑANA', 'Calle 25', 1, '28025', 'alfonso.reyes@example.com', '600123480'),
+('77880011Z', 'Lucia', 'Gonzalez', 'VIGILANCIA', NULL, 'F', 'TARDE', 'Calle 26', 1, '28026', 'lucia.gonzalez@example.com', '600123481'),
+('11229988A', 'Diego', 'Jimenez', 'LIMPIEZA', NULL, 'M', 'NOCHE', 'Calle 27', 1, '28027', 'diego.jimenez@example.com', '600123482'),
+('33447766B', 'Carmen', 'Iglesias', 'COCINA', NULL, 'F', 'MAÑANA', 'Calle 28', 1, '28028', 'carmen.iglesias@example.com', '600123483'),
+('88774455C', 'Hector', 'Molina', 'ENFERMERIA', NULL, 'M', 'TARDE', 'Calle 29', 1, '28029', 'hector.molina@example.com', '600123484'),
+('22331155D', 'Rosa', 'Navas', 'ADMINISTRACION', 'password30', 'F', 'NOCHE', 'Calle 30', 1, '28030', 'rosa.navas@example.com', '600123485');
+
+
+
+ 
 
 INSERT INTO presos (NIF, Nombre, Apellidos, Crimen, Sexo, Presente, Direccion, CodigoPostal, Correo, Celda, Telefono, Foto) VALUES
 ('12345678Z', 'Carlos', 'Gomez', 12, 'M', 1, 'Calle Falsa 123', '28080', 'carlos.gomez@example.com', 10, '600123456', NULL),

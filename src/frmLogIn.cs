@@ -43,9 +43,12 @@ namespace PROYECTO
             else
             {
                 MessageBox.Show("Usuario/Contraseña incorrecto");
+                string body = "Se ha detectado un intento de inicio de sesion con el nombre o nif: " + txtUsuario.Text;
+                Correo alerta = new Correo("centralisgrupo@gmail.com", "Intento Inicio De Secion", body);
+                alerta.EnviarCorreo(false);
                 txtContraseña.Clear();
                 txtUsuario.Clear();
-
+                
             }
         }
 
