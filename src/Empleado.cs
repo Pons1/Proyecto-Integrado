@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace PROYECTO
 {
-    internal class Empleado
+    public class Empleado
     {
         private string nif;
         private string nombre;
@@ -65,7 +65,80 @@ namespace PROYECTO
 
 
         }
+        public static int EditarEmpleado(string ni, string nom, string ap, string puest,string sex, string tur,string dir, int cod, string corr, int tel)
+        {
+            int retorno = -1;
+            if (ConexionBD.Conexion != null)
+            {
 
+                try
+                {
+
+                    ConexionBD.AbrirConexion();
+
+
+                    string consulta = String.Format("UPDATE empleados SET nombre = '{1}',Apellidos = '{2}',puesto = '{3}',sexo = '{4}'," +
+                        "turno = '{5}',direccion = '{6}',codigopostal = '{7}',correo = '{8}', telefono = '{9}' WHERE nif='{0}' ", ni, nom, ap, puest, sex,tur, dir, cod, corr, tel); ;
+
+
+                    MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+                    retorno = comando.ExecuteNonQuery();
+
+                    ConexionBD.CerrarConexion();
+                    return retorno;
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    ConexionBD.CerrarConexion();
+
+                    MessageBox.Show(ex.Message);
+                }
+                ConexionBD.CerrarConexion();
+
+
+            }
+            return retorno;
+        }
+
+        public static int BorrarEmpleado(string ni)
+        {
+            int retorno = -1;
+            if (ConexionBD.Conexion != null)
+            {
+
+                try
+                {
+
+                    ConexionBD.AbrirConexion();
+
+
+                    string consulta = String.Format("Delete from empleados where nif='{0}'", ni); ;
+
+
+                    MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+                    retorno = comando.ExecuteNonQuery();
+
+                    ConexionBD.CerrarConexion();
+                    return retorno;
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    ConexionBD.CerrarConexion();
+
+                    MessageBox.Show(ex.Message);
+                }
+                ConexionBD.CerrarConexion();
+
+
+            }
+            return retorno;
+        }
         public static List<string> MostrarTurnos()
         {
             List<string> lista = new List<string>();
@@ -105,6 +178,7 @@ namespace PROYECTO
 
 
         }
+        
         public static List<Empleado> MostrarEmpleados() { 
             List<Empleado> lista = new List<Empleado>();
 
@@ -308,6 +382,42 @@ namespace PROYECTO
 
 
 
+        }
+        public static Image ConsultarImagenEmpl(string ni)
+        {
+            Image foto = null;
+
+
+            if (ConexionBD.Conexion != null)
+            {
+                try
+                {
+                    ConexionBD.AbrirConexion();
+
+                    string c = String.Format("Select foto from empleados where nif='{0}';", ni);
+
+                    MySqlCommand com = new MySqlCommand(c, ConexionBD.Conexion);
+                    object fot = com.ExecuteScalar();
+
+                    byte[] img = (byte[])fot;
+                    MemoryStream ms = new MemoryStream(img);
+                    foto = Image.FromStream(ms);
+
+
+                    ConexionBD.CerrarConexion();
+                    ConexionBD.CerrarConexion();
+
+                    return foto;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message); return null;
+                }
+
+            }
+
+            return foto;
         }
     }
     }

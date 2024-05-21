@@ -105,6 +105,38 @@ namespace PROYECTO
         {
             dgvEmpleados.DataSource = Empleado.MostrarEmpleados();
             cmb_modulo.Text = "TODOS";
+            txt_buscar.Clear();
+        }
+
+        private void dgvEmpleados_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dgvEmpleados.Rows[e.RowIndex];
+                string id = selectedRow.Cells["NIF"].Value.ToString();
+                string nombre = selectedRow.Cells["Nombre"].Value.ToString();
+                string apellidos = selectedRow.Cells["Apellidos"].Value.ToString();
+                string puesto = selectedRow.Cells["Puesto"].Value.ToString();
+                string sexo = selectedRow.Cells["Sexo"].Value.ToString();
+                string turno = selectedRow.Cells["Turno"].Value.ToString();
+
+                string direccion = selectedRow.Cells["Direccion"].Value.ToString();
+                int presente = int.Parse(selectedRow.Cells["Presente"].Value.ToString());
+
+                int codigoPostal = int.Parse(selectedRow.Cells["codigoPostal"].Value.ToString());
+                string correo = selectedRow.Cells["Correo"].Value.ToString();
+                int tel = int.Parse(selectedRow.Cells["Telefono"].Value.ToString());
+
+
+                Image img = Empleado.ConsultarImagenEmpl(id);
+
+                Empleado p1 = new Empleado(id, nombre, apellidos, puesto, sexo, turno, direccion, codigoPostal, correo, presente, img, tel,"");
+
+                FrmFichaEmpleado frmFichaEmpleado = new FrmFichaEmpleado(p1, this);
+                frmFichaEmpleado.Show();
+
+            }
         }
     }
 }

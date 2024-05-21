@@ -93,6 +93,7 @@
             this.dgvEmpleados.Size = new System.Drawing.Size(915, 347);
             this.dgvEmpleados.TabIndex = 16;
             this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
+            this.dgvEmpleados.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentDoubleClick);
             this.dgvEmpleados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPresos_CellDoubleClick);
             // 
             // cmb_modulo

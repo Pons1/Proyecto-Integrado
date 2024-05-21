@@ -43,7 +43,10 @@ namespace PROYECTO
 
         private void pic_cerrar_Click(object sender, EventArgs e)
         {
+            Application.Exit();
+
             this.Dispose();
+
         }
 
         private void pic_minimizar_Click(object sender, EventArgs e)

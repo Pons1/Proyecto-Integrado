@@ -106,14 +106,16 @@
             this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaFin.Location = new System.Drawing.Point(824, 66);
             this.dtpFechaFin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpFechaFin.MaxDate = new System.DateTime(2024, 5, 21, 0, 0, 0, 0);
             this.dtpFechaFin.Name = "dtpFechaFin";
             this.dtpFechaFin.Size = new System.Drawing.Size(127, 22);
             this.dtpFechaFin.TabIndex = 8;
+            this.dtpFechaFin.Value = new System.DateTime(2024, 5, 21, 0, 0, 0, 0);
             this.dtpFechaFin.ValueChanged += new System.EventHandler(this.dtpFechaFin_ValueChanged);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(478, 42);
+            this.textBox1.Location = new System.Drawing.Point(446, 40);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(166, 22);
             this.textBox1.TabIndex = 9;
@@ -162,6 +164,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmRegistro";
             this.Text = "Registro";
+            this.Load += new System.EventHandler(this.FrmRegistro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLupa)).EndInit();
             this.ResumeLayout(false);

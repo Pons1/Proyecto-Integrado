@@ -1,6 +1,6 @@
 ﻿namespace PROYECTO
 {
-    partial class FichaEmpleado
+    partial class FrmFichaEmpleado
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbCelda = new System.Windows.Forms.ComboBox();
+            this.components = new System.ComponentModel.Container();
+            this.cmbTurno = new System.Windows.Forms.ComboBox();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
-            this.cmbCrimen = new System.Windows.Forms.ComboBox();
+            this.cmbPuesto = new System.Windows.Forms.ComboBox();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.txtSexo = new System.Windows.Forms.TextBox();
-            this.txtCelda = new System.Windows.Forms.TextBox();
-            this.txtcrimen = new System.Windows.Forms.TextBox();
+            this.txtTurno = new System.Windows.Forms.TextBox();
+            this.txtpuesto = new System.Windows.Forms.TextBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
-            this.lblCelda = new System.Windows.Forms.Label();
+            this.lblTurno = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.txtCodigopostal = new System.Windows.Forms.TextBox();
@@ -48,28 +49,30 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.cmbDireccion = new System.Windows.Forms.Label();
             this.lblSexo = new System.Windows.Forms.Label();
-            this.lblCrimen = new System.Windows.Forms.Label();
-            this.txt_nifPreso = new System.Windows.Forms.TextBox();
+            this.lblPuesto = new System.Windows.Forms.Label();
+            this.txt_nif = new System.Windows.Forms.TextBox();
             this.lblNif = new System.Windows.Forms.Label();
             this.txt_apellidos = new System.Windows.Forms.TextBox();
             this.lblApellidos = new System.Windows.Forms.Label();
             this.txt_pnombre = new System.Windows.Forms.TextBox();
             this.lblNom = new System.Windows.Forms.Label();
             this.pcboxFoto = new System.Windows.Forms.PictureBox();
+            this.erpEmpl = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pcboxFoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpEmpl)).BeginInit();
             this.SuspendLayout();
             // 
-            // cmbCelda
+            // cmbTurno
             // 
-            this.cmbCelda.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cmbCelda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCelda.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCelda.FormattingEnabled = true;
-            this.cmbCelda.Location = new System.Drawing.Point(126, 196);
-            this.cmbCelda.Name = "cmbCelda";
-            this.cmbCelda.Size = new System.Drawing.Size(132, 37);
-            this.cmbCelda.TabIndex = 85;
-            this.cmbCelda.Visible = false;
+            this.cmbTurno.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cmbTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTurno.FormattingEnabled = true;
+            this.cmbTurno.Location = new System.Drawing.Point(126, 196);
+            this.cmbTurno.Name = "cmbTurno";
+            this.cmbTurno.Size = new System.Drawing.Size(132, 37);
+            this.cmbTurno.TabIndex = 85;
+            this.cmbTurno.Visible = false;
             // 
             // cmbSexo
             // 
@@ -85,18 +88,25 @@
             this.cmbSexo.Size = new System.Drawing.Size(132, 37);
             this.cmbSexo.TabIndex = 84;
             this.cmbSexo.Visible = false;
+            this.cmbSexo.SelectedIndexChanged += new System.EventHandler(this.cmbSexo_SelectedIndexChanged);
             // 
-            // cmbCrimen
+            // cmbPuesto
             // 
-            this.cmbCrimen.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cmbCrimen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCrimen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCrimen.FormattingEnabled = true;
-            this.cmbCrimen.Location = new System.Drawing.Point(126, 150);
-            this.cmbCrimen.Name = "cmbCrimen";
-            this.cmbCrimen.Size = new System.Drawing.Size(132, 37);
-            this.cmbCrimen.TabIndex = 83;
-            this.cmbCrimen.Visible = false;
+            this.cmbPuesto.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cmbPuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPuesto.FormattingEnabled = true;
+            this.cmbPuesto.Items.AddRange(new object[] {
+            "VIGILANCIA",
+            "LIMPIEZA",
+            "ADMINISTRACION",
+            "COCINA",
+            "ENFERMERIA"});
+            this.cmbPuesto.Location = new System.Drawing.Point(126, 154);
+            this.cmbPuesto.Name = "cmbPuesto";
+            this.cmbPuesto.Size = new System.Drawing.Size(132, 37);
+            this.cmbPuesto.TabIndex = 83;
+            this.cmbPuesto.Visible = false;
             // 
             // btnInsertar
             // 
@@ -110,6 +120,7 @@
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
             this.btnInsertar.Visible = false;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // btnEditar
             // 
@@ -122,6 +133,7 @@
             this.btnEditar.TabIndex = 81;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnBorrar
             // 
@@ -134,6 +146,7 @@
             this.btnBorrar.TabIndex = 80;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // txtSexo
             // 
@@ -147,29 +160,29 @@
             this.txtSexo.Size = new System.Drawing.Size(132, 34);
             this.txtSexo.TabIndex = 79;
             // 
-            // txtCelda
+            // txtTurno
             // 
-            this.txtCelda.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtCelda.Enabled = false;
-            this.txtCelda.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCelda.Location = new System.Drawing.Point(126, 199);
-            this.txtCelda.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCelda.Name = "txtCelda";
-            this.txtCelda.ReadOnly = true;
-            this.txtCelda.Size = new System.Drawing.Size(163, 34);
-            this.txtCelda.TabIndex = 78;
+            this.txtTurno.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtTurno.Enabled = false;
+            this.txtTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTurno.Location = new System.Drawing.Point(126, 199);
+            this.txtTurno.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTurno.Name = "txtTurno";
+            this.txtTurno.ReadOnly = true;
+            this.txtTurno.Size = new System.Drawing.Size(163, 34);
+            this.txtTurno.TabIndex = 78;
             // 
-            // txtcrimen
+            // txtpuesto
             // 
-            this.txtcrimen.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtcrimen.Enabled = false;
-            this.txtcrimen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcrimen.Location = new System.Drawing.Point(126, 161);
-            this.txtcrimen.Margin = new System.Windows.Forms.Padding(4);
-            this.txtcrimen.Name = "txtcrimen";
-            this.txtcrimen.ReadOnly = true;
-            this.txtcrimen.Size = new System.Drawing.Size(163, 34);
-            this.txtcrimen.TabIndex = 77;
+            this.txtpuesto.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtpuesto.Enabled = false;
+            this.txtpuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpuesto.Location = new System.Drawing.Point(126, 161);
+            this.txtpuesto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtpuesto.Name = "txtpuesto";
+            this.txtpuesto.ReadOnly = true;
+            this.txtpuesto.Size = new System.Drawing.Size(163, 34);
+            this.txtpuesto.TabIndex = 77;
             // 
             // btnSalir
             // 
@@ -206,17 +219,17 @@
             this.lblTelefono.TabIndex = 74;
             this.lblTelefono.Text = "Teléfono:";
             // 
-            // lblCelda
+            // lblTurno
             // 
-            this.lblCelda.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblCelda.AutoSize = true;
-            this.lblCelda.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCelda.Location = new System.Drawing.Point(-2, 204);
-            this.lblCelda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCelda.Name = "lblCelda";
-            this.lblCelda.Size = new System.Drawing.Size(89, 29);
-            this.lblCelda.TabIndex = 73;
-            this.lblCelda.Text = "Celda:";
+            this.lblTurno.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTurno.AutoSize = true;
+            this.lblTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTurno.Location = new System.Drawing.Point(-2, 204);
+            this.lblTurno.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTurno.Name = "lblTurno";
+            this.lblTurno.Size = new System.Drawing.Size(89, 29);
+            this.lblTurno.TabIndex = 73;
+            this.lblTurno.Text = "Turno:";
             // 
             // txtCorreo
             // 
@@ -299,29 +312,29 @@
             this.lblSexo.TabIndex = 66;
             this.lblSexo.Text = "Sexo:";
             // 
-            // lblCrimen
+            // lblPuesto
             // 
-            this.lblCrimen.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblCrimen.AutoSize = true;
-            this.lblCrimen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCrimen.Location = new System.Drawing.Point(-2, 158);
-            this.lblCrimen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCrimen.Name = "lblCrimen";
-            this.lblCrimen.Size = new System.Drawing.Size(104, 29);
-            this.lblCrimen.TabIndex = 65;
-            this.lblCrimen.Text = "Crimen:";
+            this.lblPuesto.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblPuesto.AutoSize = true;
+            this.lblPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPuesto.Location = new System.Drawing.Point(-2, 158);
+            this.lblPuesto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPuesto.Name = "lblPuesto";
+            this.lblPuesto.Size = new System.Drawing.Size(101, 29);
+            this.lblPuesto.TabIndex = 65;
+            this.lblPuesto.Text = "Puesto:";
             // 
-            // txt_nifPreso
+            // txt_nif
             // 
-            this.txt_nifPreso.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_nifPreso.Enabled = false;
-            this.txt_nifPreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nifPreso.Location = new System.Drawing.Point(368, 53);
-            this.txt_nifPreso.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_nifPreso.MaxLength = 9;
-            this.txt_nifPreso.Name = "txt_nifPreso";
-            this.txt_nifPreso.Size = new System.Drawing.Size(188, 34);
-            this.txt_nifPreso.TabIndex = 64;
+            this.txt_nif.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_nif.Enabled = false;
+            this.txt_nif.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nif.Location = new System.Drawing.Point(368, 53);
+            this.txt_nif.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nif.MaxLength = 9;
+            this.txt_nif.Name = "txt_nif";
+            this.txt_nif.Size = new System.Drawing.Size(188, 34);
+            this.txt_nif.TabIndex = 64;
             // 
             // lblNif
             // 
@@ -394,24 +407,28 @@
             this.pcboxFoto.TabIndex = 58;
             this.pcboxFoto.TabStop = false;
             // 
-            // FichaEmpleado
+            // erpEmpl
+            // 
+            this.erpEmpl.ContainerControl = this;
+            // 
+            // FrmFichaEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cmbCelda);
+            this.Controls.Add(this.cmbTurno);
             this.Controls.Add(this.cmbSexo);
-            this.Controls.Add(this.cmbCrimen);
+            this.Controls.Add(this.cmbPuesto);
             this.Controls.Add(this.btnInsertar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.txtSexo);
-            this.Controls.Add(this.txtCelda);
-            this.Controls.Add(this.txtcrimen);
+            this.Controls.Add(this.txtTurno);
+            this.Controls.Add(this.txtpuesto);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.lblTelefono);
-            this.Controls.Add(this.lblCelda);
+            this.Controls.Add(this.lblTurno);
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.lblCorreo);
             this.Controls.Add(this.txtCodigopostal);
@@ -419,17 +436,19 @@
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.cmbDireccion);
             this.Controls.Add(this.lblSexo);
-            this.Controls.Add(this.lblCrimen);
-            this.Controls.Add(this.txt_nifPreso);
+            this.Controls.Add(this.lblPuesto);
+            this.Controls.Add(this.txt_nif);
             this.Controls.Add(this.lblNif);
             this.Controls.Add(this.txt_apellidos);
             this.Controls.Add(this.lblApellidos);
             this.Controls.Add(this.txt_pnombre);
             this.Controls.Add(this.lblNom);
             this.Controls.Add(this.pcboxFoto);
-            this.Name = "FichaEmpleado";
+            this.Name = "FrmFichaEmpleado";
             this.Text = "FichaEmpleado";
+            this.Load += new System.EventHandler(this.FrmFichaEmpleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcboxFoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpEmpl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,19 +456,19 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cmbCelda;
+        private System.Windows.Forms.ComboBox cmbTurno;
         private System.Windows.Forms.ComboBox cmbSexo;
-        private System.Windows.Forms.ComboBox cmbCrimen;
+        private System.Windows.Forms.ComboBox cmbPuesto;
         private System.Windows.Forms.Button btnInsertar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.TextBox txtSexo;
-        private System.Windows.Forms.TextBox txtCelda;
-        private System.Windows.Forms.TextBox txtcrimen;
+        private System.Windows.Forms.TextBox txtTurno;
+        private System.Windows.Forms.TextBox txtpuesto;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblTelefono;
-        private System.Windows.Forms.Label lblCelda;
+        private System.Windows.Forms.Label lblTurno;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.TextBox txtCodigopostal;
@@ -457,13 +476,14 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label cmbDireccion;
         private System.Windows.Forms.Label lblSexo;
-        private System.Windows.Forms.Label lblCrimen;
-        private System.Windows.Forms.TextBox txt_nifPreso;
+        private System.Windows.Forms.Label lblPuesto;
+        private System.Windows.Forms.TextBox txt_nif;
         private System.Windows.Forms.Label lblNif;
         private System.Windows.Forms.TextBox txt_apellidos;
         private System.Windows.Forms.Label lblApellidos;
         private System.Windows.Forms.TextBox txt_pnombre;
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.PictureBox pcboxFoto;
+        private System.Windows.Forms.ErrorProvider erpEmpl;
     }
 }

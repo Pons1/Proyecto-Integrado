@@ -102,5 +102,9 @@ namespace PROYECTO
             }
         }
 
+        private void FrmRegistro_Load(object sender, EventArgs e)
+        {
+            dtpFechaInicio.MaxDate=dtpFechaFin.Value;
+        }
     }
 }

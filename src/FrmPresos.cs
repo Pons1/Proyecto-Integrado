@@ -62,6 +62,8 @@ namespace PROYECTO
 
             dgvPresos.DataSource = Preso.MostrarPresos();
             cmb_modulo.Text = "Todos";
+            txt_buscar.Clear();
+
         }
 
         private void p_Click(object sender, EventArgs e)
