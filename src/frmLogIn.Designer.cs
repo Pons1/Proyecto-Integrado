@@ -198,6 +198,7 @@
             this.Name = "frmLogIn";
             this.Opacity = 0.95D;
             this.Text = "frmLogIn";
+            this.Load += new System.EventHandler(this.frmLogIn_Load);
             this.TitleBar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

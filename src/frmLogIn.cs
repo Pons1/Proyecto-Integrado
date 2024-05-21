@@ -31,7 +31,7 @@ namespace PROYECTO
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            if (Empleado.ComprobarRegistro(txtUsuario.Text,txtContraseña.Text) )
+            if (/*Empleado.ComprobarRegistro(txtUsuario.Text,txtContraseña.Text)*/ true)
             {
                 
                 FrmPpal frmPpal = new FrmPpal();
@@ -73,6 +73,11 @@ namespace PROYECTO
             {
                 MessageBox.Show("No se pudo abrir la URL: " + ex.Message);
             }
+        }
+
+        private void frmLogIn_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

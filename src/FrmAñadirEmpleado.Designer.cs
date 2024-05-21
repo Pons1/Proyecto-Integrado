@@ -33,8 +33,6 @@
             this.btnAñadir = new System.Windows.Forms.Button();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
-            this.cmbCelda = new System.Windows.Forms.ComboBox();
-            this.lblCelda = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.txtCodigopostal = new System.Windows.Forms.TextBox();
@@ -109,29 +107,6 @@
             this.lblTelefono.Size = new System.Drawing.Size(125, 29);
             this.lblTelefono.TabIndex = 44;
             this.lblTelefono.Text = "Teléfono:";
-            // 
-            // cmbCelda
-            // 
-            this.cmbCelda.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cmbCelda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCelda.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCelda.FormattingEnabled = true;
-            this.cmbCelda.Location = new System.Drawing.Point(138, 165);
-            this.cmbCelda.Name = "cmbCelda";
-            this.cmbCelda.Size = new System.Drawing.Size(132, 37);
-            this.cmbCelda.TabIndex = 43;
-            // 
-            // lblCelda
-            // 
-            this.lblCelda.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblCelda.AutoSize = true;
-            this.lblCelda.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCelda.Location = new System.Drawing.Point(34, 168);
-            this.lblCelda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCelda.Name = "lblCelda";
-            this.lblCelda.Size = new System.Drawing.Size(89, 29);
-            this.lblCelda.TabIndex = 42;
-            this.lblCelda.Text = "Celda:";
             // 
             // txtCorreo
             // 
@@ -208,7 +183,7 @@
             "Hombre",
             "Mujer",
             "Otro"});
-            this.cmbSexo.Location = new System.Drawing.Point(463, 125);
+            this.cmbSexo.Location = new System.Drawing.Point(457, 131);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(132, 37);
             this.cmbSexo.TabIndex = 35;
@@ -217,7 +192,7 @@
             // 
             this.lblSexo.AutoSize = true;
             this.lblSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSexo.Location = new System.Drawing.Point(377, 128);
+            this.lblSexo.Location = new System.Drawing.Point(371, 134);
             this.lblSexo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(79, 29);
@@ -236,7 +211,7 @@
             "COCINA",
             "ENFERMERIA",
             "ADMINISTRACION"});
-            this.cmbPuesto.Location = new System.Drawing.Point(138, 122);
+            this.cmbPuesto.Location = new System.Drawing.Point(131, 145);
             this.cmbPuesto.Name = "cmbPuesto";
             this.cmbPuesto.Size = new System.Drawing.Size(204, 37);
             this.cmbPuesto.TabIndex = 33;
@@ -247,7 +222,7 @@
             this.lblPuesto.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPuesto.AutoSize = true;
             this.lblPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPuesto.Location = new System.Drawing.Point(25, 125);
+            this.lblPuesto.Location = new System.Drawing.Point(18, 148);
             this.lblPuesto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPuesto.Name = "lblPuesto";
             this.lblPuesto.Size = new System.Drawing.Size(101, 29);
@@ -279,7 +254,7 @@
             // txt_apellidos
             // 
             this.txt_apellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_apellidos.Location = new System.Drawing.Point(169, 72);
+            this.txt_apellidos.Location = new System.Drawing.Point(162, 95);
             this.txt_apellidos.Margin = new System.Windows.Forms.Padding(4);
             this.txt_apellidos.Name = "txt_apellidos";
             this.txt_apellidos.Size = new System.Drawing.Size(264, 34);
@@ -289,7 +264,7 @@
             // 
             this.lblApellidos.AutoSize = true;
             this.lblApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellidos.Location = new System.Drawing.Point(27, 77);
+            this.lblApellidos.Location = new System.Drawing.Point(20, 100);
             this.lblApellidos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblApellidos.Name = "lblApellidos";
             this.lblApellidos.Size = new System.Drawing.Size(130, 29);
@@ -299,7 +274,7 @@
             // txt_pnombre
             // 
             this.txt_pnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pnombre.Location = new System.Drawing.Point(151, 30);
+            this.txt_pnombre.Location = new System.Drawing.Point(144, 53);
             this.txt_pnombre.Margin = new System.Windows.Forms.Padding(4);
             this.txt_pnombre.Name = "txt_pnombre";
             this.txt_pnombre.Size = new System.Drawing.Size(132, 34);
@@ -309,7 +284,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(29, 33);
+            this.lblNombre.Location = new System.Drawing.Point(22, 56);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(114, 29);
@@ -348,7 +323,7 @@
             this.cmbturno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbturno.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbturno.FormattingEnabled = true;
-            this.cmbturno.Location = new System.Drawing.Point(463, 168);
+            this.cmbturno.Location = new System.Drawing.Point(457, 174);
             this.cmbturno.Name = "cmbturno";
             this.cmbturno.Size = new System.Drawing.Size(132, 37);
             this.cmbturno.TabIndex = 49;
@@ -358,7 +333,7 @@
             this.lblTurno.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTurno.AutoSize = true;
             this.lblTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTurno.Location = new System.Drawing.Point(367, 171);
+            this.lblTurno.Location = new System.Drawing.Point(361, 177);
             this.lblTurno.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTurno.Name = "lblTurno";
             this.lblTurno.Size = new System.Drawing.Size(89, 29);
@@ -405,8 +380,6 @@
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.lblTelefono);
-            this.Controls.Add(this.cmbCelda);
-            this.Controls.Add(this.lblCelda);
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.lblCorreo);
             this.Controls.Add(this.txtCodigopostal);
@@ -441,8 +414,6 @@
         private System.Windows.Forms.Button btnAñadir;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblTelefono;
-        private System.Windows.Forms.ComboBox cmbCelda;
-        private System.Windows.Forms.Label lblCelda;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.TextBox txtCodigopostal;

@@ -63,7 +63,7 @@ namespace PROYECTO
 
 
                     Preso p1 = new Preso(txt_nifPreso.Text, txt_pnombre.Text, txt_apellidos.Text, int.Parse(cmbCrimen.Text), cmbSexo.Text
-                        , txtDireccion.Text, int.Parse(txtCodigopostal.Text), txtCorreo.Text, int.Parse(cmbCelda.Text), pcboxFoto.Image, int.Parse(txtTelefono.Text));
+                        , txtDireccion.Text, int.Parse(txtCodigopostal.Text), txtCorreo.Text, int.Parse(cmbCelda.Text),1, pcboxFoto.Image, int.Parse(txtTelefono.Text));
                     p1.AgregarPreso();
 
                     List<int> lista = Crimen.MostrarIdCrimenes();

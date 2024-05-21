@@ -22,6 +22,7 @@ namespace PROYECTO
         private int codigoPostal;
         private string correo;
         private int celda;
+        private int presente;
         private int telefono;
         private Image foto;
 
@@ -36,12 +37,14 @@ namespace PROYECTO
         public int CodigoPostal { get { return codigoPostal; } }
         public string Correo { get { return correo; } }
         public int Celda { get { return celda; } }
+        public int Presente { get { return presente; } }
+
         public int Telefono { get { return telefono; } }
 
         public Image Foto { get { return foto; } }
 
 
-        public Preso(string Nif, string Nombre, string Apellidos, int Crimen, string Sexo, string Direccion, int CodigoPostal, string Correo, int Celda, Image fot,int tel)
+        public Preso(string Nif, string Nombre, string Apellidos, int Crimen, string Sexo, string Direccion, int CodigoPostal, string Correo, int Celda,int pres, Image fot,int tel)
         {
             this.nif = Nif;
             this.nombre = Nombre;
@@ -52,6 +55,7 @@ namespace PROYECTO
             this.codigoPostal = CodigoPostal;
             this.correo = Correo;
             this.celda = Celda;
+            presente = pres;
             this.foto = fot;
             telefono = tel;
 
@@ -84,7 +88,7 @@ namespace PROYECTO
                         Image foto = Image.FromStream(ms);
 
                         Preso user = new Preso(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                        reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8),foto, reader.GetInt32(9));
+                        reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8), reader.GetInt32(9),foto, reader.GetInt32(10));
                         lista.Add(user);
                     }
                     ConexionBD.CerrarConexion();
@@ -127,7 +131,7 @@ namespace PROYECTO
                         Image foto = Image.FromStream(ms);
 
                         Preso user = new Preso(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                        reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8),foto, reader.GetInt32(9));
+                        reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8), reader.GetInt32(9), foto, reader.GetInt32(10));
                         lista.Add(user);
                     }
                     ConexionBD.CerrarConexion();
@@ -160,8 +164,8 @@ namespace PROYECTO
                     this.foto.Save(ms, ImageFormat.Jpeg);
                     byte[] aByte = ms.ToArray();
 
-                    string consulta = String.Format("INSERT INTO presos (nif,nombre,apellidos,crimen,sexo,direccion,codigopostal,correo,celda,telefono,foto) VALUES " +
-                        "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}',@imagen)",this.nif,this.nombre,this.apellidos, crimen, sexo, direccion, codigoPostal, correo, celda, telefono);
+                    string consulta = String.Format("INSERT INTO presos (nif,nombre,apellidos,crimen,sexo,direccion,codigopostal,correo,celda,presente,telefono,foto) VALUES " +
+                        "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}',@imagen)",this.nif,this.nombre,this.apellidos, crimen, sexo, direccion, codigoPostal, correo, celda, 1, telefono);
 
 
                     MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
@@ -213,7 +217,7 @@ namespace PROYECTO
                         Image foto = Image.FromStream(ms);
 
                         Preso user = new Preso(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                        reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8), foto, reader.GetInt32(9));
+                        reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8), reader.GetInt32(9), foto, reader.GetInt32(10));
                         lista.Add(user);
                     }
                     ConexionBD.CerrarConexion();

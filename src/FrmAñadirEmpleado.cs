@@ -29,11 +29,7 @@ namespace PROYECTO
         {
 
             List<int> celdas = Celda.MostrarIdCeldas();
-            for (int i = 0; i < celdas.Count; i++)
-            {
-                cmbCelda.Items.Add(celdas[i].ToString());
-            }
-
+          
 
             List<string> turnos = Empleado.MostrarTurnos();
             for (int i = 0; i < turnos.Count; i++)
@@ -86,7 +82,7 @@ namespace PROYECTO
 
 
                     Empleado p1 = new Empleado(txt_nifempleado.Text, txt_pnombre.Text, txt_apellidos.Text,cmbPuesto.Text,cmbSexo.Text,cmbturno.Text,txtDireccion.Text
-                        ,int.Parse(txtCodigopostal.Text),txtCorreo.Text,int.Parse(cmbCelda.Text),pcboxFoto.Image,int.Parse(txtTelefono.Text),txtContraseña.Text);
+                        ,int.Parse(txtCodigopostal.Text),txtCorreo.Text,1,pcboxFoto.Image,int.Parse(txtTelefono.Text),txtContraseña.Text);
                     p1.AgregarEmpleado();
 
                     frm.Actualizardgv();

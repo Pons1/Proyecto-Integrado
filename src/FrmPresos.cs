@@ -100,7 +100,7 @@ namespace PROYECTO
 
                 Image img =Preso.ConsultarImagenPreso(id);
 
-                Preso p1 =new Preso(id,nombre,apellidos,crimen,sexo,direccion,codigoPostal,correo,celda,img,tel);
+                Preso p1 =new Preso(id,nombre,apellidos,crimen,sexo,direccion,codigoPostal,correo,celda,0,img,tel);
 
                 FrmFichaPreso frmFichaPreso = new FrmFichaPreso(p1,this);
                 frmFichaPreso.Show();
