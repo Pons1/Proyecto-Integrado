@@ -34,7 +34,7 @@ namespace PROYECTO
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             string nif = mtxtNif.Text.Replace("-", "");
-            if (Empleado.ComprobarRegistro(nif,txtContraseña.Text))
+            if (Empleado.ComprobarRegistro(nif,txtContraseña.Text) == false)
             {
                 
                 FrmPpal frmPpal = new FrmPpal();

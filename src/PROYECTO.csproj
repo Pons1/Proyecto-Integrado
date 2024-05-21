@@ -269,10 +269,13 @@
     <None Include="Resources\def.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\mapa-mejorado.png" />
     <None Include="Resources\logo.png" />
     <None Include="Resources\cerrar1.png" />
     <None Include="Resources\boton-x.png" />
     <None Include="Resources\icons8-cerrar-ventana-64.png" />
+    <None Include="Resources\arrow-25-24.png" />
+    <None Include="Resources\arrow-88-32.png" />
     <Content Include="Resources\logo1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
