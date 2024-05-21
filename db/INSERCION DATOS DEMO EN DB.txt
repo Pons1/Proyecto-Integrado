@@ -46,7 +46,7 @@ INSERT INTO turnos (Turno, HoraEntrada, HoraSalida) VALUES
 ('TARDE', '16:00:00', '00:00:00'), 
 ('NOCHE', '00:00:00', '08:00:00');
 
-INSERT INTO puertas (Zona, Modulo) VALUES 
+INSERT INTO puertas (Zona, Modulo,abierto) VALUES 
 ('PATIO', 'A',1), 
 ('PATIO', 'B',1), 
 ('CONTROL', 'A',1),
