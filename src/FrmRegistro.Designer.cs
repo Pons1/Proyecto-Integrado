@@ -36,6 +36,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblFiltrarPorFecha = new System.Windows.Forms.Label();
             this.pcbLupa = new System.Windows.Forms.PictureBox();
+            this.btnRefrescar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLupa)).BeginInit();
             this.SuspendLayout();
@@ -144,12 +145,23 @@
             this.pcbLupa.TabStop = false;
             this.pcbLupa.Click += new System.EventHandler(this.pcbLupa_Click);
             // 
+            // btnRefrescar
+            // 
+            this.btnRefrescar.Location = new System.Drawing.Point(297, 78);
+            this.btnRefrescar.Name = "btnRefrescar";
+            this.btnRefrescar.Size = new System.Drawing.Size(93, 23);
+            this.btnRefrescar.TabIndex = 15;
+            this.btnRefrescar.Text = "Refrescar";
+            this.btnRefrescar.UseVisualStyleBackColor = true;
+            this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
+            // 
             // FrmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(190)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1011, 505);
+            this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.pcbLupa);
             this.Controls.Add(this.lblFiltrarPorFecha);
             this.Controls.Add(this.textBox1);
@@ -179,5 +191,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblFiltrarPorFecha;
         private System.Windows.Forms.PictureBox pcbLupa;
+        private System.Windows.Forms.Button btnRefrescar;
     }
 }
