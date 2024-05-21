@@ -17,6 +17,8 @@ namespace PROYECTO
         public frmLogIn()
         {
             InitializeComponent();
+            mtxtNif.TextChanged += mtxtNif_TextChanged;
+            string nif = mtxtNif.Text.Replace("-", "");
         }
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
@@ -31,7 +33,8 @@ namespace PROYECTO
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            if (/*Empleado.ComprobarRegistro(txtUsuario.Text,txtContraseña.Text)*/ true)
+            string nif = mtxtNif.Text.Replace("-", "");
+            if (Empleado.ComprobarRegistro(nif,txtContraseña.Text) == false)
             {
                 
                 FrmPpal frmPpal = new FrmPpal();
@@ -43,11 +46,11 @@ namespace PROYECTO
             else
             {
                 MessageBox.Show("Usuario/Contraseña incorrecto");
-                string body = "Se ha detectado un intento de inicio de sesion con el nombre o nif: " + txtUsuario.Text;
-                Correo alerta = new Correo("centralisgrupo@gmail.com", "Intento Inicio De Secion", body);
+                string body = "Se ha detectado un intento de inicio de sesion con el nombre o nif: <span Style=\"color: red;\">" + nif+ "</span>";
+                Correo alerta = new Correo("centralisgrupo@gmail.com", "Intento Inicio De Sesion", body);
                 alerta.EnviarCorreo(false);
                 txtContraseña.Clear();
-                txtUsuario.Clear();
+                mtxtNif.Clear();
                 
             }
         }
@@ -83,6 +86,20 @@ namespace PROYECTO
         private void frmLogIn_Load(object sender, EventArgs e)
         {
 
+        }
+
+
+
+        private void mtxtNif_TextChanged(object sender, EventArgs e)
+        {
+            // Obtener el texto del MaskedTextBox
+            string texto = mtxtNif.Text;
+            // Convertir el texto a mayúsculas
+            texto = texto.ToUpper();
+            // Establecer el texto convertido de nuevo en el MaskedTextBox
+            mtxtNif.Text = texto;
+            // Mover el cursor al final del texto
+            mtxtNif.SelectionStart = mtxtNif.Text.Length;
         }
     }
 }

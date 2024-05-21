@@ -30,19 +30,19 @@
         {
             this.LBLNIF = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.TitleBar = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.linklbl_paginaweb = new System.Windows.Forms.LinkLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mtxtNif = new System.Windows.Forms.MaskedTextBox();
             this.TitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LBLNIF
@@ -66,18 +66,6 @@
             this.lblContraseña.Size = new System.Drawing.Size(131, 25);
             this.lblContraseña.TabIndex = 1;
             this.lblContraseña.Text = "Contraseña:";
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
-            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtUsuario.Location = new System.Drawing.Point(479, 101);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUsuario.MaxLength = 9;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(389, 34);
-            this.txtUsuario.TabIndex = 2;
             // 
             // txtContraseña
             // 
@@ -117,6 +105,18 @@
             this.TitleBar.TabIndex = 6;
             this.TitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleBar_MouseDown);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PROYECTO.Properties.Resources.boton_x;
+            this.pictureBox1.Location = new System.Drawing.Point(1029, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(27, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(74)))), ((int)(((byte)(173)))));
@@ -127,6 +127,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(276, 413);
             this.panel2.TabIndex = 8;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PROYECTO.Properties.Resources.logo;
+            this.pictureBox2.Location = new System.Drawing.Point(16, 64);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(182, 222);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // label1
             // 
@@ -155,28 +166,16 @@
             this.linklbl_paginaweb.Text = "Acceder a la página web";
             this.linklbl_paginaweb.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklbl_paginaweb_LinkClicked);
             // 
-            // pictureBox2
+            // mtxtNif
             // 
-            this.pictureBox2.Image = global::PROYECTO.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(16, 64);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(182, 222);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PROYECTO.Properties.Resources.boton_x;
-            this.pictureBox1.Location = new System.Drawing.Point(1029, 5);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.mtxtNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtNif.Location = new System.Drawing.Point(544, 69);
+            this.mtxtNif.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mtxtNif.Mask = "00000000-L";
+            this.mtxtNif.Name = "mtxtNif";
+            this.mtxtNif.Size = new System.Drawing.Size(449, 75);
+            this.mtxtNif.TabIndex = 11;
+            this.mtxtNif.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frmLogIn
             // 
@@ -184,13 +183,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(104)))));
             this.ClientSize = new System.Drawing.Size(1067, 450);
+            this.Controls.Add(this.mtxtNif);
             this.Controls.Add(this.linklbl_paginaweb);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.TitleBar);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtContraseña);
-            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.LBLNIF);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -200,10 +199,10 @@
             this.Text = "frmLogIn";
             this.Load += new System.EventHandler(this.frmLogIn_Load);
             this.TitleBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,7 +212,6 @@
 
         private System.Windows.Forms.Label LBLNIF;
         private System.Windows.Forms.Label lblContraseña;
-        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Panel TitleBar;
@@ -222,5 +220,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linklbl_paginaweb;
+        private System.Windows.Forms.MaskedTextBox mtxtNif;
     }
 }

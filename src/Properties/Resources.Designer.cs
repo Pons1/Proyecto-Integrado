@@ -103,6 +103,26 @@ namespace PROYECTO.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_25_24 {
+            get {
+                object obj = ResourceManager.GetObject("arrow-25-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_88_32 {
+            get {
+                object obj = ResourceManager.GetObject("arrow-88-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap boton_x {
             get {
                 object obj = ResourceManager.GetObject("boton-x", resourceCulture);
@@ -206,6 +226,16 @@ namespace PROYECTO.Properties {
         internal static System.Drawing.Bitmap map_4_32 {
             get {
                 object obj = ResourceManager.GetObject("map-4-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mapa_mejorado {
+            get {
+                object obj = ResourceManager.GetObject("mapa-mejorado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

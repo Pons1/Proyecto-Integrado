@@ -90,5 +90,19 @@ namespace PROYECTO
         {
             this.Close();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            panel1.Width = 10;
+            pic_cerrar.Visible = false;
+            pic_abrir.Visible = true;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            panel1.Width = 215;
+            pic_cerrar.Visible = true;
+            pic_abrir.Visible = false;
+        }
     }
 }

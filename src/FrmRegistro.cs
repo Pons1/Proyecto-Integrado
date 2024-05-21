@@ -102,9 +102,11 @@ namespace PROYECTO
             }
         }
 
-        private void FrmRegistro_Load(object sender, EventArgs e)
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
         {
-            dtpFechaInicio.MaxDate=dtpFechaFin.Value;
+            CargarRegistros();
+
         }
     }
 }
