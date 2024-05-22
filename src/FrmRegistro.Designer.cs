@@ -39,8 +39,14 @@ namespace PROYECTO
             this.lblFiltrarPorFecha = new System.Windows.Forms.Label();
             this.pcbLupa = new System.Windows.Forms.PictureBox();
             this.btnRefrescar = new System.Windows.Forms.Button();
+            this.grbSeleccionRegistro = new System.Windows.Forms.GroupBox();
+            this.rbtnEmpleado = new System.Windows.Forms.RadioButton();
+            this.rbtnPreso = new System.Windows.Forms.RadioButton();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLupa)).BeginInit();
+            this.grbSeleccionRegistro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_añadir_registro
@@ -63,7 +69,7 @@ namespace PROYECTO
             this.lblFiltrarPorTexto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFiltrarPorTexto.AutoSize = true;
             this.lblFiltrarPorTexto.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltrarPorTexto.Location = new System.Drawing.Point(266, 40);
+            this.lblFiltrarPorTexto.Location = new System.Drawing.Point(234, 40);
             this.lblFiltrarPorTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFiltrarPorTexto.Name = "lblFiltrarPorTexto";
             this.lblFiltrarPorTexto.Size = new System.Drawing.Size(153, 23);
@@ -151,7 +157,7 @@ namespace PROYECTO
             // 
             // btnRefrescar
             // 
-            this.btnRefrescar.Location = new System.Drawing.Point(297, 78);
+            this.btnRefrescar.Location = new System.Drawing.Point(273, 78);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Size = new System.Drawing.Size(93, 23);
             this.btnRefrescar.TabIndex = 15;
@@ -159,12 +165,64 @@ namespace PROYECTO
             this.btnRefrescar.UseVisualStyleBackColor = true;
             this.btnRefrescar.Click += new System.EventHandler(this.btnRefrescar_Click);
             // 
+            // grbSeleccionRegistro
+            // 
+            this.grbSeleccionRegistro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.grbSeleccionRegistro.Controls.Add(this.rbtnEmpleado);
+            this.grbSeleccionRegistro.Controls.Add(this.rbtnPreso);
+            this.grbSeleccionRegistro.Location = new System.Drawing.Point(446, 68);
+            this.grbSeleccionRegistro.Name = "grbSeleccionRegistro";
+            this.grbSeleccionRegistro.Size = new System.Drawing.Size(175, 34);
+            this.grbSeleccionRegistro.TabIndex = 18;
+            this.grbSeleccionRegistro.TabStop = false;
+            // 
+            // rbtnEmpleado
+            // 
+            this.rbtnEmpleado.AutoSize = true;
+            this.rbtnEmpleado.Location = new System.Drawing.Point(5, 11);
+            this.rbtnEmpleado.Name = "rbtnEmpleado";
+            this.rbtnEmpleado.Size = new System.Drawing.Size(91, 20);
+            this.rbtnEmpleado.TabIndex = 1;
+            this.rbtnEmpleado.Text = "Empleado";
+            this.rbtnEmpleado.UseVisualStyleBackColor = true;
+            this.rbtnEmpleado.CheckedChanged += new System.EventHandler(this.rbtnEmpleado_CheckedChanged);
+            // 
+            // rbtnPreso
+            // 
+            this.rbtnPreso.AutoSize = true;
+            this.rbtnPreso.Location = new System.Drawing.Point(105, 11);
+            this.rbtnPreso.Name = "rbtnPreso";
+            this.rbtnPreso.Size = new System.Drawing.Size(64, 20);
+            this.rbtnPreso.TabIndex = 0;
+            this.rbtnPreso.Text = "Preso";
+            this.rbtnPreso.UseVisualStyleBackColor = true;
+            this.rbtnPreso.CheckedChanged += new System.EventHandler(this.rbtnPreso_CheckedChanged);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(36, 108);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.Size = new System.Drawing.Size(915, 370);
+            this.dataGridView2.TabIndex = 19;
+            // 
             // FrmRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(190)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1011, 505);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.grbSeleccionRegistro);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.pcbLupa);
             this.Controls.Add(this.lblFiltrarPorFecha);
@@ -181,15 +239,15 @@ namespace PROYECTO
             this.Load += new System.EventHandler(this.FrmRegistro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLupa)).EndInit();
+            this.grbSeleccionRegistro.ResumeLayout(false);
+            this.grbSeleccionRegistro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-        private void FrmRegistro_Load(object sender, EventArgs e)
-        {
-            
-        }
+      
 
         #endregion
 
@@ -202,5 +260,9 @@ namespace PROYECTO
         private System.Windows.Forms.Label lblFiltrarPorFecha;
         private System.Windows.Forms.PictureBox pcbLupa;
         private System.Windows.Forms.Button btnRefrescar;
+        private System.Windows.Forms.GroupBox grbSeleccionRegistro;
+        private System.Windows.Forms.RadioButton rbtnEmpleado;
+        private System.Windows.Forms.RadioButton rbtnPreso;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

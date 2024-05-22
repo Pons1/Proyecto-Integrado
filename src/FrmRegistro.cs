@@ -16,18 +16,23 @@ namespace PROYECTO
         public FrmRegistro()
         {
             InitializeComponent();
+            rbtnPreso.Checked = true;
             CargarRegistros();
         }
 
 
 
 
-      private void CargarRegistros()
+        private void CargarRegistros()
         {
             try
             {
-                DataTable dtRegistros = Registros.ObtenerRegistrosConPresos();
-                dataGridView1.DataSource = dtRegistros;
+                DataTable dtRegistrosPresos = Registros.ObtenerRegistrosPresos();
+                dataGridView1.DataSource = dtRegistrosPresos;
+
+                DataTable dtRegistrosEmpleados = Registros.ObtenerRegistrosEmpleados();
+                dataGridView2.DataSource = dtRegistrosEmpleados;
+
             }
             catch (Exception ex)
             {
@@ -44,7 +49,8 @@ namespace PROYECTO
 
         private void btn_añadir_registro_Click(object sender, EventArgs e)
         {
-
+            FrmAñadirRegistro frm = new FrmAñadirRegistro();
+            frm.ShowDialog();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -93,8 +99,18 @@ namespace PROYECTO
                     return;
                 }
 
-                DataTable dtRegistros = Registros.ObtenerRegistros(fechaInicio, fechaFin);
-                dataGridView1.DataSource = dtRegistros;
+                if (rbtnPreso.Checked)
+                {
+                    DataTable dtRegistros = Registros.ObtenerRegistrosPresos(fechaInicio, fechaFin);
+                    dataGridView1.DataSource = dtRegistros;
+                }
+
+                if (rbtnEmpleado.Checked)
+                {
+                    DataTable dtRegistros = Registros.ObtenerRegistrosEmpleados(fechaInicio, fechaFin);
+                    dataGridView2.DataSource = dtRegistros;
+                }
+
             }
             catch (Exception ex)
             {
@@ -102,11 +118,26 @@ namespace PROYECTO
             }
         }
 
-
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             CargarRegistros();
+        }
 
+        private void FrmRegistro_Load(object sender, EventArgs e)
+        {
+            rbtnPreso.Checked = true;
+        }
+
+        private void rbtnPreso_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridView1.Show();
+            dataGridView2.Hide();
+        }
+
+        private void rbtnEmpleado_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridView1.Hide();
+            dataGridView2.Show();
         }
     }
 }

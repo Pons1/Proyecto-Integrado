@@ -61,7 +61,180 @@ namespace PROYECTO
 
 
         }
-     
+
+        public static bool MarcarPresente(string nif)
+        {
+            bool exito = false;
+
+            if (ConexionBD.Conexion != null)
+            {
+                try
+                {
+                    ConexionBD.AbrirConexion();
+
+
+                    string consulta = String.Format("SELECT Presente FROM presos WHERE NIF = '{0}';", nif);
+                    MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+                    object resultado = comando.ExecuteScalar();
+
+                    if (resultado != null)
+                    {
+                        int presente = Convert.ToInt32(resultado);
+                        int nuevoEstado = (presente == 1) ? 0 : 1;
+
+
+                        string updateConsulta = String.Format("UPDATE presos SET Presente = {1} WHERE NIF = '{0}';", nif, nuevoEstado);
+                        MySqlCommand updateComando = new MySqlCommand(updateConsulta, ConexionBD.Conexion);
+                        int filasAfectadas = updateComando.ExecuteNonQuery();
+
+                        if (filasAfectadas > 0)
+                        {
+                            exito = true;
+                        }
+                    }
+
+                    ConexionBD.CerrarConexion();
+                }
+                catch (Exception ex)
+                {
+                    ConexionBD.CerrarConexion();
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            return exito;
+        }
+
+        public static bool MarcarBorrado(string nif)
+        {
+            bool exito = false;
+
+            if (ConexionBD.Conexion != null)
+            {
+                try
+                {
+                    ConexionBD.AbrirConexion();
+
+                    string consulta = String.Format("UPDATE presos SET presente = 1 WHERE NIF = '{0}';", nif);
+
+                    MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+                    int filasAfectadas = comando.ExecuteNonQuery();
+
+                    if (filasAfectadas > 0)
+                    {
+                        exito = true;
+                    }
+
+                    ConexionBD.CerrarConexion();
+                }
+                catch (Exception ex)
+                {
+                    ConexionBD.CerrarConexion();
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            return exito;
+        }
+
+        public static bool EstaPresente(string nif)
+        {
+            bool presente = false;
+
+            if (ConexionBD.Conexion != null)
+            {
+                try
+                {
+                    ConexionBD.AbrirConexion();
+
+                    string consulta = String.Format("SELECT Presente FROM presos WHERE NIF = '{0}';", nif);
+
+                    MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+                    object resultado = comando.ExecuteScalar();
+
+                    if (resultado != null)
+                    {
+                        presente = Convert.ToInt32(resultado) == 1;
+                    }
+
+                    ConexionBD.CerrarConexion();
+                }
+                catch (Exception ex)
+                {
+                    ConexionBD.CerrarConexion();
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            return presente;
+        }
+
+
+        public static bool EstaBorrado(string nif)
+        {
+            bool presente = false;
+
+            if (ConexionBD.Conexion != null)
+            {
+                try
+                {
+                    ConexionBD.AbrirConexion();
+
+                    string consulta = String.Format("SELECT Borrado FROM presos WHERE NIF = '{0}';", nif);
+
+                    MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+                    object resultado = comando.ExecuteScalar();
+
+                    if (resultado != null)
+                    {
+                        presente = Convert.ToInt32(resultado) == 1;
+                    }
+
+                    ConexionBD.CerrarConexion();
+                }
+                catch (Exception ex)
+                {
+                    ConexionBD.CerrarConexion();
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            return presente;
+        }
+
+
+        public static bool PresoRegistrado(string nif)
+        {
+            bool registrado = false;
+
+            if (ConexionBD.Conexion != null)
+            {
+                try
+                {
+                    ConexionBD.AbrirConexion();
+
+                    string consulta = String.Format("SELECT COUNT(*) FROM presos WHERE NIF = '{0}';", nif);
+
+                    MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+                    object resultado = comando.ExecuteScalar();
+
+                    if (resultado != null)
+                    {
+                        registrado = Convert.ToInt32(resultado) > 0;
+                    }
+
+                    ConexionBD.CerrarConexion();
+                }
+                catch (Exception ex)
+                {
+                    ConexionBD.CerrarConexion();
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            return registrado;
+        }
+
 
         public static List<Preso> MostrarPresos()
         {

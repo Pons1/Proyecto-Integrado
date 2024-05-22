@@ -186,6 +186,20 @@ INSERT INTO empleados (NIF, Nombre, Apellidos, Puesto, Contraseña, Sexo, Turno,
 ('34574628Q', 'Laura', 'Perez', 'ENFERMERIA', 'pass321', 'F', 'MAÑANA', 'Calle Mayor 123', 1, '28009', 'laura.perez@example.com', '600901234', NULL),
 ('52673662M', 'Carmen', 'Lopez', 'ADMINISTRACION', 'pass654', 'F', 'NOCHE', 'Avenida de la Paz 234', 1, '28010', 'carmen.lopez@example.com', '600012345', NULL);
 
+
+INSERT INTO registros (Tipo, EmpleadoNIF, Fecha) VALUES 
+('ENTRADA', '24186930S', NOW()),
+('ENTRADA', '53445183Z', NOW()),
+('ENTRADA', '95336396Q', NOW()),
+('ENTRADA', '71916562R', NOW()),
+('ENTRADA', '03909618D', NOW()),
+('ENTRADA', '39329037A', NOW()),
+('ENTRADA', '88118162X', NOW()),
+('ENTRADA', '36711488S', NOW()),
+('ENTRADA', '34574628Q', NOW()),
+('ENTRADA', '52673662M', NOW());
+
+
 INSERT INTO presos (NIF, Nombre, Apellidos, Crimen, Sexo, Direccion, CodigoPostal, Correo, Celda, Presente, Telefono, Foto) VALUES 
 ('76805228V', 'Pablo', 'Gonzalez', 1, 'M', 'Calle Mayor 1', '28001', 'pablo.gonzalez@example.com', 1, 1, '600111111', NULL),
 ('17518448S', 'Javier', 'Rodriguez', 2, 'M', 'Calle Real 2', '28002', 'javier.rodriguez@example.com', 2, 1, '600222222', NULL),

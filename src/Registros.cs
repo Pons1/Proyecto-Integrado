@@ -1,57 +1,52 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PROYECTO
 {
     public class Registros
     {
-        public static DataTable ObtenerRegistrosConPresos()
+        // Métodos para obtener registros
+
+        // Obtener registros de presos
+        public static DataTable ObtenerRegistrosPresos()
         {
             DataTable dt = new DataTable();
 
-            if (ConexionBD.Conexion != null)
+            try
             {
-                try
+                using (MySqlConnection conn = ConexionBD.Conexion)
                 {
-                    ConexionBD.AbrirConexion();
-
+                    conn.Open();
                     string query = "SELECT CodigoRegistro, Tipo, PresoNIF, Motivo, Fecha FROM registros WHERE PresoNIF IS NOT NULL;";
-                    MySqlCommand cmd = new MySqlCommand(query, ConexionBD.Conexion);
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(dt);
-
-                    ConexionBD.CerrarConexion();
                 }
-                catch (Exception ex)
-                {
-                    ConexionBD.CerrarConexion();
-                    throw new Exception("Error al obtener los registros: " + ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener los registros de presos: " + ex.Message);
             }
 
             return dt;
         }
 
-
-        public static DataTable ObtenerRegistros(DateTime fechaInicio, DateTime fechaFin)
+        // Obtener registros de presos por rango de fechas
+        public static DataTable ObtenerRegistrosPresos(DateTime fechaInicio, DateTime fechaFin)
         {
             DataTable dtRegistros = new DataTable();
+
             try
             {
                 using (MySqlConnection conn = ConexionBD.Conexion)
                 {
                     conn.Open();
                     string query = @"SELECT CodigoRegistro, Tipo, PresoNIF, Motivo, Fecha 
-                             FROM registros 
-                             WHERE PresoNIF IS NOT NULL 
-                             AND DATE(Fecha) BETWEEN @FechaInicio AND @FechaFin";
+                                     FROM registros 
+                                     WHERE PresoNIF IS NOT NULL 
+                                     AND DATE(Fecha) BETWEEN @FechaInicio AND @FechaFin";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
-                    // Convertir las fechas al formato 'yyyy-MM-dd' para la consulta SQL
                     cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio.ToString("yyyy-MM-dd"));
                     cmd.Parameters.AddWithValue("@FechaFin", fechaFin.ToString("yyyy-MM-dd"));
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -60,13 +55,110 @@ namespace PROYECTO
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception("Error al obtener los registros de presos por rango de fechas: " + ex.Message);
             }
+
             return dtRegistros;
         }
 
+        // Obtener registros de empleados
+        public static DataTable ObtenerRegistrosEmpleados()
+        {
+            DataTable dt = new DataTable();
 
+            try
+            {
+                using (MySqlConnection conn = ConexionBD.Conexion)
+                {
+                    conn.Open();
+                    string query = "SELECT CodigoRegistro, Tipo, EmpleadoNIF, Fecha FROM registros WHERE EmpleadoNIF IS NOT NULL;";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener los registros de empleados: " + ex.Message);
+            }
 
+            return dt;
+        }
+
+        // Obtener registros de empleados por rango de fechas
+        public static DataTable ObtenerRegistrosEmpleados(DateTime fechaInicio, DateTime fechaFin)
+        {
+            DataTable dtRegistros = new DataTable();
+
+            try
+            {
+                using (MySqlConnection conn = ConexionBD.Conexion)
+                {
+                    conn.Open();
+                    string query = @"SELECT CodigoRegistro, Tipo, EmpleadoNIF, Fecha 
+                                     FROM registros 
+                                     WHERE EmpleadoNIF IS NOT NULL 
+                                     AND DATE(Fecha) BETWEEN @FechaInicio AND @FechaFin";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio.ToString("yyyy-MM-dd"));
+                    cmd.Parameters.AddWithValue("@FechaFin", fechaFin.ToString("yyyy-MM-dd"));
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(dtRegistros);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener los registros de empleados por rango de fechas: " + ex.Message);
+            }
+
+            return dtRegistros;
+        }
+
+        // Método para agregar un nuevo registro
+        public static int AgregarRegistroPreso(string tipoRegistro, string presoNIF, string motivo = null)
+        {
+            try
+            {
+                using (MySqlConnection conn = ConexionBD.Conexion)
+                {
+                    conn.Open();
+                    string query = @"INSERT INTO registros (Tipo, PresoNIF, Motivo, Fecha)
+                             VALUES (@Tipo, @PresoNIF, @Motivo, NOW())";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Tipo", tipoRegistro);
+                    cmd.Parameters.AddWithValue("@PresoNIF", presoNIF);
+                    cmd.Parameters.AddWithValue("@Motivo", (tipoRegistro == "SALIDA" && motivo != null) ? motivo : (object)DBNull.Value);
+
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al agregar el registro del preso: " + ex.Message);
+            }
+        }
+
+        public static int AgregarRegistroEmpleado(string tipoRegistro, string empleadoNIF)
+        {
+            try
+            {
+                using (MySqlConnection conn = ConexionBD.Conexion)
+                {
+                    conn.Open();
+                    string query = @"INSERT INTO registros (Tipo, EmpleadoNIF, Fecha)
+                             VALUES (@Tipo, @EmpleadoNIF, NOW())";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Tipo", tipoRegistro);
+                    cmd.Parameters.AddWithValue("@EmpleadoNIF", empleadoNIF);
+
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al agregar el registro del empleado: " + ex.Message);
+            }
+        }
 
     }
 }

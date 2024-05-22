@@ -65,6 +65,171 @@ namespace PROYECTO
 
 
         }
+
+
+        public static bool EstaBorrado(string nif)
+        {
+            bool presente = false;
+
+            if (ConexionBD.Conexion != null)
+            {
+                try
+                {
+                    ConexionBD.AbrirConexion();
+
+                    string consulta = String.Format("SELECT Borrado FROM empleados WHERE NIF = '{0}';", nif);
+
+                    MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+                    object resultado = comando.ExecuteScalar();
+
+                    if (resultado != null)
+                    {
+                        presente = Convert.ToInt32(resultado) == 1;
+                    }
+
+                    ConexionBD.CerrarConexion();
+                }
+                catch (Exception ex)
+                {
+                    ConexionBD.CerrarConexion();
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            return presente;
+        }
+
+
+
+        public static bool EmpleadoRegistrado(string nif)
+        {
+            bool registrado = false;
+
+            if (ConexionBD.Conexion != null)
+            {
+                try
+                {
+                    ConexionBD.AbrirConexion();
+
+                    string consulta = String.Format("SELECT COUNT(*) FROM empleados WHERE NIF = '{0}';", nif);
+
+                    MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+                    object resultado = comando.ExecuteScalar();
+
+                    if (resultado != null)
+                    {
+                        registrado = Convert.ToInt32(resultado) > 0;
+                    }
+
+                    ConexionBD.CerrarConexion();
+                }
+                catch (Exception ex)
+                {
+                    ConexionBD.CerrarConexion();
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            return registrado;
+        }
+
+
+        public static bool VerificarPresencia(string nif)
+        {
+            if (ConexionBD.Conexion != null)
+            {
+                ConexionBD.AbrirConexion();
+
+                string consulta = String.Format("SELECT presente FROM empleados WHERE nif = '{0}';", nif);
+
+                MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+                object resultado = comando.ExecuteScalar();
+
+                ConexionBD.CerrarConexion();
+
+                return (resultado != null && Convert.ToInt32(resultado) == 1);
+            }
+            return false;
+        }
+
+
+        public static bool MarcarPresente(string nif)
+        {
+            bool exito = false;
+
+            if (ConexionBD.Conexion != null)
+            {
+                try
+                {
+                    ConexionBD.AbrirConexion();
+
+
+                    string consulta = String.Format("SELECT Presente FROM empleados WHERE NIF = '{0}';", nif);
+                    MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+                    object resultado = comando.ExecuteScalar();
+
+                    if (resultado != null)
+                    {
+                        int presente = Convert.ToInt32(resultado);
+                        int nuevoEstado = (presente == 1) ? 0 : 1;
+
+
+                        string updateConsulta = String.Format("UPDATE empleados SET Presente = {1} WHERE NIF = '{0}';", nif, nuevoEstado);
+                        MySqlCommand updateComando = new MySqlCommand(updateConsulta, ConexionBD.Conexion);
+                        int filasAfectadas = updateComando.ExecuteNonQuery();
+
+                        if (filasAfectadas > 0)
+                        {
+                            exito = true;
+                        }
+                    }
+
+                    ConexionBD.CerrarConexion();
+                }
+                catch (Exception ex)
+                {
+                    ConexionBD.CerrarConexion();
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            return exito;
+        }
+
+
+
+        public static bool DNICorrecto(string dni)
+        {
+            //Comprueba si el DNI tiene 9 digitos
+            if (dni.Length != 9)
+            {
+                return false;
+            }
+
+            string dniNumbers = dni.Substring(0, dni.Length - 1);
+            string dniLeter = dni.Substring(dni.Length - 1, 1).ToUpper();
+            //intenta parsear para comprobar si son numeros
+            var numbersValid = int.TryParse(dniNumbers, out int dniInteger);
+            if (!numbersValid)
+            {
+                //No se pudo convertir los números a formato númerico
+                return false;
+            }
+
+            string[] control = { "T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E" };
+            var mod = dniInteger % 23;
+
+            if (control[mod] != dniLeter)
+            {
+                return false;
+            }
+
+            //DNI Valido
+            return true;
+        }
+
+
+
         public static int EditarEmpleado(string ni, string nom, string ap, string puest,string sex, string tur,string dir, int cod, string corr, int tel)
         {
             int retorno = -1;
