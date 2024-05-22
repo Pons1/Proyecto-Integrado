@@ -26,8 +26,8 @@ CREATE TABLE celdas (
 );
 
 CREATE TABLE horarios (
-    CodigoHorario INT auto_increment,
-    Horario TIME NOT NULL
+    CodigoHorario INT AUTO_INCREMENT PRIMARY KEY,
+    Horario TIME NOT NULL,
     Descripcion VARCHAR(50) NOT NULL
 );
 
