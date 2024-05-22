@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using PROYECTO.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -256,9 +257,19 @@ namespace PROYECTO
                     // Recorremos el reader (registro por registro) y cargamos la lista de usuarios.
                     while (reader.Read())
                     {
-                        byte[] img = (byte[])reader["foto"];
-                        MemoryStream ms = new MemoryStream(img);
-                        Image foto = Image.FromStream(ms);
+                        Image foto = null;
+                       
+                        if (reader["foto"] == System.DBNull.Value)
+                        {
+                            foto = Resources.def;
+
+                        }
+                        else
+                        {
+                            byte[] img = (byte[])reader["foto"];
+                            MemoryStream ms = new MemoryStream(img);
+                            foto = Image.FromStream(ms);
+                        }
 
                         Preso user = new Preso(reader.GetString(0), reader.GetString(1), reader.GetString(2),
                         reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8), reader.GetInt32(9),foto, reader.GetInt32(10));
@@ -299,9 +310,20 @@ namespace PROYECTO
                     // Recorremos el reader (registro por registro) y cargamos la lista de usuarios.
                     while (reader.Read())
                     {
-                        byte[] img = (byte[])reader["foto"];
-                        MemoryStream ms = new MemoryStream(img);
-                        Image foto = Image.FromStream(ms);
+                        Image foto = null;
+
+                        if (reader["foto"] == System.DBNull.Value)
+                        {
+                            foto = Resources.def;
+
+                        }
+                        else
+                        {
+                            byte[] img = (byte[])reader["foto"];
+                            MemoryStream ms = new MemoryStream(img);
+                            foto = Image.FromStream(ms);
+                        }
+
 
                         Preso user = new Preso(reader.GetString(0), reader.GetString(1), reader.GetString(2),
                         reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8), reader.GetInt32(9), foto, reader.GetInt32(10));
@@ -397,9 +419,19 @@ namespace PROYECTO
                     // Recorremos el reader (registro por registro) y cargamos la lista de usuarios.
                     while (reader.Read())
                     {
-                        byte[] img = (byte[])reader["foto"];
-                        MemoryStream ms = new MemoryStream(img);
-                        Image foto = Image.FromStream(ms);
+                        Image foto = null;
+
+                        if (reader["foto"] == System.DBNull.Value)
+                        {
+                            foto = Resources.def;
+
+                        }
+                        else
+                        {
+                            byte[] img = (byte[])reader["foto"];
+                            MemoryStream ms = new MemoryStream(img);
+                            foto = Image.FromStream(ms);
+                        }
 
                         Preso user = new Preso(reader.GetString(0), reader.GetString(1), reader.GetString(2),
                         reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6), reader.GetString(7), reader.GetInt32(8), reader.GetInt32(9), foto, reader.GetInt32(10));
@@ -435,12 +467,25 @@ namespace PROYECTO
                     string c = String.Format("Select foto from presos where nif='{0}';", ni);
 
                     MySqlCommand com = new MySqlCommand(c, ConexionBD.Conexion);
-                    object fot = com.ExecuteScalar();
 
-                    byte[] img = (byte[])fot;
-                    MemoryStream ms = new MemoryStream(img);
-                    foto = Image.FromStream(ms);
 
+
+
+                    if (com.ExecuteScalar() == System.DBNull.Value)
+                    {
+                        foto = Resources.def;
+
+                    }
+                    else
+                    {
+                        object fot = com.ExecuteScalar();
+
+                        byte[] img = (byte[])fot;
+                        MemoryStream ms = new MemoryStream(img);
+
+                        foto = Image.FromStream(ms);
+
+                    }
 
                     ConexionBD.CerrarConexion();
                     ConexionBD.CerrarConexion();
