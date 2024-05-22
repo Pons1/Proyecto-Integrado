@@ -58,6 +58,12 @@
     </Compile>
     <Compile Include="Correo.cs" />
     <Compile Include="Empleado.cs" />
+    <Compile Include="FrmCorreos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCorreos.Designer.cs">
+      <DependentUpon>FrmCorreos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmFichaEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     <Compile Include="Puertas.cs" />
     <EmbeddedResource Include="Añadir_recluso.resx">
       <DependentUpon>Añadir_recluso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCorreos.resx">
+      <DependentUpon>FrmCorreos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFichaEmpleado.resx">
       <DependentUpon>FrmFichaEmpleado.cs</DependentUpon>
