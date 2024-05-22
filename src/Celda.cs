@@ -37,7 +37,7 @@ namespace PROYECTO
 
                 ConexionBD.AbrirConexion();
 
-                string c = String.Format("Select CodigoCelda from celdas;");
+                string c = String.Format("Select CodigoCelda from celdas where ocupacion <4;");
 
                 MySqlCommand com = new MySqlCommand(c, ConexionBD.Conexion);
                 MySqlDataReader reader = com.ExecuteReader();

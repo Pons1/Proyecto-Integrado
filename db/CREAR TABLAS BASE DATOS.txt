@@ -21,6 +21,7 @@ CREATE TABLE celdas (
     CodigoCelda INT auto_increment,
     Modulo ENUM('A','B'),
     Abierta TINYINT DEFAULT 0,
+	Ocupacion int default 0,
     PRIMARY KEY (CodigoCelda),
     FOREIGN KEY (Modulo) REFERENCES modulos(CodigoModulo) ON DELETE CASCADE
 );

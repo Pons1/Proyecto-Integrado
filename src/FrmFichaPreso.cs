@@ -171,7 +171,7 @@ namespace PROYECTO
             erpFichasPresos.Clear();
             if (Preso.DNICorrecto(txt_nifPreso.Text))
             {
-                if (Preso.BorrarPreso(txt_nifPreso.Text) == -1)
+                if (Preso.BorrarPreso(txt_nifPreso.Text, int.Parse(txtCelda.Text)) == -1)
                 {
                     MessageBox.Show("No se ha encontrado ningún preso con dicho NIF");
                 }

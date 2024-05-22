@@ -97,6 +97,12 @@
     <Compile Include="FrmFichaPreso.Designer.cs">
       <DependentUpon>FrmFichaPreso.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmInfoCeldas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInfoCeldas.Designer.cs">
+      <DependentUpon>FrmInfoCeldas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,12 +132,6 @@
     </Compile>
     <Compile Include="FrmPersonal.Designer.cs">
       <DependentUpon>FrmPersonal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Mapa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Mapa.Designer.cs">
-      <DependentUpon>Mapa.cs</DependentUpon>
     </Compile>
     <Compile Include="Preso.cs" />
     <Compile Include="FrmPresos.cs">
@@ -176,6 +176,9 @@
     <EmbeddedResource Include="FrmFichaPreso.resx">
       <DependentUpon>FrmFichaPreso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmInfoCeldas.resx">
+      <DependentUpon>FrmInfoCeldas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogIn.resx">
       <DependentUpon>frmLogIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,9 +196,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPresos.resx">
       <DependentUpon>FrmPresos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mapa.resx">
-      <DependentUpon>Mapa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -347,6 +347,18 @@ namespace PROYECTO
 
                     ConexionBD.CerrarConexion();
                     MessageBox.Show("Recluso añadido correctamente");
+                    /////////////////////////////////////////////////////////
+                    ConexionBD.AbrirConexion();
+
+
+                    string con = String.Format("UPDATE celdas SET ocupacion = ocupacion + 1 WHERE codigocelda = '{0}'", celda);
+
+
+                    MySqlCommand com = new MySqlCommand(con, ConexionBD.Conexion);
+                    com.ExecuteNonQuery();
+
+                    ConexionBD.CerrarConexion();
+                    ///////////////////////////////////////////
 
                 }
                 catch (Exception ex)
@@ -474,7 +486,7 @@ namespace PROYECTO
             return true;
         }
 
-        public static int BorrarPreso(string ni)
+        public static int BorrarPreso(string ni, int celda)
         {
             int retorno = -1;
             if (ConexionBD.Conexion != null)
@@ -493,6 +505,18 @@ namespace PROYECTO
                      retorno = comando.ExecuteNonQuery();
 
                     ConexionBD.CerrarConexion();
+                    /////////////////////////////////////////////////////////
+                    ConexionBD.AbrirConexion();
+
+
+                    string con = String.Format("UPDATE celdas SET ocupacion = ocupacion - 1 WHERE codigocelda = '{0}'", celda);
+
+
+                    MySqlCommand com = new MySqlCommand(con, ConexionBD.Conexion);
+                    com.ExecuteNonQuery();
+
+                    ConexionBD.CerrarConexion();
+                    ///////////////////////////////////////////
                     return retorno;
 
 

@@ -64,9 +64,9 @@ namespace PROYECTO
 
 
 
-        public int AbrirPuerta(Puertas puert)
+        public int AbrirPuerta(int puert)
         {
-            string nombre = puert.CodigoPuerta.ToString();
+            
 
             if (ConexionBD.Conexion != null)
             {
@@ -77,22 +77,14 @@ namespace PROYECTO
                     string query = "UPDATE puertas SET Abierto = 1 WHERE CodigoPuerta = @puert AND Abierto = 0";
                     using (MySqlCommand com = new MySqlCommand(query, ConexionBD.Conexion))
                     {
-                        com.Parameters.AddWithValue("@puert", puert.CodigoPuerta);
+                        com.Parameters.AddWithValue("@puert", puert);
                         int rowsAffected = com.ExecuteNonQuery();
 
-                        if (rowsAffected > 0)
-                        {
-                            
-                        }
-                        else
-                        {
-                            MessageBox.Show("No se encontró ninguna puerta cerrada con el código especificado.");
-                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Ocurrió un error al actualizar la puerta: " + ex.Message);
+                    MessageBox.Show("Ocurrió un error al actualizar la puerta: " + ex.Message);
                 }
                 finally
                 {
@@ -101,9 +93,45 @@ namespace PROYECTO
             }
             else
             {
-                Console.WriteLine("La conexión a la base de datos no está disponible.");
+                MessageBox.Show("La conexión a la base de datos no está disponible.");
             }
             return 0;   
         }
+
+        public int CerrarPuerta(int puert)
+        {
+
+
+            if (ConexionBD.Conexion != null)
+            {
+                try
+                {
+                    ConexionBD.AbrirConexion();
+
+                    string query = "UPDATE puertas SET Abierto = 0 WHERE CodigoPuerta = @puert AND Abierto = 1";
+                    using (MySqlCommand com = new MySqlCommand(query, ConexionBD.Conexion))
+                    {
+                        com.Parameters.AddWithValue("@puert", puert);
+                        int rowsAffected = com.ExecuteNonQuery();
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al actualizar la puerta: " + ex.Message);
+                }
+                finally
+                {
+                    ConexionBD.CerrarConexion();
+                }
+            }
+            else
+            {
+                MessageBox.Show("La conexión a la base de datos no está disponible.");
+            }
+            return 0;
+        }
+
+
     }
 }
