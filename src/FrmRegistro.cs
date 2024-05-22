@@ -55,7 +55,14 @@ namespace PROYECTO
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            if (rbtnEmpleado.Checked)
+            {
+                dataGridView2.DataSource = Registros.BuscarRegistrosEmpleadosTexto(txtBusquedaPorTexto.Text);
+            }
+            else if (rbtnPreso.Checked)
+            {
+                dataGridView1.DataSource = Registros.BuscarRegistrosPresosTexto(txtBusquedaPorTexto.Text);
+            }
         }
 
 

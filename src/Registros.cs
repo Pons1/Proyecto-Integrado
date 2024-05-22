@@ -61,6 +61,37 @@ namespace PROYECTO
             return dtRegistros;
         }
 
+
+
+        public static DataTable BuscarRegistrosPresosTexto(string valor)
+        {
+            DataTable dtRegistros = new DataTable();
+
+            try
+            {
+                using (MySqlConnection conn = ConexionBD.Conexion)
+                {
+                    conn.Open();
+                    string query = @"SELECT CodigoRegistro, Tipo, PresoNIF, Motivo, Fecha 
+                                     FROM registros 
+                                     WHERE PresoNIF IS NOT NULL 
+                                     AND (CodigoRegistro LIKE @Valor OR Tipo LIKE @Valor OR PresoNIF LIKE @Valor OR Motivo LIKE @Valor OR Fecha LIKE @Valor);";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Valor", "%" + valor + "%");
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(dtRegistros);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al buscar los registros de presos: " + ex.Message);
+            }
+
+            return dtRegistros;
+        }
+
+
+
         // Obtener registros de empleados
         public static DataTable ObtenerRegistrosEmpleados()
         {
@@ -114,6 +145,37 @@ namespace PROYECTO
             return dtRegistros;
         }
 
+
+
+        public static DataTable BuscarRegistrosEmpleadosTexto(string valor)
+        {
+            DataTable dtRegistros = new DataTable();
+
+            try
+            {
+                using (MySqlConnection conn = ConexionBD.Conexion)
+                {
+                    conn.Open();
+                    string query = @"SELECT CodigoRegistro, Tipo, EmpleadoNIF, Fecha 
+                                     FROM registros 
+                                     WHERE EmpleadoNIF IS NOT NULL 
+                                     AND (CodigoRegistro LIKE @Valor OR Tipo LIKE @Valor OR EmpleadoNIF LIKE @Valor OR Fecha LIKE @Valor);";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Valor", "%" + valor + "%");
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(dtRegistros);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al buscar los registros de empleados: " + ex.Message);
+            }
+
+            return dtRegistros;
+        }
+
+
+
         // Método para agregar un nuevo registro
         public static int AgregarRegistroPreso(string tipoRegistro, string presoNIF, string motivo = null)
         {
@@ -137,6 +199,10 @@ namespace PROYECTO
                 throw new Exception("Error al agregar el registro del preso: " + ex.Message);
             }
         }
+
+
+       
+
 
         public static int AgregarRegistroEmpleado(string tipoRegistro, string empleadoNIF)
         {

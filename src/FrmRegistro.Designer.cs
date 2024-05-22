@@ -35,7 +35,7 @@ namespace PROYECTO
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBusquedaPorTexto = new System.Windows.Forms.TextBox();
             this.lblFiltrarPorFecha = new System.Windows.Forms.Label();
             this.pcbLupa = new System.Windows.Forms.PictureBox();
             this.btnRefrescar = new System.Windows.Forms.Button();
@@ -122,13 +122,13 @@ namespace PROYECTO
             this.dtpFechaFin.Value = new System.DateTime(2024, 5, 21, 0, 0, 0, 0);
             this.dtpFechaFin.ValueChanged += new System.EventHandler(this.dtpFechaFin_ValueChanged);
             // 
-            // textBox1
+            // txtBusquedaPorTexto
             // 
-            this.textBox1.Location = new System.Drawing.Point(446, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 22);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtBusquedaPorTexto.Location = new System.Drawing.Point(446, 40);
+            this.txtBusquedaPorTexto.Name = "txtBusquedaPorTexto";
+            this.txtBusquedaPorTexto.Size = new System.Drawing.Size(166, 22);
+            this.txtBusquedaPorTexto.TabIndex = 9;
+            this.txtBusquedaPorTexto.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblFiltrarPorFecha
             // 
@@ -226,7 +226,7 @@ namespace PROYECTO
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.pcbLupa);
             this.Controls.Add(this.lblFiltrarPorFecha);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBusquedaPorTexto);
             this.Controls.Add(this.dtpFechaFin);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dtpFechaInicio);
@@ -256,7 +256,7 @@ namespace PROYECTO
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker dtpFechaFin;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBusquedaPorTexto;
         private System.Windows.Forms.Label lblFiltrarPorFecha;
         private System.Windows.Forms.PictureBox pcbLupa;
         private System.Windows.Forms.Button btnRefrescar;
