@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -343,7 +344,59 @@ namespace PROYECTO
 
 
         }
-        
+
+
+
+        public static List<Empleado> ObtenerEmpleadosPorPuesto(string puesto)
+        {
+            List<Empleado> empleados = new List<Empleado>();
+
+            if (ConexionBD.Conexion != null)
+            {
+                try
+                {
+                    ConexionBD.AbrirConexion();
+
+                    string consulta = String.Format("SELECT * FROM empleados WHERE Puesto = '{0}';", puesto);
+
+                    MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+                    MySqlDataReader reader = comando.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Empleado empleado = new Empleado(
+                            reader.GetString("NIF"),
+                            reader.GetString("Nombre"),
+                            reader.GetString("Apellidos"),
+                            reader.GetString("Puesto"),
+                            reader.GetString("Sexo"),
+                            reader.GetString("Turno"),
+                            reader.GetString("Direccion"),
+                            reader.GetInt32("CodigoPostal"),
+                            reader.GetString("Correo"),
+                            reader.GetInt32("Presente"),
+                            null, // Foto - Este valor se obtendría de la base de datos si fuera necesario
+                            reader.GetInt32("Telefono"),
+                            reader.GetString("Contraseña")
+                        );
+                        empleados.Add(empleado);
+                    }
+
+                    ConexionBD.CerrarConexion();
+                }
+                catch (Exception ex)
+                {
+                    ConexionBD.CerrarConexion();
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            return empleados;
+        }
+
+
+
+
         public static List<Empleado> MostrarEmpleados() { 
             List<Empleado> lista = new List<Empleado>();
 
@@ -388,6 +441,10 @@ namespace PROYECTO
 
 
         }
+
+
+
+
         public static bool ComprobarRegistro(string nom, string con)
         {
 
@@ -548,6 +605,58 @@ namespace PROYECTO
 
 
         }
+
+
+
+        public static List<Empleado> ObtenerEmpleadosParaCorreo()
+        {
+            List<Empleado> lista = new List<Empleado>();
+
+            if (ConexionBD.Conexion != null)
+            {
+                try
+                {
+                    ConexionBD.AbrirConexion();
+
+                    string consulta = "SELECT NIF, Nombre, Apellidos, Puesto, Correo FROM empleados;";
+
+                    MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+                    MySqlDataReader reader = comando.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Empleado empleado = new Empleado(
+                            reader.GetString("NIF"),
+                            reader.GetString("Nombre"),
+                            reader.GetString("Apellidos"),
+                            reader.GetString("Puesto"),
+                            string.Empty, // sexo
+                            string.Empty, // turno
+                            string.Empty, // direccion
+                            0, // codigoPostal
+                            reader.GetString("Correo"),
+                            0, // presente
+                            null, // foto
+                            0, // telefono
+                            string.Empty // contraseña
+                        );
+                        lista.Add(empleado);
+                    }
+
+                    ConexionBD.CerrarConexion();
+                }
+                catch (Exception ex)
+                {
+                    ConexionBD.CerrarConexion();
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            return lista;
+        }
+
+
+
         public static Image ConsultarImagenEmpl(string ni)
         {
             Image foto = null;

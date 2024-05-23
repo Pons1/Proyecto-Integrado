@@ -175,16 +175,15 @@ INSERT INTO crimenes (Descripcion, Condena) VALUES
 
 
 INSERT INTO empleados (NIF, Nombre, Apellidos, Puesto, Contraseña, Sexo, Turno, Direccion, Presente, CodigoPostal, Correo, Telefono, Foto) VALUES 
-('24186930S', 'Juan', 'Garcia', 'VIGILANCIA', 'pass123', 'M', 'MAÑANA', 'Calle Mayor 123', 1, '28001', 'juan.garcia@example.com', '600123456', NULL),
+('53879548R', 'Adrian', 'Pons', 'VIGILANCIA', 'pass123', 'M', 'MAÑANA', 'Calle Mayor 123', 1, '28001', 'adrianpons21@gmail.com', '600123456', NULL),
 ('53445183Z', 'Pedro', 'Lopez', 'LIMPIEZA', 'pass456', 'M', 'TARDE', 'Calle San Juan 456', 1, '28002', 'pedro.lopez@example.com', '600234567', NULL),
-('95336396Q', 'Manuel', 'Rodriguez', 'COCINA', 'pass789', 'M', 'NOCHE', 'Avenida de la Paz 789', 1, '28003', 'manuel.rodriguez@example.com', '600345678', NULL),
+('95336396Q', 'Jorge', 'Garcia', 'COCINA', 'pass789', 'M', 'NOCHE', 'Avenida de la Paz 789', 1, '28003', 'jogamo01@floridauniversitaria.es', '600345678', NULL),
 ('71916562R', 'Antonio', 'Martinez', 'ENFERMERIA', 'pass987', 'M', 'MAÑANA', 'Calle Real 234', 1, '28004', 'antonio.martinez@example.com', '600456789', NULL),
-('03909618D', 'Francisco', 'Sanchez', 'ADMINISTRACION', 'pass654', 'M', 'TARDE', 'Plaza Mayor 567', 1, '28005', 'francisco.sanchez@example.com', '600567890', NULL),
-('39329037A', 'Maria', 'Gomez', 'VIGILANCIA', 'pass321', 'F', 'NOCHE', 'Calle Sol 345', 1, '28006', 'maria.gomez@example.com', '600678901', NULL),
+('29222260R', 'Manuel', 'Garcia', 'ADMINISTRACION', 'pass654', 'M', 'TARDE', 'Plaza Mayor 567', 1, '28005', 'manugamu@gmail.com', '600567890', NULL),
+('39329037A', 'Sergio', 'Samper', 'VIGILANCIA', 'pass321', 'F', 'NOCHE', 'Calle Sol 345', 1, '28006', 'sesaca@floridauniversitaria.es', '600678901', NULL),
 ('88118162X', 'Ana', 'Fernandez', 'LIMPIEZA', 'pass654', 'F', 'MAÑANA', 'Avenida de la Constitucion 678', 1, '28007', 'ana.fernandez@example.com', '600789012', NULL),
-('36711488S', 'Isabel', 'Jimenez', 'COCINA', 'pass987', 'F', 'TARDE', 'Calle del Prado 901', 1, '28008', 'isabel.jimenez@example.com', '600890123', NULL),
 ('34574628Q', 'Laura', 'Perez', 'ENFERMERIA', 'pass321', 'F', 'MAÑANA', 'Calle Mayor 123', 1, '28009', 'laura.perez@example.com', '600901234', NULL),
-('52673662M', 'Carmen', 'Lopez', 'ADMINISTRACION', 'pass654', 'F', 'NOCHE', 'Avenida de la Paz 234', 1, '28010', 'carmen.lopez@example.com', '600012345', NULL);
+('54014873V', 'Diego', 'Martinez', 'ADMINISTRACION', 'pass654', 'F', 'NOCHE', 'Avenida de la Paz 234', 1, '28010', 'diegomartinez.l.2005@gmail.com', '600012345', NULL);
 
 
 INSERT INTO registros (Tipo, EmpleadoNIF, Fecha) VALUES 

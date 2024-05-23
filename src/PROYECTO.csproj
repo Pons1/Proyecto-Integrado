@@ -304,6 +304,8 @@
     <None Include="Resources\icons8-cerrar-ventana-64.png" />
     <None Include="Resources\arrow-25-24.png" />
     <None Include="Resources\arrow-88-32.png" />
+    <Content Include="Resources\centralis.png" />
+    <Content Include="Resources\enviar-correo.png" />
     <Content Include="Resources\logo1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

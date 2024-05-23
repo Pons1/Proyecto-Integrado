@@ -96,3 +96,10 @@ AFTER INSERT ON presos
 FOR EACH ROW
     INSERT INTO registros (Tipo, PresoNIF, Motivo, Fecha)
     VALUES ('ENTRADA', NEW.NIF, 'Ingreso inicial', NOW());
+
+
+CREATE TRIGGER after_insert_empleados
+AFTER INSERT ON Empleados
+FOR EACH ROW
+    INSERT INTO registros (Tipo, EmpleadoNIF, Fecha)
+    VALUES ('ENTRADA', NEW.NIF, NOW());

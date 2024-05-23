@@ -214,6 +214,7 @@ namespace PROYECTO
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.Size = new System.Drawing.Size(915, 370);
             this.dataGridView2.TabIndex = 19;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // FrmRegistro
             // 

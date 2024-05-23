@@ -6,9 +6,9 @@ namespace PROYECTO
 {
     public class Registros
     {
-        // Métodos para obtener registros
+     
 
-        // Obtener registros de presos
+    
         public static DataTable ObtenerRegistrosPresos()
         {
             DataTable dt = new DataTable();
@@ -116,7 +116,8 @@ namespace PROYECTO
             return dt;
         }
 
-        // Obtener registros de empleados por rango de fechas
+        
+
         public static DataTable ObtenerRegistrosEmpleados(DateTime fechaInicio, DateTime fechaFin)
         {
             DataTable dtRegistros = new DataTable();
@@ -176,7 +177,7 @@ namespace PROYECTO
 
 
 
-        // Método para agregar un nuevo registro
+        
         public static int AgregarRegistroPreso(string tipoRegistro, string presoNIF, string motivo = null)
         {
             try

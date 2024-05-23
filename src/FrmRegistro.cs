@@ -146,5 +146,10 @@ namespace PROYECTO
             dataGridView1.Hide();
             dataGridView2.Show();
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

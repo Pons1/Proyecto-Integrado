@@ -150,5 +150,11 @@ namespace PROYECTO
             frmLogIn frm=new frmLogIn();
             frm.ShowDialog();
         }
+
+        private void btnEnviarCorreo_Click(object sender, EventArgs e)
+        {
+            FrmCorreos correos = new FrmCorreos();
+            correos.ShowDialog();
+        }
     }
 }
