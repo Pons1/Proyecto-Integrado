@@ -127,12 +127,6 @@
     <Compile Include="FrmPersonal.Designer.cs">
       <DependentUpon>FrmPersonal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mapa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Mapa.Designer.cs">
-      <DependentUpon>Mapa.cs</DependentUpon>
-    </Compile>
     <Compile Include="Preso.cs" />
     <Compile Include="FrmPresos.cs">
       <SubType>Form</SubType>
@@ -193,9 +187,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPresos.resx">
       <DependentUpon>FrmPresos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mapa.resx">
-      <DependentUpon>Mapa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

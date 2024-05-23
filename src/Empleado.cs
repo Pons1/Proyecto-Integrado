@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using PROYECTO.Properties;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -48,14 +49,14 @@ namespace PROYECTO
 
 
 
-        public Empleado(string Nif, string Nombre, string Apellidos, string puesto, string Sexo, string turno,  string dir,int CodigoPostal, string Correo,int pres, Image fot, int tel,string contra)
+        public Empleado(string Nif, string Nombre, string Apellidos, string puesto, string Sexo, string turno, string dir, int CodigoPostal, string Correo, int pres, Image fot, int tel, string contra)
         {
             this.nif = Nif;
             this.nombre = Nombre;
             this.apellidos = Apellidos;
             this.puesto = puesto;
             this.sexo = Sexo;
-            this.turno=turno;
+            this.turno = turno;
             this.direccion = dir;
             this.codigoPostal = CodigoPostal;
             this.correo = Correo;
@@ -231,7 +232,7 @@ namespace PROYECTO
 
 
 
-        public static int EditarEmpleado(string ni, string nom, string ap, string puest,string sex, string tur,string dir, int cod, string corr, int tel)
+        public static int EditarEmpleado(string ni, string nom, string ap, string puest, string sex, string tur, string dir, int cod, string corr, int tel)
         {
             int retorno = -1;
             if (ConexionBD.Conexion != null)
@@ -244,7 +245,7 @@ namespace PROYECTO
 
 
                     string consulta = String.Format("UPDATE empleados SET nombre = '{1}',Apellidos = '{2}',puesto = '{3}',sexo = '{4}'," +
-                        "turno = '{5}',direccion = '{6}',codigopostal = '{7}',correo = '{8}', telefono = '{9}' WHERE nif='{0}' ", ni, nom, ap, puest, sex,tur, dir, cod, corr, tel); ;
+                        "turno = '{5}',direccion = '{6}',codigopostal = '{7}',correo = '{8}', telefono = '{9}' WHERE nif='{0}' ", ni, nom, ap, puest, sex, tur, dir, cod, corr, tel); ;
 
 
                     MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
@@ -405,7 +406,7 @@ namespace PROYECTO
             {
 
                 ConexionBD.AbrirConexion();
-               
+
 
                 string c = String.Format("Select * from empleados;");
 
@@ -417,12 +418,22 @@ namespace PROYECTO
                     // Recorremos el reader (registro por registro) y cargamos la lista de usuarios.
                     while (reader.Read())
                     {
-                        byte[] img = (byte[])reader["foto"];
-                        MemoryStream ms = new MemoryStream(img);
-                        Image foto = Image.FromStream(ms);
+                        Image foto = null;
+
+                        if (reader["foto"] == System.DBNull.Value)
+                        {
+                            foto = Resources.def;
+
+                        }
+                        else
+                        {
+                            byte[] img = (byte[])reader["foto"];
+                            MemoryStream ms = new MemoryStream(img);
+                            foto = Image.FromStream(ms);
+                        }
 
                         Empleado user = new Empleado(reader.GetString(0), reader.GetString(1), reader.GetString(2),
-                        reader.GetString(3), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetInt32(9), reader.GetString(10), reader.GetInt32(8),foto, reader.GetInt32(11), reader.GetString(4));
+                        reader.GetString(3), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetInt32(9), reader.GetString(10), reader.GetInt32(8), foto, reader.GetInt32(11), reader.GetString(4));
                         lista.Add(user);
                     }
                     ConexionBD.CerrarConexion();
@@ -453,27 +464,27 @@ namespace PROYECTO
 
                 ConexionBD.AbrirConexion();
 
-                string c = String.Format("SELECT nombre FROM empleados WHERE puesto='ADMINISTRACION' and NIF = '{0}' and contraseña = '{1}';", nom,con);
+                string c = String.Format("SELECT nombre FROM empleados WHERE puesto='ADMINISTRACION' and NIF = '{0}' and contraseña = '{1}';", nom, con);
 
                 MySqlCommand com = new MySqlCommand(c, ConexionBD.Conexion);
                 object res = com.ExecuteScalar();
 
-               
-                    ConexionBD.CerrarConexion();
-                if (res!=null)
+
+                ConexionBD.CerrarConexion();
+                if (res != null)
                 {
                     return true;
 
                 }
                 else
                 {
-                    return false; 
+                    return false;
                 }
 
-                }
+            }
 
-                // devolvemos la lista cargada con los usuarios.
-                ConexionBD.CerrarConexion();
+            // devolvemos la lista cargada con los usuarios.
+            ConexionBD.CerrarConexion();
             return false;
         }
         public static List<Empleado> MostrarEmpleadosPorNombre(string nom)
@@ -495,9 +506,19 @@ namespace PROYECTO
                     // Recorremos el reader (registro por registro) y cargamos la lista de usuarios.
                     while (reader.Read())
                     {
-                        byte[] img = (byte[])reader["foto"];
-                        MemoryStream ms = new MemoryStream(img);
-                        Image foto = Image.FromStream(ms);
+                        Image foto = null;
+
+                        if (reader["foto"] == System.DBNull.Value)
+                        {
+                            foto = Resources.def;
+
+                        }
+                        else
+                        {
+                            byte[] img = (byte[])reader["foto"];
+                            MemoryStream ms = new MemoryStream(img);
+                            foto = Image.FromStream(ms);
+                        }
 
                         Empleado user = new Empleado(reader.GetString(0), reader.GetString(1), reader.GetString(2),
                        reader.GetString(3), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetInt32(9), reader.GetString(10), reader.GetInt32(8), foto, reader.GetInt32(11), reader.GetString(4));
@@ -534,7 +555,7 @@ namespace PROYECTO
                     byte[] aByte = ms.ToArray();
 
                     string consulta = String.Format("INSERT INTO empleados (nif,nombre,apellidos,puesto,contraseña,sexo,turno,direccion,codigopostal,correo,telefono,foto,presente) VALUES " +
-                        "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}',@imagen,'{11}')", this.nif, this.nombre, this.apellidos,puesto, contraseña, sexo, turno,direccion, codigoPostal, correo, telefono,1);
+                        "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}',@imagen,'{11}')", this.nif, this.nombre, this.apellidos, puesto, contraseña, sexo, turno, direccion, codigoPostal, correo, telefono, 1);
 
 
                     MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
@@ -581,9 +602,19 @@ namespace PROYECTO
                     // Recorremos el reader (registro por registro) y cargamos la lista de usuarios.
                     while (reader.Read())
                     {
-                        byte[] img = (byte[])reader["foto"];
-                        MemoryStream ms = new MemoryStream(img);
-                        Image foto = Image.FromStream(ms);
+                        Image foto = null;
+
+                        if (reader["foto"] == System.DBNull.Value)
+                        {
+                            foto = Resources.def;
+
+                        }
+                        else
+                        {
+                            byte[] img = (byte[])reader["foto"];
+                            MemoryStream ms = new MemoryStream(img);
+                            foto = Image.FromStream(ms);
+                        }
 
                         Empleado user = new Empleado(reader.GetString(0), reader.GetString(1), reader.GetString(2),
                         reader.GetString(3), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetInt32(9), reader.GetString(10), reader.GetInt32(8), foto, reader.GetInt32(11), reader.GetString(4));
@@ -671,11 +702,21 @@ namespace PROYECTO
                     string c = String.Format("Select foto from empleados where nif='{0}';", ni);
 
                     MySqlCommand com = new MySqlCommand(c, ConexionBD.Conexion);
-                    object fot = com.ExecuteScalar();
+                    if (com.ExecuteScalar() == System.DBNull.Value)
+                    {
+                        foto = Resources.def;
 
-                    byte[] img = (byte[])fot;
-                    MemoryStream ms = new MemoryStream(img);
-                    foto = Image.FromStream(ms);
+                    }
+                    else
+                    {
+                        object fot = com.ExecuteScalar();
+
+                        byte[] img = (byte[])fot;
+                        MemoryStream ms = new MemoryStream(img);
+
+                        foto = Image.FromStream(ms);
+
+                    }
 
 
                     ConexionBD.CerrarConexion();
