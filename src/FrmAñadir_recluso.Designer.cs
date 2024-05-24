@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAñadir_recluso));
             this.btn_añadir_foto = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txt_pnombre = new System.Windows.Forms.TextBox();
@@ -73,7 +74,7 @@
             this.btn_añadir_foto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_añadir_foto.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_añadir_foto.Location = new System.Drawing.Point(69, 249);
-            this.btn_añadir_foto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_añadir_foto.Margin = new System.Windows.Forms.Padding(4);
             this.btn_añadir_foto.Name = "btn_añadir_foto";
             this.btn_añadir_foto.Size = new System.Drawing.Size(136, 30);
             this.btn_añadir_foto.TabIndex = 1;
@@ -100,7 +101,7 @@
             this.txt_pnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_pnombre.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.txt_pnombre.Location = new System.Drawing.Point(35, 49);
-            this.txt_pnombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_pnombre.Margin = new System.Windows.Forms.Padding(4);
             this.txt_pnombre.Name = "txt_pnombre";
             this.txt_pnombre.Size = new System.Drawing.Size(237, 23);
             this.txt_pnombre.TabIndex = 3;
@@ -124,7 +125,7 @@
             this.txt_apellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_apellidos.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.txt_apellidos.Location = new System.Drawing.Point(291, 52);
-            this.txt_apellidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_apellidos.Margin = new System.Windows.Forms.Padding(4);
             this.txt_apellidos.Name = "txt_apellidos";
             this.txt_apellidos.Size = new System.Drawing.Size(380, 23);
             this.txt_apellidos.TabIndex = 5;
@@ -148,7 +149,7 @@
             this.txt_nifPreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nifPreso.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.txt_nifPreso.Location = new System.Drawing.Point(35, 127);
-            this.txt_nifPreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_nifPreso.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nifPreso.MaxLength = 9;
             this.txt_nifPreso.Name = "txt_nifPreso";
             this.txt_nifPreso.Size = new System.Drawing.Size(156, 23);
@@ -214,7 +215,7 @@
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.txtDireccion.Location = new System.Drawing.Point(35, 213);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(636, 23);
             this.txtDireccion.TabIndex = 13;
@@ -240,7 +241,7 @@
             this.txtCodigopostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigopostal.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.txtCodigopostal.Location = new System.Drawing.Point(36, 288);
-            this.txtCodigopostal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigopostal.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigopostal.MaxLength = 5;
             this.txtCodigopostal.Name = "txtCodigopostal";
             this.txtCodigopostal.Size = new System.Drawing.Size(131, 23);
@@ -281,7 +282,7 @@
             this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreo.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.txtCorreo.Location = new System.Drawing.Point(201, 288);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(469, 23);
             this.txtCorreo.TabIndex = 17;
@@ -320,7 +321,7 @@
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.txtTelefono.Location = new System.Drawing.Point(219, 127);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(265, 23);
             this.txtTelefono.TabIndex = 21;
@@ -347,7 +348,7 @@
             this.btnAñadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAñadir.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAñadir.Location = new System.Drawing.Point(32, 341);
-            this.btnAñadir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAñadir.Margin = new System.Windows.Forms.Padding(4);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(208, 46);
             this.btnAñadir.TabIndex = 22;
@@ -368,7 +369,7 @@
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnSalir.Location = new System.Drawing.Point(32, 414);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(208, 46);
             this.btnSalir.TabIndex = 23;
@@ -385,7 +386,7 @@
             this.panel1.Controls.Add(this.btnAñadir);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(732, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(13, 487);
             this.panel1.TabIndex = 24;
@@ -396,7 +397,7 @@
             this.pcboxFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pcboxFoto.Image = global::PROYECTO.Properties.Resources.def;
             this.pcboxFoto.Location = new System.Drawing.Point(32, 26);
-            this.pcboxFoto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcboxFoto.Margin = new System.Windows.Forms.Padding(4);
             this.pcboxFoto.Name = "pcboxFoto";
             this.pcboxFoto.Size = new System.Drawing.Size(223, 214);
             this.pcboxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -407,7 +408,7 @@
             // 
             this.pic_abrir.Image = global::PROYECTO.Properties.Resources.arrow_88_32;
             this.pic_abrir.Location = new System.Drawing.Point(701, 197);
-            this.pic_abrir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pic_abrir.Margin = new System.Windows.Forms.Padding(4);
             this.pic_abrir.Name = "pic_abrir";
             this.pic_abrir.Size = new System.Drawing.Size(23, 65);
             this.pic_abrir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -459,7 +460,8 @@
             this.Controls.Add(this.txt_pnombre);
             this.Controls.Add(this.lblNombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAñadir_recluso";
             this.Text = "Añadir_recluso";
             this.Load += new System.EventHandler(this.Añadir_recluso_Load);

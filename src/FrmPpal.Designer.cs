@@ -30,13 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEnviarCorreo = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btn_registro = new System.Windows.Forms.Button();
             this.btn_horario = new System.Windows.Forms.Button();
             this.btn_personal = new System.Windows.Forms.Button();
             this.btn_presos = new System.Windows.Forms.Button();
             this.btn_mapa = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmbSeleccionarIdioma = new System.Windows.Forms.ComboBox();
             this.BarraTitulo = new System.Windows.Forms.Panel();
             this.pic_normal = new System.Windows.Forms.PictureBox();
             this.pic_maximizar = new System.Windows.Forms.PictureBox();
@@ -45,7 +47,6 @@
             this.btn_slide = new System.Windows.Forms.PictureBox();
             this.PanelPrincipal = new System.Windows.Forms.Panel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnEnviarCorreo = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BarraTitulo.SuspendLayout();
@@ -60,7 +61,7 @@
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.MenuVertical.Controls.Add(this.btnEnviarCorreo);
-            this.MenuVertical.Controls.Add(this.button1);
+            this.MenuVertical.Controls.Add(this.btnCerrarSesion);
             this.MenuVertical.Controls.Add(this.btn_registro);
             this.MenuVertical.Controls.Add(this.btn_horario);
             this.MenuVertical.Controls.Add(this.btn_personal);
@@ -74,24 +75,38 @@
             this.MenuVertical.Size = new System.Drawing.Size(251, 650);
             this.MenuVertical.TabIndex = 0;
             // 
-            // button1
+            // btnEnviarCorreo
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(74)))), ((int)(((byte)(173)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::PROYECTO.Properties.Resources.icons8_cerrar_ventana_64;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(-19, 532);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(341, 62);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Cerrar Sesión";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEnviarCorreo.FlatAppearance.BorderSize = 0;
+            this.btnEnviarCorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarCorreo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnEnviarCorreo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEnviarCorreo.Location = new System.Drawing.Point(0, 441);
+            this.btnEnviarCorreo.Name = "btnEnviarCorreo";
+            this.btnEnviarCorreo.Size = new System.Drawing.Size(251, 67);
+            this.btnEnviarCorreo.TabIndex = 0;
+            this.btnEnviarCorreo.Text = "ENVIAR CORREO";
+            this.btnEnviarCorreo.UseVisualStyleBackColor = true;
+            this.btnEnviarCorreo.Click += new System.EventHandler(this.btnEnviarCorreo_Click);
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(74)))), ((int)(((byte)(173)))));
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
+            this.btnCerrarSesion.Image = global::PROYECTO.Properties.Resources.icons8_cerrar_ventana_64;
+            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 515);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(312, 67);
+            this.btnCerrarSesion.TabIndex = 6;
+            this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_registro
             // 
@@ -103,10 +118,10 @@
             this.btn_registro.ForeColor = System.Drawing.Color.White;
             this.btn_registro.Image = global::PROYECTO.Properties.Resources.paper_32;
             this.btn_registro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_registro.Location = new System.Drawing.Point(4, 391);
+            this.btn_registro.Location = new System.Drawing.Point(0, 373);
             this.btn_registro.Margin = new System.Windows.Forms.Padding(4);
             this.btn_registro.Name = "btn_registro";
-            this.btn_registro.Size = new System.Drawing.Size(251, 62);
+            this.btn_registro.Size = new System.Drawing.Size(251, 67);
             this.btn_registro.TabIndex = 5;
             this.btn_registro.Text = "Registros";
             this.btn_registro.UseVisualStyleBackColor = true;
@@ -122,10 +137,10 @@
             this.btn_horario.ForeColor = System.Drawing.Color.White;
             this.btn_horario.Image = global::PROYECTO.Properties.Resources.time_8_32;
             this.btn_horario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_horario.Location = new System.Drawing.Point(4, 322);
+            this.btn_horario.Location = new System.Drawing.Point(0, 302);
             this.btn_horario.Margin = new System.Windows.Forms.Padding(4);
             this.btn_horario.Name = "btn_horario";
-            this.btn_horario.Size = new System.Drawing.Size(251, 62);
+            this.btn_horario.Size = new System.Drawing.Size(251, 67);
             this.btn_horario.TabIndex = 4;
             this.btn_horario.Text = "Horario";
             this.btn_horario.UseVisualStyleBackColor = true;
@@ -141,10 +156,10 @@
             this.btn_personal.ForeColor = System.Drawing.Color.White;
             this.btn_personal.Image = global::PROYECTO.Properties.Resources.worker_32;
             this.btn_personal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_personal.Location = new System.Drawing.Point(4, 254);
+            this.btn_personal.Location = new System.Drawing.Point(0, 231);
             this.btn_personal.Margin = new System.Windows.Forms.Padding(4);
             this.btn_personal.Name = "btn_personal";
-            this.btn_personal.Size = new System.Drawing.Size(251, 62);
+            this.btn_personal.Size = new System.Drawing.Size(251, 67);
             this.btn_personal.TabIndex = 3;
             this.btn_personal.Text = "Personal";
             this.btn_personal.UseVisualStyleBackColor = true;
@@ -160,10 +175,10 @@
             this.btn_presos.ForeColor = System.Drawing.Color.White;
             this.btn_presos.Image = global::PROYECTO.Properties.Resources.add_user_32;
             this.btn_presos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_presos.Location = new System.Drawing.Point(4, 185);
+            this.btn_presos.Location = new System.Drawing.Point(0, 160);
             this.btn_presos.Margin = new System.Windows.Forms.Padding(4);
             this.btn_presos.Name = "btn_presos";
-            this.btn_presos.Size = new System.Drawing.Size(251, 62);
+            this.btn_presos.Size = new System.Drawing.Size(251, 67);
             this.btn_presos.TabIndex = 2;
             this.btn_presos.Text = "Presos";
             this.btn_presos.UseVisualStyleBackColor = true;
@@ -179,10 +194,10 @@
             this.btn_mapa.ForeColor = System.Drawing.Color.White;
             this.btn_mapa.Image = global::PROYECTO.Properties.Resources.map_4_32;
             this.btn_mapa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_mapa.Location = new System.Drawing.Point(4, 116);
+            this.btn_mapa.Location = new System.Drawing.Point(0, 89);
             this.btn_mapa.Margin = new System.Windows.Forms.Padding(4);
             this.btn_mapa.Name = "btn_mapa";
-            this.btn_mapa.Size = new System.Drawing.Size(251, 62);
+            this.btn_mapa.Size = new System.Drawing.Size(251, 67);
             this.btn_mapa.TabIndex = 1;
             this.btn_mapa.Text = "Mapa";
             this.btn_mapa.UseVisualStyleBackColor = true;
@@ -199,9 +214,23 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // cmbSeleccionarIdioma
+            // 
+            this.cmbSeleccionarIdioma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSeleccionarIdioma.FormattingEnabled = true;
+            this.cmbSeleccionarIdioma.Items.AddRange(new object[] {
+            "ESPAÑOL",
+            "ENGLISH"});
+            this.cmbSeleccionarIdioma.Location = new System.Drawing.Point(789, 12);
+            this.cmbSeleccionarIdioma.Name = "cmbSeleccionarIdioma";
+            this.cmbSeleccionarIdioma.Size = new System.Drawing.Size(132, 24);
+            this.cmbSeleccionarIdioma.TabIndex = 7;
+            this.cmbSeleccionarIdioma.SelectedIndexChanged += new System.EventHandler(this.cmbSeleccionarIdioma_SelectedIndexChanged_1);
+            // 
             // BarraTitulo
             // 
             this.BarraTitulo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BarraTitulo.Controls.Add(this.cmbSeleccionarIdioma);
             this.BarraTitulo.Controls.Add(this.pic_normal);
             this.BarraTitulo.Controls.Add(this.pic_maximizar);
             this.BarraTitulo.Controls.Add(this.pic_minimizar);
@@ -296,16 +325,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // btnEnviarCorreo
-            // 
-            this.btnEnviarCorreo.Location = new System.Drawing.Point(44, 482);
-            this.btnEnviarCorreo.Name = "btnEnviarCorreo";
-            this.btnEnviarCorreo.Size = new System.Drawing.Size(122, 43);
-            this.btnEnviarCorreo.TabIndex = 0;
-            this.btnEnviarCorreo.Text = "ENVIAR CORREO";
-            this.btnEnviarCorreo.UseVisualStyleBackColor = true;
-            this.btnEnviarCorreo.Click += new System.EventHandler(this.btnEnviarCorreo_Click);
-            // 
             // FrmPpal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -349,8 +368,9 @@
         private System.Windows.Forms.Button btn_horario;
         private System.Windows.Forms.Button btn_registro;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button btnEnviarCorreo;
+        private System.Windows.Forms.ComboBox cmbSeleccionarIdioma;
     }
 }
 

@@ -32,7 +32,6 @@
             this.btn_p9 = new System.Windows.Forms.Button();
             this.btn_p13 = new System.Windows.Forms.Button();
             this.btn_p7 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_p2 = new System.Windows.Forms.Button();
             this.btn_p1 = new System.Windows.Forms.Button();
             this.btn_p8 = new System.Windows.Forms.Button();
@@ -74,14 +73,17 @@
             this.btn_c28 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pcbIng = new System.Windows.Forms.PictureBox();
+            this.pcbEsp = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbIng)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEsp)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_p9
             // 
             this.btn_p9.BackColor = System.Drawing.Color.White;
             this.btn_p9.Location = new System.Drawing.Point(431, 279);
-            this.btn_p9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_p9.Margin = new System.Windows.Forms.Padding(4);
             this.btn_p9.Name = "btn_p9";
             this.btn_p9.Size = new System.Drawing.Size(27, 25);
             this.btn_p9.TabIndex = 6;
@@ -92,7 +94,7 @@
             // 
             this.btn_p13.BackColor = System.Drawing.Color.White;
             this.btn_p13.Location = new System.Drawing.Point(483, 542);
-            this.btn_p13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_p13.Margin = new System.Windows.Forms.Padding(4);
             this.btn_p13.Name = "btn_p13";
             this.btn_p13.Size = new System.Drawing.Size(27, 25);
             this.btn_p13.TabIndex = 7;
@@ -103,29 +105,18 @@
             // 
             this.btn_p7.BackColor = System.Drawing.Color.White;
             this.btn_p7.Location = new System.Drawing.Point(540, 329);
-            this.btn_p7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_p7.Margin = new System.Windows.Forms.Padding(4);
             this.btn_p7.Name = "btn_p7";
             this.btn_p7.Size = new System.Drawing.Size(27, 25);
             this.btn_p7.TabIndex = 8;
             this.btn_p7.UseVisualStyleBackColor = false;
             this.btn_p7.Click += new System.EventHandler(this.btn_p7_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PROYECTO.Properties.Resources.mapa_mejorado;
-            this.pictureBox1.Location = new System.Drawing.Point(81, -1);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(855, 607);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // btn_p2
             // 
             this.btn_p2.BackColor = System.Drawing.Color.White;
             this.btn_p2.Location = new System.Drawing.Point(653, 37);
-            this.btn_p2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_p2.Margin = new System.Windows.Forms.Padding(4);
             this.btn_p2.Name = "btn_p2";
             this.btn_p2.Size = new System.Drawing.Size(27, 25);
             this.btn_p2.TabIndex = 9;
@@ -136,7 +127,7 @@
             // 
             this.btn_p1.BackColor = System.Drawing.Color.White;
             this.btn_p1.Location = new System.Drawing.Point(312, 37);
-            this.btn_p1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_p1.Margin = new System.Windows.Forms.Padding(4);
             this.btn_p1.Name = "btn_p1";
             this.btn_p1.Size = new System.Drawing.Size(27, 25);
             this.btn_p1.TabIndex = 10;
@@ -147,7 +138,7 @@
             // 
             this.btn_p8.BackColor = System.Drawing.Color.White;
             this.btn_p8.Location = new System.Drawing.Point(469, 329);
-            this.btn_p8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_p8.Margin = new System.Windows.Forms.Padding(4);
             this.btn_p8.Name = "btn_p8";
             this.btn_p8.Size = new System.Drawing.Size(27, 25);
             this.btn_p8.TabIndex = 11;
@@ -158,7 +149,7 @@
             // 
             this.btn_p11.BackColor = System.Drawing.Color.White;
             this.btn_p11.Location = new System.Drawing.Point(556, 383);
-            this.btn_p11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_p11.Margin = new System.Windows.Forms.Padding(4);
             this.btn_p11.Name = "btn_p11";
             this.btn_p11.Size = new System.Drawing.Size(27, 25);
             this.btn_p11.TabIndex = 12;
@@ -169,7 +160,7 @@
             // 
             this.btn_p5.BackColor = System.Drawing.Color.White;
             this.btn_p5.Location = new System.Drawing.Point(744, 327);
-            this.btn_p5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_p5.Margin = new System.Windows.Forms.Padding(4);
             this.btn_p5.Name = "btn_p5";
             this.btn_p5.Size = new System.Drawing.Size(27, 25);
             this.btn_p5.TabIndex = 13;
@@ -180,7 +171,7 @@
             // 
             this.btn_p4.BackColor = System.Drawing.Color.White;
             this.btn_p4.Location = new System.Drawing.Point(195, 329);
-            this.btn_p4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_p4.Margin = new System.Windows.Forms.Padding(4);
             this.btn_p4.Name = "btn_p4";
             this.btn_p4.Size = new System.Drawing.Size(27, 25);
             this.btn_p4.TabIndex = 14;
@@ -191,7 +182,7 @@
             // 
             this.btn_p10.BackColor = System.Drawing.Color.White;
             this.btn_p10.Location = new System.Drawing.Point(261, 383);
-            this.btn_p10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_p10.Margin = new System.Windows.Forms.Padding(4);
             this.btn_p10.Name = "btn_p10";
             this.btn_p10.Size = new System.Drawing.Size(27, 25);
             this.btn_p10.TabIndex = 15;
@@ -206,7 +197,7 @@
             // 
             this.btn_p3.BackColor = System.Drawing.Color.White;
             this.btn_p3.Location = new System.Drawing.Point(209, 272);
-            this.btn_p3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_p3.Margin = new System.Windows.Forms.Padding(4);
             this.btn_p3.Name = "btn_p3";
             this.btn_p3.Size = new System.Drawing.Size(27, 25);
             this.btn_p3.TabIndex = 16;
@@ -217,7 +208,7 @@
             // 
             this.btn_p6.BackColor = System.Drawing.Color.White;
             this.btn_p6.Location = new System.Drawing.Point(756, 272);
-            this.btn_p6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_p6.Margin = new System.Windows.Forms.Padding(4);
             this.btn_p6.Name = "btn_p6";
             this.btn_p6.Size = new System.Drawing.Size(27, 25);
             this.btn_p6.TabIndex = 17;
@@ -228,7 +219,7 @@
             // 
             this.btn_p12.BackColor = System.Drawing.Color.White;
             this.btn_p12.Location = new System.Drawing.Point(483, 383);
-            this.btn_p12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_p12.Margin = new System.Windows.Forms.Padding(4);
             this.btn_p12.Name = "btn_p12";
             this.btn_p12.Size = new System.Drawing.Size(27, 25);
             this.btn_p12.TabIndex = 18;
@@ -265,6 +256,7 @@
             this.btn_c2.TabIndex = 20;
             this.btn_c2.Text = "2";
             this.btn_c2.UseVisualStyleBackColor = false;
+            this.btn_c2.Click += new System.EventHandler(this.btn_c2_Click);
             // 
             // btn_c3
             // 
@@ -280,6 +272,7 @@
             this.btn_c3.TabIndex = 21;
             this.btn_c3.Text = "3";
             this.btn_c3.UseVisualStyleBackColor = false;
+            this.btn_c3.Click += new System.EventHandler(this.btn_c3_Click);
             // 
             // btn_c4
             // 
@@ -295,6 +288,7 @@
             this.btn_c4.TabIndex = 22;
             this.btn_c4.Text = "4";
             this.btn_c4.UseVisualStyleBackColor = false;
+            this.btn_c4.Click += new System.EventHandler(this.btn_c4_Click);
             // 
             // btn_c5
             // 
@@ -310,6 +304,7 @@
             this.btn_c5.TabIndex = 23;
             this.btn_c5.Text = "5";
             this.btn_c5.UseVisualStyleBackColor = false;
+            this.btn_c5.Click += new System.EventHandler(this.btn_c5_Click);
             // 
             // btn_c6
             // 
@@ -325,6 +320,7 @@
             this.btn_c6.TabIndex = 24;
             this.btn_c6.Text = "6";
             this.btn_c6.UseVisualStyleBackColor = false;
+            this.btn_c6.Click += new System.EventHandler(this.btn_c6_Click);
             // 
             // btn_c7
             // 
@@ -340,6 +336,7 @@
             this.btn_c7.TabIndex = 25;
             this.btn_c7.Text = "7";
             this.btn_c7.UseVisualStyleBackColor = false;
+            this.btn_c7.Click += new System.EventHandler(this.btn_c7_Click);
             // 
             // btn_c8
             // 
@@ -355,6 +352,7 @@
             this.btn_c8.TabIndex = 26;
             this.btn_c8.Text = "8";
             this.btn_c8.UseVisualStyleBackColor = false;
+            this.btn_c8.Click += new System.EventHandler(this.btn_c8_Click);
             // 
             // btn_c9
             // 
@@ -370,6 +368,7 @@
             this.btn_c9.TabIndex = 27;
             this.btn_c9.Text = "9";
             this.btn_c9.UseVisualStyleBackColor = false;
+            this.btn_c9.Click += new System.EventHandler(this.btn_c9_Click);
             // 
             // btn_c10
             // 
@@ -385,6 +384,7 @@
             this.btn_c10.TabIndex = 28;
             this.btn_c10.Text = "10";
             this.btn_c10.UseVisualStyleBackColor = false;
+            this.btn_c10.Click += new System.EventHandler(this.btn_c10_Click);
             // 
             // btn_c11
             // 
@@ -400,6 +400,7 @@
             this.btn_c11.TabIndex = 29;
             this.btn_c11.Text = "11";
             this.btn_c11.UseVisualStyleBackColor = false;
+            this.btn_c11.Click += new System.EventHandler(this.btn_c11_Click);
             // 
             // btn_c12
             // 
@@ -415,6 +416,7 @@
             this.btn_c12.TabIndex = 30;
             this.btn_c12.Text = "12";
             this.btn_c12.UseVisualStyleBackColor = false;
+            this.btn_c12.Click += new System.EventHandler(this.btn_c12_Click);
             // 
             // btn_c13
             // 
@@ -430,6 +432,7 @@
             this.btn_c13.TabIndex = 31;
             this.btn_c13.Text = "13";
             this.btn_c13.UseVisualStyleBackColor = false;
+            this.btn_c13.Click += new System.EventHandler(this.btn_c13_Click);
             // 
             // btn_c14
             // 
@@ -445,6 +448,7 @@
             this.btn_c14.TabIndex = 32;
             this.btn_c14.Text = "14";
             this.btn_c14.UseVisualStyleBackColor = false;
+            this.btn_c14.Click += new System.EventHandler(this.btn_c14_Click);
             // 
             // btn_c15
             // 
@@ -458,8 +462,9 @@
             this.btn_c15.Name = "btn_c15";
             this.btn_c15.Size = new System.Drawing.Size(48, 30);
             this.btn_c15.TabIndex = 33;
-            this.btn_c15.Text = "1";
+            this.btn_c15.Text = "15";
             this.btn_c15.UseVisualStyleBackColor = false;
+            this.btn_c15.Click += new System.EventHandler(this.btn_c15_Click);
             // 
             // btn_c16
             // 
@@ -473,8 +478,9 @@
             this.btn_c16.Name = "btn_c16";
             this.btn_c16.Size = new System.Drawing.Size(48, 30);
             this.btn_c16.TabIndex = 34;
-            this.btn_c16.Text = "2";
+            this.btn_c16.Text = "16";
             this.btn_c16.UseVisualStyleBackColor = false;
+            this.btn_c16.Click += new System.EventHandler(this.btn_c16_Click);
             // 
             // btn_c17
             // 
@@ -488,8 +494,9 @@
             this.btn_c17.Name = "btn_c17";
             this.btn_c17.Size = new System.Drawing.Size(48, 28);
             this.btn_c17.TabIndex = 35;
-            this.btn_c17.Text = "3";
+            this.btn_c17.Text = "17";
             this.btn_c17.UseVisualStyleBackColor = false;
+            this.btn_c17.Click += new System.EventHandler(this.btn_c17_Click);
             // 
             // btn_c18
             // 
@@ -503,8 +510,9 @@
             this.btn_c18.Name = "btn_c18";
             this.btn_c18.Size = new System.Drawing.Size(48, 30);
             this.btn_c18.TabIndex = 36;
-            this.btn_c18.Text = "4";
+            this.btn_c18.Text = "18";
             this.btn_c18.UseVisualStyleBackColor = false;
+            this.btn_c18.Click += new System.EventHandler(this.btn_c18_Click);
             // 
             // btn_c19
             // 
@@ -518,8 +526,9 @@
             this.btn_c19.Name = "btn_c19";
             this.btn_c19.Size = new System.Drawing.Size(48, 30);
             this.btn_c19.TabIndex = 37;
-            this.btn_c19.Text = "5";
+            this.btn_c19.Text = "19";
             this.btn_c19.UseVisualStyleBackColor = false;
+            this.btn_c19.Click += new System.EventHandler(this.btn_c19_Click);
             // 
             // btn_c20
             // 
@@ -533,8 +542,9 @@
             this.btn_c20.Name = "btn_c20";
             this.btn_c20.Size = new System.Drawing.Size(48, 30);
             this.btn_c20.TabIndex = 38;
-            this.btn_c20.Text = "6";
+            this.btn_c20.Text = "20";
             this.btn_c20.UseVisualStyleBackColor = false;
+            this.btn_c20.Click += new System.EventHandler(this.btn_c20_Click);
             // 
             // btn_c21
             // 
@@ -548,8 +558,9 @@
             this.btn_c21.Name = "btn_c21";
             this.btn_c21.Size = new System.Drawing.Size(48, 30);
             this.btn_c21.TabIndex = 39;
-            this.btn_c21.Text = "7";
+            this.btn_c21.Text = "21";
             this.btn_c21.UseVisualStyleBackColor = false;
+            this.btn_c21.Click += new System.EventHandler(this.btn_c21_Click);
             // 
             // btn_c22
             // 
@@ -563,8 +574,9 @@
             this.btn_c22.Name = "btn_c22";
             this.btn_c22.Size = new System.Drawing.Size(48, 30);
             this.btn_c22.TabIndex = 40;
-            this.btn_c22.Text = "8";
+            this.btn_c22.Text = "22";
             this.btn_c22.UseVisualStyleBackColor = false;
+            this.btn_c22.Click += new System.EventHandler(this.btn_c22_Click);
             // 
             // btn_c23
             // 
@@ -578,8 +590,9 @@
             this.btn_c23.Name = "btn_c23";
             this.btn_c23.Size = new System.Drawing.Size(48, 30);
             this.btn_c23.TabIndex = 41;
-            this.btn_c23.Text = "9";
+            this.btn_c23.Text = "23";
             this.btn_c23.UseVisualStyleBackColor = false;
+            this.btn_c23.Click += new System.EventHandler(this.btn_c23_Click);
             // 
             // btn_c24
             // 
@@ -593,8 +606,9 @@
             this.btn_c24.Name = "btn_c24";
             this.btn_c24.Size = new System.Drawing.Size(48, 30);
             this.btn_c24.TabIndex = 42;
-            this.btn_c24.Text = "10";
+            this.btn_c24.Text = "24";
             this.btn_c24.UseVisualStyleBackColor = false;
+            this.btn_c24.Click += new System.EventHandler(this.btn_c24_Click);
             // 
             // btn_c25
             // 
@@ -608,8 +622,9 @@
             this.btn_c25.Name = "btn_c25";
             this.btn_c25.Size = new System.Drawing.Size(48, 30);
             this.btn_c25.TabIndex = 43;
-            this.btn_c25.Text = "11";
+            this.btn_c25.Text = "25";
             this.btn_c25.UseVisualStyleBackColor = false;
+            this.btn_c25.Click += new System.EventHandler(this.btn_c25_Click);
             // 
             // btn_c26
             // 
@@ -623,8 +638,9 @@
             this.btn_c26.Name = "btn_c26";
             this.btn_c26.Size = new System.Drawing.Size(48, 30);
             this.btn_c26.TabIndex = 44;
-            this.btn_c26.Text = "12";
+            this.btn_c26.Text = "26";
             this.btn_c26.UseVisualStyleBackColor = false;
+            this.btn_c26.Click += new System.EventHandler(this.btn_c26_Click);
             // 
             // btn_c27
             // 
@@ -638,8 +654,9 @@
             this.btn_c27.Name = "btn_c27";
             this.btn_c27.Size = new System.Drawing.Size(48, 30);
             this.btn_c27.TabIndex = 45;
-            this.btn_c27.Text = "13";
+            this.btn_c27.Text = "27";
             this.btn_c27.UseVisualStyleBackColor = false;
+            this.btn_c27.Click += new System.EventHandler(this.btn_c27_Click);
             // 
             // btn_c28
             // 
@@ -653,8 +670,9 @@
             this.btn_c28.Name = "btn_c28";
             this.btn_c28.Size = new System.Drawing.Size(48, 30);
             this.btn_c28.TabIndex = 46;
-            this.btn_c28.Text = "14";
+            this.btn_c28.Text = "28";
             this.btn_c28.UseVisualStyleBackColor = false;
+            this.btn_c28.Click += new System.EventHandler(this.btn_c28_Click);
             // 
             // button1
             // 
@@ -665,13 +683,37 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(181)))));
             this.button1.Location = new System.Drawing.Point(141, 517);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(229, 49);
             this.button1.TabIndex = 47;
             this.button1.Text = "Cerrar Puertas";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pcbIng
+            // 
+            this.pcbIng.Image = global::PROYECTO.Properties.Resources.En_Mapa;
+            this.pcbIng.Location = new System.Drawing.Point(81, -8);
+            this.pcbIng.Margin = new System.Windows.Forms.Padding(4);
+            this.pcbIng.Name = "pcbIng";
+            this.pcbIng.Size = new System.Drawing.Size(891, 623);
+            this.pcbIng.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbIng.TabIndex = 48;
+            this.pcbIng.TabStop = false;
+            // 
+            // pcbEsp
+            // 
+            this.pcbEsp.Image = global::PROYECTO.Properties.Resources.mapa_mejorado;
+            this.pcbEsp.Location = new System.Drawing.Point(81, -1);
+            this.pcbEsp.Margin = new System.Windows.Forms.Padding(4);
+            this.pcbEsp.Name = "pcbEsp";
+            this.pcbEsp.Size = new System.Drawing.Size(855, 607);
+            this.pcbEsp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbEsp.TabIndex = 0;
+            this.pcbEsp.TabStop = false;
+            this.pcbEsp.Visible = false;
+            this.pcbEsp.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FrmMapa
             // 
@@ -721,20 +763,22 @@
             this.Controls.Add(this.btn_p7);
             this.Controls.Add(this.btn_p13);
             this.Controls.Add(this.btn_p9);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pcbEsp);
+            this.Controls.Add(this.pcbIng);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMapa";
             this.Text = "Mapa";
             this.Load += new System.EventHandler(this.Mapa_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbIng)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEsp)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pcbEsp;
         private System.Windows.Forms.Button btn_p9;
         private System.Windows.Forms.Button btn_p13;
         private System.Windows.Forms.Button btn_p7;
@@ -779,5 +823,6 @@
         private System.Windows.Forms.Button btn_c28;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pcbIng;
     }
 }

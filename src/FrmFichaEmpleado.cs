@@ -14,11 +14,64 @@ namespace PROYECTO
     {
         Empleado p1;
         FrmPersonal form;
-        public FrmFichaEmpleado(Empleado p1,FrmPersonal form)
+        FrmPpal frmPpal;
+        public FrmFichaEmpleado(Empleado p1,FrmPersonal form, FrmPpal frmPpal)
         {
             InitializeComponent();
             this.p1 = p1;
             this.form = form;
+            this.frmPpal = frmPpal;
+            frmPpal.IdiomaCambiado += new FrmPpal.IdiomaCambiadoEventHandler(OnIdiomaCambiado);
+            ActualizarIdioma();
+        }
+
+        private void OnIdiomaCambiado(object sender, EventArgs e)
+        {
+            ActualizarIdioma();
+        }
+
+
+        private void ActualizarIdioma()
+        {
+            if (frmPpal.getIdioma() == "ENGLISH")
+            {
+
+                lblNom.Text = "Name:";
+                lblApellidos.Text = "Surnames:";
+                lblNif.Text = "Id:";
+                lblTelefono.Text = "Phone Nº:";
+                lblSexo.Text = "Gender:";
+                cmbDireccion.Text = "Address:";
+                lblCodigoPos.Text = "Postal Code:";
+                lblCorreo.Text = "Email Adress";
+                lblTurno.Text = "Shift:";
+                lblPuesto.Text = "Job:";
+                btnSalir.Text = "Exit";
+                btnBorrar.Text = "Delete";
+                btnInsertar.Text = "Insert";
+                btnEditar.Text = "Edit";
+                this.Text = "Employee Info";
+
+
+            }
+            else if (frmPpal.getIdioma() == "ESPAÑOL")
+            {
+                lblNom.Text = "Nombre:";
+                lblApellidos.Text = "Apellidos:";
+                lblNif.Text = "DNI:";
+                lblTelefono.Text = "Telefono:";
+                lblSexo.Text = "Sexo:";
+                cmbDireccion.Text = "Dirección:";
+                lblCodigoPos.Text = "Codigo Postal:";
+                lblCorreo.Text = "Correo Electronico:";
+                lblTurno.Text = "Turno:";
+                lblPuesto.Text = "Puesto:";
+                btnSalir.Text = "Salir";
+                btnBorrar.Text = "Borrar";
+                btnInsertar.Text = "Insertar";
+                btnEditar.Text = "Editar";
+                this.Text = "Ficha Empleado";
+            }
         }
 
         private void FrmFichaEmpleado_Load(object sender, EventArgs e)

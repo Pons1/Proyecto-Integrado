@@ -187,16 +187,16 @@ INSERT INTO empleados (NIF, Nombre, Apellidos, Puesto, Contraseña, Sexo, Turno,
 
 
 INSERT INTO registros (Tipo, EmpleadoNIF, Fecha) VALUES 
-('ENTRADA', '24186930S', NOW()),
+('ENTRADA', '53879548R', NOW()),
 ('ENTRADA', '53445183Z', NOW()),
 ('ENTRADA', '95336396Q', NOW()),
 ('ENTRADA', '71916562R', NOW()),
-('ENTRADA', '03909618D', NOW()),
+('ENTRADA', '29222260R', NOW()),
 ('ENTRADA', '39329037A', NOW()),
 ('ENTRADA', '88118162X', NOW()),
-('ENTRADA', '36711488S', NOW()),
 ('ENTRADA', '34574628Q', NOW()),
-('ENTRADA', '52673662M', NOW());
+('ENTRADA', '54014873V', NOW());
+
 
 
 INSERT INTO presos (NIF, Nombre, Apellidos, Crimen, Sexo, Direccion, CodigoPostal, Correo, Celda, Presente, Telefono, Foto) VALUES 
@@ -216,24 +216,34 @@ INSERT INTO presos (NIF, Nombre, Apellidos, Crimen, Sexo, Direccion, CodigoPosta
 ('19770148S', 'Ivan', 'Moreno', 14, 'M', 'Calle Mayor 14', '28014', 'ivan.moreno@example.com', 14, 1, '600445566', NULL),
 ('78645475B', 'Alberto', 'Alvarez', 15, 'M', 'Calle Real 15', '28015', 'alberto.alvarez@example.com', 15, 1, '600556677', NULL);
 
-INSERT INTO registros (Tipo, PresoNIF, EmpleadoNIF, Motivo, Fecha) VALUES
-('ENTRADA', '76805228V', '24186930S', 'Inicio de sentencia', '2024-05-01 08:00:00'),
-('SALIDA', '76805228V', '95336396Q', 'Cita médica', '2024-05-01 12:00:00'),
-('ENTRADA', '17518448S', '88118162X', 'Traslado a celda', '2024-05-02 09:30:00'),
-('SALIDA', '17518448S', '52673662M', 'Visita familiar', '2024-05-02 14:00:00'),
-('ENTRADA', '55432589J', '03909618D', 'Ingreso nuevo', '2024-05-03 10:00:00'),
-('SALIDA', '55432589J', '71916562R', 'Trabajo en cocina', '2024-05-03 16:00:00'),
-('ENTRADA', '10366753D', '95336396Q', 'Regreso de trabajo', '2024-05-04 08:30:00'),
-('SALIDA', '10366753D', '34574628Q', 'Audiencia con abogado', '2024-05-04 11:00:00'),
-('ENTRADA', '87167185Z', '24186930S', 'Salida temporal', '2024-05-05 09:00:00'),
-('SALIDA', '87167185Z', '34574628Q', 'Permiso especial', '2024-05-05 18:00:00'),
-('ENTRADA', '36279259W', '88118162X', 'Cita médica', '2024-05-06 08:00:00'),
-('SALIDA', '36279259W', '71916562R', 'Actividad recreativa', '2024-05-06 14:00:00'),
-('ENTRADA', '73551243A', '52673662M', 'Visita con abogado', '2024-05-07 10:30:00'),
-('SALIDA', '73551243A', '95336396Q', 'Salida supervisada', '2024-05-07 15:00:00'),
-('ENTRADA', '73551243A', '88118162X', 'Regreso de audiencia', '2024-05-08 09:00:00'),
-('SALIDA', '73551243A', '03909618D', 'Terapia grupal', '2024-05-08 11:30:00'),
-('ENTRADA', '19770148S', '95336396Q', 'Nuevo ingreso', '2024-05-09 08:00:00'),
-('SALIDA', '19770148S', '88118162X', 'Trabajo comunitario', '2024-05-09 13:00:00'),
-('ENTRADA', '14395443L', '71916562R', 'Reasignación de celda', '2024-05-10 10:00:00'),
-('SALIDA', '14395443L', '95336396Q', 'Programa educativo', '2024-05-10 16:00:00');
+INSERT INTO registros (Tipo, PresoNIF, Motivo, Fecha) VALUES
+('ENTRADA', '76805228V', 'Inicio de sentencia', '2024-05-01 08:00:00'),
+('SALIDA', '17518448S', 'Cita médica', '2024-05-01 12:00:00'),
+('ENTRADA', '55432589J', 'Traslado a celda', '2024-05-02 09:30:00'),
+('SALIDA', '10366753D', 'Visita familiar', '2024-05-02 14:00:00'),
+('ENTRADA', '59583808P', 'Ingreso nuevo', '2024-05-03 10:00:00'),
+('SALIDA', '87167185Z', 'Trabajo en cocina', '2024-05-03 16:00:00'),
+('ENTRADA', '51758580R', 'Regreso de trabajo', '2024-05-04 08:30:00'),
+('SALIDA', '36279259W', 'Audiencia con abogado', '2024-05-04 11:00:00'),
+('ENTRADA', '73551243A', 'Salida temporal', '2024-05-05 09:00:00'),
+('SALIDA', '14395443L', 'Permiso especial', '2024-05-05 18:00:00'),
+('ENTRADA', '10825444B', 'Cita médica', '2024-05-06 08:00:00'),
+('SALIDA', '17205905L', 'Actividad recreativa', '2024-05-06 14:00:00'),
+('ENTRADA', '47649581K', 'Visita con abogado', '2024-05-07 10:30:00'),
+('SALIDA', '19770148S', 'Salida supervisada', '2024-05-07 15:00:00'),
+('ENTRADA', '78645475B', 'Regreso de audiencia', '2024-05-08 09:00:00'),
+('SALIDA', '76805228V', 'Terapia grupal', '2024-05-08 11:30:00'),
+('ENTRADA', '17518448S', 'Nuevo ingreso', '2024-05-09 08:00:00'),
+('SALIDA', '55432589J', 'Trabajo comunitario', '2024-05-09 13:00:00'),
+('ENTRADA', '10366753D', 'Reasignación de celda', '2024-05-10 10:00:00'),
+('SALIDA', '59583808P', 'Programa educativo', '2024-05-10 16:00:00');
+
+INSERT INTO horarios (Horario,Descripcion) VALUES 
+(NOW(),'Ejemplo'),
+(NOW(),'Ejemplo'),
+(NOW(),'Ejemplo'),
+(NOW(),'Ejemplo'),
+(NOW(),'Ejemplo'),
+(NOW(),'Ejemplo'),
+(NOW(),'Ejemplo'),
+(NOW(),'Ejemplo');

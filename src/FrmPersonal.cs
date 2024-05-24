@@ -12,9 +12,47 @@ namespace PROYECTO
 {
     public partial class FrmPersonal : Form
     {
-        public FrmPersonal()
+        private FrmPpal frmPpal;
+        public FrmPersonal(FrmPpal frmpPpal)
         {
             InitializeComponent();
+            dgvEmpleados.RowHeadersVisible=false;
+            this.frmPpal = frmpPpal;
+
+            frmPpal.IdiomaCambiado += new FrmPpal.IdiomaCambiadoEventHandler(OnIdiomaCambiado);
+            ActualizarIdioma();
+            dgvEmpleados.RowTemplate.Height = 50;
+        }
+
+        public FrmPersonal()
+        {
+        }
+
+        private void OnIdiomaCambiado(object sender, EventArgs e)
+        {
+            ActualizarIdioma();
+        }
+
+
+        private void ActualizarIdioma()
+        {
+            if (frmPpal.getIdioma() == "ENGLISH")
+            {
+
+                label1.Text = "*Double click on the line to see the personal file/edit/delete of each employee";
+                btnReset.Text = "Refresh";
+                lblPuesto.Text = "Job: ";
+                lblNombre.Text = "Name:";
+                btn_añadir_empleado.Text = "Add Employee";
+            }
+            else if (frmPpal.getIdioma() == "ESPAÑOL")
+            {
+                label1.Text = "*Doble click sobre la liena para ver la ficha personal/editar/borrar de cada mpleado";
+                btnReset.Text = "Actualizar";
+                lblPuesto.Text = "Puesto:";
+                lblNombre.Text = "Nombre:";
+                btn_añadir_empleado.Text = "Añadir Empleado";
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -73,7 +111,7 @@ namespace PROYECTO
 
         private void btn_añadir_empleado_Click(object sender, EventArgs e)
         {
-            FrmAñadirEmpleado form = new FrmAñadirEmpleado(this);
+            FrmAñadirEmpleado form = new FrmAñadirEmpleado(this,this.frmPpal);
             form.ShowDialog();
         }
 
@@ -122,7 +160,6 @@ namespace PROYECTO
                 string turno = selectedRow.Cells["Turno"].Value.ToString();
 
                 string direccion = selectedRow.Cells["Direccion"].Value.ToString();
-                int presente = int.Parse(selectedRow.Cells["Presente"].Value.ToString());
 
                 int codigoPostal = int.Parse(selectedRow.Cells["codigoPostal"].Value.ToString());
                 string correo = selectedRow.Cells["Correo"].Value.ToString();
@@ -131,9 +168,9 @@ namespace PROYECTO
 
                 Image img = Empleado.ConsultarImagenEmpl(id);
 
-                Empleado p1 = new Empleado(id, nombre, apellidos, puesto, sexo, turno, direccion, codigoPostal, correo, presente, img, tel,"");
+                Empleado p1 = new Empleado(id, nombre, apellidos, puesto, sexo, turno, direccion, codigoPostal, correo, 1, img, tel,"");
 
-                FrmFichaEmpleado frmFichaEmpleado = new FrmFichaEmpleado(p1, this);
+                FrmFichaEmpleado frmFichaEmpleado = new FrmFichaEmpleado(p1, this,this.frmPpal);
                 frmFichaEmpleado.Show();
 
             }

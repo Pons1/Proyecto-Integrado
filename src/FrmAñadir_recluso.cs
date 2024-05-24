@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,10 +14,63 @@ namespace PROYECTO
     public partial class FrmAñadir_recluso : Form
     {
         FrmPresos frm;
-        public FrmAñadir_recluso(FrmPresos form)
+        FrmPpal frmPpal;
+        public FrmAñadir_recluso(FrmPresos form, FrmPpal frmPpal)
         {
              frm = form;
+            this.frmPpal = frmPpal;
             InitializeComponent();
+            frmPpal.IdiomaCambiado += new FrmPpal.IdiomaCambiadoEventHandler(OnIdiomaCambiado);
+            ActualizarIdioma();
+        }
+        private void OnIdiomaCambiado(object sender, EventArgs e)
+        {
+            ActualizarIdioma();
+        }
+
+
+        private void ActualizarIdioma()
+        {
+            if (frmPpal.getIdioma() == "ENGLISH")
+            {
+
+                lblNombre.Text = "Name:";
+                lblApellidos.Text = "Surnames:";
+                lblNif.Text = "Id:";
+                lblTelefono.Text = "Phone Nº:";
+                lblSexo.Text = "Gender:";
+                cmbDireccion.Text = "Address:";
+                lblCodigoPos.Text = "Postal Code:";
+                lblCorreo.Text = "Email Adress";
+                lblCelda.Text = "Cell:";
+                lblCrimen.Text = "Crime:";
+                btnSalir.Text = "Exit";
+                btn_añadir_foto.Text = "Add Image";
+                btnAñadir.Text = "Add";
+                this.Text = "Add Inmate";
+
+
+
+            }
+            else if (frmPpal.getIdioma() == "ESPAÑOL")
+            {
+                lblNombre.Text = "Nombre:";
+                lblApellidos.Text = "Apellidos:";
+                lblNif.Text = "DNI:";
+                lblTelefono.Text = "Telefono:";
+                lblSexo.Text = "Sexo:";
+                cmbDireccion.Text = "Dirección:";
+                lblCodigoPos.Text = "Codigo Postal:";
+                lblCorreo.Text = "Correo Electronico:";
+                lblCelda.Text = "Celda:";
+                lblCrimen.Text = "Crimen:";
+                btnSalir.Text = "Salir";
+                btn_añadir_foto.Text = "Añadir Foto";
+                btnAñadir.Text = "Añadir";
+                this.Text = "Añadir recluso";
+
+
+            }
         }
 
         private void Añadir_recluso_Load(object sender, EventArgs e)

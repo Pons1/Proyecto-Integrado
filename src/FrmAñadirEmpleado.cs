@@ -13,13 +13,65 @@ namespace PROYECTO
     public partial class FrmAñadirEmpleado : Form
     {
         FrmPersonal frm = new FrmPersonal();
-        public FrmAñadirEmpleado(FrmPersonal frm)
+        FrmPpal frmPpal;
+        public FrmAñadirEmpleado(FrmPersonal frm, FrmPpal frmPpal)
         {
            
             InitializeComponent();
             this.frm=frm;
+
+            this.frmPpal=frmPpal;
+            frmPpal.IdiomaCambiado += new FrmPpal.IdiomaCambiadoEventHandler(OnIdiomaCambiado);
+            ActualizarIdioma();
         }
-        
+        private void OnIdiomaCambiado(object sender, EventArgs e)
+        {
+            ActualizarIdioma();
+        }
+
+
+        private void ActualizarIdioma()
+        {
+            if (frmPpal.getIdioma() == "ENGLISH")
+            {
+
+                lblNombre.Text = "Name:";
+                lblApellidos.Text = "Surnames:";
+                lblNif.Text = "Id:";
+                lblTelefono.Text = "Phone Nº:";
+                lblSexo.Text = "Gender:";
+                cmbDireccion.Text = "Address:";
+                lblCodigoPos.Text = "Postal Code:";
+                lblCorreo.Text = "Email Adress";
+                lblPuesto.Text = "Job:";
+                lblTurno.Text = "Shift:";
+                btnSalir.Text = "Exit";
+                btn_añadir_foto.Text = "Add Image";
+                btnAñadir.Text = "Add";
+                this.Text = "Add Employee";
+
+            }
+            else if (frmPpal.getIdioma() == "ESPAÑOL")
+            {
+                lblNombre.Text = "Nombre:";
+                lblApellidos.Text = "Apellidos:";
+                lblNif.Text = "NIF:";
+                lblTelefono.Text = "Telefono:";
+                lblSexo.Text = "Sexo:";
+                cmbDireccion.Text = "Dirección:";
+                lblCodigoPos.Text = "Codigo Postal:";
+                lblCorreo.Text = "Correo Electronico:";
+                lblPuesto.Text = "Puesto:";
+                lblTurno.Text = "Turno:";
+                btnSalir.Text = "Salir";
+                btn_añadir_foto.Text = "Añadir Foto";
+                btnAñadir.Text = "Añadir";
+                this.Text = "Añadir Empleado";
+
+
+            }
+        }
+
         private void lblCrimen_Click(object sender, EventArgs e)
         {
 
@@ -98,5 +150,22 @@ namespace PROYECTO
                 erpPersonal.SetError(txt_nifempleado, "Nif incorrecto");
             }
         }
+
+        private void pic_abrir_Click(object sender, EventArgs e)
+        {
+            panel1.Width = 215;
+            pic_cerrar.Visible = true;
+            pic_abrir.Visible = false;
+
+        }
+
+        private void pic_cerrar_Click(object sender, EventArgs e)
+        {
+          
+            panel1.Width = 10;
+            pic_cerrar.Visible = false;
+            pic_abrir.Visible = true;
+        }
     }
-}
+    }
+

@@ -8,11 +8,14 @@ namespace PROYECTO
     public partial class FrmCorreos : Form
     {
         private List<string> correosSeleccionados;
-
-        public FrmCorreos()
+        FrmPpal frmPpal;
+        public FrmCorreos(FrmPpal frmPpal)
         {
             InitializeComponent();
             correosSeleccionados = new List<string>();
+            this.frmPpal = frmPpal;
+            frmPpal.IdiomaCambiado += new FrmPpal.IdiomaCambiadoEventHandler(OnIdiomaCambiado);
+            ActualizarIdioma();
 
             // Registrar los eventos
             this.dgvCorreos.CellDoubleClick += new DataGridViewCellEventHandler(this.dgvCorreos_CellDoubleClick);
@@ -24,6 +27,45 @@ namespace PROYECTO
             this.chkCocina.CheckedChanged += new EventHandler(this.chkCocina_CheckedChanged);
             this.chkLimpieza.CheckedChanged += new EventHandler(this.chkLimpieza_CheckedChanged);
             this.chkEnfermeria.CheckedChanged += new EventHandler(this.chkEnfermeria_CheckedChanged);
+        }
+        private void OnIdiomaCambiado(object sender, EventArgs e)
+        {
+            ActualizarIdioma();
+        }
+
+
+        private void ActualizarIdioma()
+        {
+            if (frmPpal.getIdioma() == "ENGLISH")
+            {
+
+                lblAsunto.Text = "Issue:";
+                lblPara.Text = "To:";
+                lblMensaje.Text = "Message:";
+                chkVigilancia.Text = "Vigilance";
+                chkLimpieza.Text = "Housekeeping";
+                chkCocina.Text = "Kitchen";
+                chkAdministracion.Text = "Administration";
+                chkEnfermeria.Text = "Nursing";
+
+
+                this.Text = "Send EMail";
+
+            }
+            else if (frmPpal.getIdioma() == "ESPAÑOL")
+            {
+
+                lblAsunto.Text = "Asunto:";
+                lblPara.Text = "Para:";
+                lblMensaje.Text = "Mensaje:";
+                chkVigilancia.Text = "Vigilacia";
+                chkLimpieza.Text = "Limpieza";
+                chkCocina.Text = "Cocina";
+                chkAdministracion.Text = "Administracion";
+                chkEnfermeria.Text = "Enfermeria";
+                this.Text = "Envio de Correos";
+
+            }
         }
 
         private void FrmCorreos_Load(object sender, EventArgs e)

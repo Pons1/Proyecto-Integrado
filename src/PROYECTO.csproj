@@ -127,6 +127,12 @@
     <Compile Include="FrmPersonal.Designer.cs">
       <DependentUpon>FrmPersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVerCeldacs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVerCeldacs.Designer.cs">
+      <DependentUpon>FrmVerCeldacs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Preso.cs" />
     <Compile Include="FrmPresos.cs">
       <SubType>Form</SubType>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPresos.resx">
       <DependentUpon>FrmPresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVerCeldacs.resx">
+      <DependentUpon>FrmVerCeldacs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -288,6 +297,9 @@
     <None Include="Resources\def.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\En_Mapa.jpg" />
+    <Content Include="Resources\MapaIng.jpg" />
+    <None Include="Resources\MapaIng1.jpg" />
     <None Include="Resources\mapa-mejorado.png" />
     <None Include="Resources\logo.png" />
     <None Include="Resources\cerrar1.png" />

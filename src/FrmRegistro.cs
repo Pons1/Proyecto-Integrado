@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,16 +14,70 @@ namespace PROYECTO
 {
     public partial class FrmRegistro : Form
     {
-        public FrmRegistro()
+        FrmPpal frmPpal;
+
+
+        public FrmRegistro(FrmPpal frmPpal)
         {
             InitializeComponent();
+            ConfigurarEstiloDataGridView(dataGridView1);
+            ConfigurarEstiloDataGridView(dataGridView2);
+
             rbtnPreso.Checked = true;
             CargarRegistros();
+            this.frmPpal = frmPpal;
+            frmPpal.IdiomaCambiado += new FrmPpal.IdiomaCambiadoEventHandler(OnIdiomaCambiado);
+            ActualizarIdioma();
+        }
+        private void OnIdiomaCambiado(object sender, EventArgs e)
+        {
+            ActualizarIdioma();
+        }
+
+
+        private void ActualizarIdioma()
+        {
+            if (frmPpal.getIdioma() == "ENGLISH")
+            {
+
+                btn_añadir_registro.Text = "Add Register";
+                lblFiltrarPorTexto.Text = "Filter by text:";
+                lblFiltrarPorFecha.Text = "Filter by date:";
+                btnRefrescar.Text = "Refresh";
+                rbtnEmpleado.Text = "Employee";
+                rbtnPreso.Text = "Inmate";
+
+            }
+            else if (frmPpal.getIdioma() == "ESPAÑOL")
+            {
+
+                btn_añadir_registro.Text = "Añadir Registro";
+                lblFiltrarPorTexto.Text = "Filtrar Por Texto:";
+                lblFiltrarPorFecha.Text = "Filtrar Por Fecha";
+                btnRefrescar.Text = "Refrescar";
+                rbtnEmpleado.Text = "Empleado";
+                rbtnPreso.Text = "Prisionero";
+            }
         }
 
 
 
+        private void ConfigurarEstiloDataGridView(DataGridView dgv)
+        {
+            Color colorCelda = ColorTranslator.FromHtml("#D6BB78");
+            Color colorCelda2 = ColorTranslator.FromHtml("#5c330a");
 
+            dgv.DefaultCellStyle.BackColor = colorCelda;
+            dgv.DefaultCellStyle.ForeColor = Color.Black;
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = colorCelda2;
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv.RowHeadersVisible = false;
+            dgv.RowTemplate.Height = 40;
+            dgv.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            dgv.DefaultCellStyle.Padding = new Padding(5);
+            dgv.GridColor = Color.Black;
+            dgv.EnableHeadersVisualStyles = false;
+        }
         private void CargarRegistros()
         {
             try
@@ -49,7 +104,7 @@ namespace PROYECTO
 
         private void btn_añadir_registro_Click(object sender, EventArgs e)
         {
-            FrmAñadirRegistro frm = new FrmAñadirRegistro();
+            FrmAñadirRegistro frm = new FrmAñadirRegistro(this.frmPpal);
             frm.ShowDialog();
         }
 
@@ -74,6 +129,7 @@ namespace PROYECTO
 
         private void dtpFechaFin_ValueChanged(object sender, EventArgs e)
         {
+            dtpFechaInicio.MaxDate = dtpFechaFin.Value;
 
         }
 
@@ -128,11 +184,22 @@ namespace PROYECTO
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             CargarRegistros();
+            dtpFechaInicio.Text=DateTime.Now.Date.ToString();
+            dtpFechaFin.Text = DateTime.Now.Date.ToString();
+
         }
 
         private void FrmRegistro_Load(object sender, EventArgs e)
         {
             rbtnPreso.Checked = true;
+
+
+            dtpFechaFin.MaxDate= DateTime.Now;
+            dtpFechaInicio.MaxDate = dtpFechaFin.Value;
+
+
+
+
         }
 
         private void rbtnPreso_CheckedChanged(object sender, EventArgs e)

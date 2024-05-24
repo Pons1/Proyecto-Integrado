@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,13 +15,66 @@ namespace PROYECTO
     {
         private Preso p1;
         private FrmPresos form;
+        FrmPpal frmPpal;
 
-
-        public FrmFichaPreso(Preso p1, FrmPresos form)
+        public FrmFichaPreso(Preso p1, FrmPresos form,FrmPpal frmPpal)
         {
             InitializeComponent();
             this.p1 = p1;
             this.form = form;
+            this.frmPpal = frmPpal;
+            frmPpal.IdiomaCambiado += new FrmPpal.IdiomaCambiadoEventHandler(OnIdiomaCambiado);
+            ActualizarIdioma();
+
+        }
+        private void OnIdiomaCambiado(object sender, EventArgs e)
+        {
+            ActualizarIdioma();
+        }
+
+
+        private void ActualizarIdioma()
+        {
+            if (frmPpal.getIdioma() == "ENGLISH")
+            {
+
+                lblNom.Text = "Name:";
+                lblApellidos.Text = "Surnames:";
+                lblNif.Text = "Id:";
+                lblTelefono.Text = "Phone Nº:";
+                lblSexo.Text = "Gender:";
+                cmbDireccion.Text = "Address:";
+                lblCodigoPos.Text = "Postal Code:";
+                lblCorreo.Text = "Email Adress";
+                lblCelda.Text = "Cell:";
+                lblCrimen.Text = "Crime:";
+                btnSalir.Text = "Exit";
+                btnBorrar.Text = "Delete";
+                btnInsertar.Text = "Insert";
+                btnEditar.Text = "Edit";
+                this.Text = "Inmate Info";
+
+
+            }
+            else if (frmPpal.getIdioma() == "ESPAÑOL")
+            {
+                lblNom.Text="Nombre:";
+                lblApellidos.Text = "Apellidos:";
+                lblNif.Text = "DNI:";
+                lblTelefono.Text = "Telefono:";
+                lblSexo.Text = "Sexo:";
+                cmbDireccion.Text = "Dirección:";
+                lblCodigoPos.Text = "Codigo Postal:";
+                lblCorreo.Text = "Correo Electronico:";
+                lblCelda.Text = "Celda:";
+                lblCrimen.Text = "Crimen:";
+                btnSalir.Text = "Salir";
+                btnBorrar.Text = "Borrar";
+                btnInsertar.Text = "Insertar";
+                btnEditar.Text = "Editar";
+                this.Text = "Ficha Preso";
+
+            }
         }
 
 
@@ -171,7 +225,7 @@ namespace PROYECTO
             erpFichasPresos.Clear();
             if (Preso.DNICorrecto(txt_nifPreso.Text))
             {
-                if (Preso.BorrarPreso(txt_nifPreso.Text, int.Parse(txtCelda.Text)) == -1)
+                if (Preso.BorrarPreso(txt_nifPreso.Text,int.Parse(cmbCelda.Text)) == -1)
                 {
                     MessageBox.Show("No se ha encontrado ningún preso con dicho NIF");
                 }

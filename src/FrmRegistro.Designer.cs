@@ -84,9 +84,11 @@ namespace PROYECTO
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaInicio.Location = new System.Drawing.Point(824, 28);
             this.dtpFechaInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpFechaInicio.MaxDate = new System.DateTime(2024, 5, 23, 0, 0, 0, 0);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(127, 22);
             this.dtpFechaInicio.TabIndex = 6;
+            this.dtpFechaInicio.Value = new System.DateTime(2024, 5, 23, 0, 0, 0, 0);
             this.dtpFechaInicio.ValueChanged += new System.EventHandler(this.dtpFechaInicio_ValueChanged);
             // 
             // dataGridView1
@@ -115,11 +117,11 @@ namespace PROYECTO
             this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaFin.Location = new System.Drawing.Point(824, 66);
             this.dtpFechaFin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpFechaFin.MaxDate = new System.DateTime(2024, 5, 21, 0, 0, 0, 0);
+            this.dtpFechaFin.MaxDate = new System.DateTime(2024, 5, 23, 0, 0, 0, 0);
             this.dtpFechaFin.Name = "dtpFechaFin";
             this.dtpFechaFin.Size = new System.Drawing.Size(127, 22);
             this.dtpFechaFin.TabIndex = 8;
-            this.dtpFechaFin.Value = new System.DateTime(2024, 5, 21, 0, 0, 0, 0);
+            this.dtpFechaFin.Value = new System.DateTime(2024, 5, 23, 0, 0, 0, 0);
             this.dtpFechaFin.ValueChanged += new System.EventHandler(this.dtpFechaFin_ValueChanged);
             // 
             // txtBusquedaPorTexto

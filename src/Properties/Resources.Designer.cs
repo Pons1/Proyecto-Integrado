@@ -183,6 +183,16 @@ namespace PROYECTO.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap En_Mapa {
+            get {
+                object obj = ResourceManager.GetObject("En_Mapa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap horario {
             get {
                 object obj = ResourceManager.GetObject("horario", resourceCulture);
@@ -236,6 +246,16 @@ namespace PROYECTO.Properties {
         internal static System.Drawing.Bitmap mapa_mejorado {
             get {
                 object obj = ResourceManager.GetObject("mapa-mejorado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MapaIng {
+            get {
+                object obj = ResourceManager.GetObject("MapaIng", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

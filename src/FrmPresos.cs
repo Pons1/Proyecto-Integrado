@@ -12,9 +12,43 @@ namespace PROYECTO
 {
     public partial class FrmPresos : Form
     {
-        public FrmPresos()
+        FrmPpal frmPpal;
+        public FrmPresos(FrmPpal frmPpal)
         {
             InitializeComponent();
+            dgvPresos.RowHeadersVisible = false;
+
+            this.frmPpal = frmPpal;
+            frmPpal.IdiomaCambiado += new FrmPpal.IdiomaCambiadoEventHandler(OnIdiomaCambiado);
+            ActualizarIdioma();
+            dgvPresos.RowTemplate.Height = 50;
+
+        }
+        private void OnIdiomaCambiado(object sender, EventArgs e)
+        {
+            ActualizarIdioma();
+        }
+
+
+        private void ActualizarIdioma()
+        {
+            if (frmPpal.getIdioma() == "ENGLISH")
+            {
+
+                label1.Text = "*Double click on the line to see the personal file/edit/delete of each prisoner";
+                btnReset.Text = "Refresh";
+                lblmod.Text = "Module ";
+                lblNombre.Text = "Name";
+                btn_añadir_recluso.Text = "Add Prisioner";
+            }
+            else if (frmPpal.getIdioma() == "ESPAÑOL")
+            {
+                label1.Text = "*Doble click sobre la liena para ver la ficha personal/editar/borrar de cada preso";
+                btnReset.Text = "Actualizar";
+                lblmod.Text = "Modulo:";
+                lblNombre.Text = "Nombre:";
+                btn_añadir_recluso.Text = "Añadir Recluso";
+            }
         }
 
         public void Actualizardgv()
@@ -25,7 +59,7 @@ namespace PROYECTO
 
         private void btn_añadir_recluso_Click(object sender, EventArgs e)
         {
-            FrmAñadir_recluso r1 = new FrmAñadir_recluso(this);
+            FrmAñadir_recluso r1 = new FrmAñadir_recluso(this,this.frmPpal);
             r1.Show();
         }
 
@@ -104,7 +138,7 @@ namespace PROYECTO
 
                 Preso p1 =new Preso(id,nombre,apellidos,crimen,sexo,direccion,codigoPostal,correo,celda,0,img,tel);
 
-                FrmFichaPreso frmFichaPreso = new FrmFichaPreso(p1,this);
+                FrmFichaPreso frmFichaPreso = new FrmFichaPreso(p1,this,this.frmPpal);
                 frmFichaPreso.Show();
 
             }

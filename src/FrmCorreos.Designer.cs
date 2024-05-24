@@ -275,6 +275,7 @@
             this.Controls.Add(this.lblPara);
             this.Controls.Add(this.lblAsunto);
             this.Controls.Add(this.txtAsunto);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCorreos";
             this.Text = "FrmCorreos";
             this.Load += new System.EventHandler(this.FrmCorreos_Load);

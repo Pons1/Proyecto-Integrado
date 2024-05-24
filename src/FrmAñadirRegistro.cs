@@ -5,7 +5,8 @@ namespace PROYECTO
 {
     public partial class FrmAñadirRegistro : Form
     {
-        public FrmAñadirRegistro()
+        FrmPpal frmPpal;
+        public FrmAñadirRegistro(FrmPpal frmPpal)
         {
             InitializeComponent();
             mtxtNif.TextChanged += mtxtNif_TextChanged;
@@ -17,6 +18,42 @@ namespace PROYECTO
             btnCrearRegistro.Click -= btnCrearRegistro_Click;
             // Suscribir el evento
             btnCrearRegistro.Click += btnCrearRegistro_Click;
+            this.frmPpal = frmPpal;
+            frmPpal.IdiomaCambiado += new FrmPpal.IdiomaCambiadoEventHandler(OnIdiomaCambiado);
+            ActualizarIdioma();
+        }
+        private void OnIdiomaCambiado(object sender, EventArgs e)
+        {
+            ActualizarIdioma();
+        }
+
+
+        private void ActualizarIdioma()
+        {
+            if (frmPpal.getIdioma() == "ENGLISH")
+            {
+
+                lblNif.Text = "Id:";
+                lblRegistro.Text = "Register:";
+                lblMotivo.Text = "Motive:";
+                 btnCrearRegistro.Text = "Create register";
+                rbtnEmpleado.Text = "Employee";
+                rbtnPreso.Text = "Inmate";
+                this.Text = "Add Register";
+
+            }
+            else if (frmPpal.getIdioma() == "ESPAÑOL")
+            {
+
+                lblNif.Text = "Id:";
+                lblRegistro.Text = "Register:";
+                lblMotivo.Text = "Motive:";
+                btnCrearRegistro.Text = "Create register";
+                rbtnEmpleado.Text = "Empleado";
+                rbtnPreso.Text = "Prisionero";
+                this.Text = "Añadir Registro";
+
+            }
         }
 
         private void FrmAñadirRegistro_Load(object sender, EventArgs e)

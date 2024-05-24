@@ -20,16 +20,10 @@ CREATE TABLE crimenes (
 CREATE TABLE celdas (
     CodigoCelda INT auto_increment,
     Modulo ENUM('A','B'),
-    Abierta TINYINT DEFAULT 0,
-	Ocupacion int default 0,
+    Abierta TINYINT,
+    ocupacion INT DEFAULT 0,
     PRIMARY KEY (CodigoCelda),
     FOREIGN KEY (Modulo) REFERENCES modulos(CodigoModulo) ON DELETE CASCADE
-);
-
-CREATE TABLE horarios (
-    CodigoHorario INT AUTO_INCREMENT PRIMARY KEY,
-    Horario TIME NOT NULL,
-    Descripcion VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE turnos (
@@ -43,7 +37,7 @@ CREATE TABLE presos (
     Nombre CHAR(20) NOT NULL,
     Apellidos CHAR(20) NOT NULL,
     Crimen INT,
-    Sexo ENUM('HOMBRE'),
+    Sexo CHAR(1),
     Direccion CHAR(50) NOT NULL,
     CodigoPostal CHAR(5) NOT NULL,
     Correo VARCHAR(50),
@@ -63,7 +57,7 @@ CREATE TABLE empleados (
     Apellidos CHAR(20) NOT NULL,
     Puesto ENUM('VIGILANCIA','LIMPIEZA','COCINA','ENFERMERIA','ADMINISTRACION') NOT NULL,
     Contraseña VARCHAR(30),
-    Sexo ENUM('HOMBRE','MUJER'),
+    Sexo CHAR(1) NOT NULL,
     Turno ENUM('MAÑANA','TARDE','NOCHE'),
     Direccion CHAR(50) NOT NULL,
     Presente TINYINT,
@@ -98,15 +92,28 @@ CREATE TABLE registros (
     FOREIGN KEY (EmpleadoNIF) REFERENCES empleados(NIF) ON DELETE SET NULL
 );
 
+CREATE TABLE horarios (
+    CodigoHorario INT AUTO_INCREMENT PRIMARY KEY,
+    Horario TIME NOT NULL,
+    Descripcion VARCHAR(50) NOT NULL
+);
+
+DELIMITER $$
+
 CREATE TRIGGER after_insert_presos
 AFTER INSERT ON presos
 FOR EACH ROW
+BEGIN
     INSERT INTO registros (Tipo, PresoNIF, Motivo, Fecha)
     VALUES ('ENTRADA', NEW.NIF, 'Ingreso inicial', NOW());
-
+END$$
 
 CREATE TRIGGER after_insert_empleados
-AFTER INSERT ON Empleados
+AFTER INSERT ON empleados
 FOR EACH ROW
+BEGIN
     INSERT INTO registros (Tipo, EmpleadoNIF, Fecha)
     VALUES ('ENTRADA', NEW.NIF, NOW());
+END$$
+
+DELIMITER ;

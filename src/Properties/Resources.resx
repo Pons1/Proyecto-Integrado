@@ -130,14 +130,11 @@
   <data name="cuadrado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cuadrado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrow-25-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow-25-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="paper-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\paper-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow-25-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow-25-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="time-8-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\time-8-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,8 +148,14 @@
   <data name="worker-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\worker-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="arrow-88-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow-88-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="time-8-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\time-8-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="paper-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paper-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mapa-mejorado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mapa-mejorado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,7 +208,10 @@
   <data name="prision" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prision.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrow-88-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow-88-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MapaIng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MapaIng1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="En_Mapa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\En_Mapa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

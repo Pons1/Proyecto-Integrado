@@ -34,20 +34,20 @@ namespace PROYECTO
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             string nif = mtxtNif.Text.Replace("-", "");
-            if (Empleado.ComprobarRegistro(nif,txtContraseña.Text) == false)
+            if (Empleado.ComprobarRegistro(nif,txtContraseña.Text))
             {
                 
                 FrmPpal frmPpal = new FrmPpal();
                 frmPpal.Show();
             
-                frmPpal.AbrirFormulario(new FrmMapa());
+                frmPpal.AbrirFormulario(new FrmMapa(frmPpal));
                 this.Hide();
             }
             else
             {
                 MessageBox.Show("Usuario/Contraseña incorrecto");
                 string body = "Se ha detectado un intento de inicio de sesion con el nombre o nif: <span Style=\"color: red;\">" + nif+ "</span>";
-                Correo alerta = new Correo("centralisgrupo@gmail.com", "Intento Inicio De Sesion", body);
+                Correo alerta = new Correo("CentralisGrupo@outlook.es", "Intento Inicio De Sesion", body);
                 alerta.EnviarCorreo(false);
                 txtContraseña.Clear();
                 mtxtNif.Clear();

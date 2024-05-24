@@ -8,20 +8,47 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Design;
+using System.Reflection.Emit;
+using PROYECTO.Properties;
 
 namespace PROYECTO
 {
     public partial class FrmMapa : Form
     {
+        FrmPpal frmPpal;
 
-
-        public FrmMapa()
+        public FrmMapa(FrmPpal frmPpal)
         {
             InitializeComponent();
             temporizador = new Timer();
             temporizador.Interval = 500; // Intervalo en milisegundos (por ejemplo, cada 5 segundos)
             temporizador.Tick += temporizador_Tick;
             temporizador.Start();
+
+            this.frmPpal = frmPpal;
+            frmPpal.IdiomaCambiado += new FrmPpal.IdiomaCambiadoEventHandler(OnIdiomaCambiado);
+            ActualizarIdioma();
+        }
+        private void OnIdiomaCambiado(object sender, EventArgs e)
+        {
+            ActualizarIdioma();
+        }
+
+
+        private void ActualizarIdioma()
+        {
+            if (frmPpal.getIdioma() == "ENGLISH")
+            {
+               pcbEsp.Hide();
+                button1.Text = "Close Cells";
+                
+            }
+            else if (frmPpal.getIdioma() == "ESPAÑOL")
+            {
+               pcbEsp.Show();
+                button1.Text = "Cerrar Puertas";
+
+            }
         }
 
         Puertas p1 = new Puertas(1);
@@ -416,7 +443,7 @@ namespace PROYECTO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Se trata de una emergencia, desea abrir todas las puertas?", "¡Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("¿Se trata de una emergencia, desea cerrar todas las puertas?", "¡Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             // Verificar la respuesta del usuario
             if (result == DialogResult.Yes)
@@ -440,7 +467,203 @@ namespace PROYECTO
 
         private void btn_c1_Click(object sender, EventArgs e)
         {
-            
+            List<Preso> pres=Preso.MostrarPresosPorCelda(1);
+            FrmVerCeldacs frm= new FrmVerCeldacs(pres,1,"A",frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c2_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(2);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 2, "A", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c20_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(20);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 20, "B", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c3_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(3);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 3, "A", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c4_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(4);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 4, "A", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c5_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(5);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 5, "A", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c6_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(6);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 6, "A", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c7_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(7);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 7, "A", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c8_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(8);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 8, "A", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c9_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(9);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 9, "A", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c10_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(10);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 10, "A", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c11_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(11);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 11, "A", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c12_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(12);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 12, "A", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c13_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(13);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 13, "A", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c14_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(14);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 14, "A", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c15_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(15);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 15, "B", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c16_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(16);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 16, "B", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c17_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(17);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 17, "B", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c18_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(18);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 18, "B", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c19_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(19);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 19, "B", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c21_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(21);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 21, "B", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c22_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(22);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 22, "B", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c23_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(23);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 23, "B", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c24_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(24);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 24, "B", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c25_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(25);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 25, "B", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c26_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(26);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 26, "B", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c27_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(27);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 27, "B", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void btn_c28_Click(object sender, EventArgs e)
+        {
+            List<Preso> pres = Preso.MostrarPresosPorCelda(28);
+            FrmVerCeldacs frm = new FrmVerCeldacs(pres, 28, "B", frmPpal);
+            frm.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

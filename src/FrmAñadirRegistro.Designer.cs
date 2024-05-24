@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAñadirRegistro));
             this.lblNif = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblRegistro = new System.Windows.Forms.Label();
@@ -156,6 +157,7 @@
             this.Controls.Add(this.lblRegistro);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lblNif);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAñadirRegistro";
             this.Text = "FrmAñadirRegistro";
             this.Load += new System.EventHandler(this.FrmAñadirRegistro_Load);

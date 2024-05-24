@@ -41,7 +41,6 @@ namespace PROYECTO
         public string Direccion { get { return direccion; } }
         public int CodigoPostal { get { return codigoPostal; } }
         public string Correo { get { return correo; } }
-        public int Presente { get { return presente; } }
 
         public int Telefono { get { return telefono; } }
 
@@ -102,7 +101,27 @@ namespace PROYECTO
         }
 
 
+        public bool Polipreso()
+        {
+            ConexionBD.AbrirConexion();
 
+            string consulta = String.Format("Select nombre from presos where nif='{0}'", this.nif);
+
+
+            MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+
+            object nom = comando.ExecuteScalar();
+
+            ConexionBD.CerrarConexion();
+            if (nom == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         public static bool EmpleadoRegistrado(string nif)
         {
             bool registrado = false;
@@ -542,44 +561,52 @@ namespace PROYECTO
         }
         public int AgregarEmpleado()
         {
-
-            if (ConexionBD.Conexion != null)
+            if (Polipreso())
             {
-                try
-                {
-
-                    ConexionBD.AbrirConexion();
-                    int retorno;
-                    MemoryStream ms = new MemoryStream();
-                    this.foto.Save(ms, ImageFormat.Jpeg);
-                    byte[] aByte = ms.ToArray();
-
-                    string consulta = String.Format("INSERT INTO empleados (nif,nombre,apellidos,puesto,contraseña,sexo,turno,direccion,codigopostal,correo,telefono,foto,presente) VALUES " +
-                        "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}',@imagen,'{11}')", this.nif, this.nombre, this.apellidos, puesto, contraseña, sexo, turno, direccion, codigoPostal, correo, telefono, 1);
-
-
-                    MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
-                    comando.Parameters.AddWithValue("imagen", aByte);
-                    retorno = comando.ExecuteNonQuery();
-
-                    ConexionBD.CerrarConexion();
-                    MessageBox.Show("Empleado añadido correctamente");
-
-                }
-                catch (Exception ex)
-                {
-                    ConexionBD.CerrarConexion();
-
-                    MessageBox.Show(ex.Message);
-                    return -1;
-                }
-                ConexionBD.CerrarConexion();
-
+                MessageBox.Show("Nif presente en tabla presos");
                 return -1;
-
-
             }
-            return -1;
+            else
+            {
+                if (ConexionBD.Conexion != null)
+                {
+                    try
+                    {
+
+                        ConexionBD.AbrirConexion();
+                        int retorno;
+                        MemoryStream ms = new MemoryStream();
+                        this.foto.Save(ms, ImageFormat.Jpeg);
+                        byte[] aByte = ms.ToArray();
+
+                        string consulta = String.Format("INSERT INTO empleados (nif,nombre,apellidos,puesto,contraseña,sexo,turno,direccion,codigopostal,correo,telefono,foto,presente) VALUES " +
+                            "('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}',@imagen,'{11}')", this.nif, this.nombre, this.apellidos, puesto, contraseña, sexo, turno, direccion, codigoPostal, correo, telefono, 1);
+
+
+                        MySqlCommand comando = new MySqlCommand(consulta, ConexionBD.Conexion);
+                        comando.Parameters.AddWithValue("imagen", aByte);
+                        retorno = comando.ExecuteNonQuery();
+
+                        ConexionBD.CerrarConexion();
+                        MessageBox.Show("Empleado añadido correctamente");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        ConexionBD.CerrarConexion();
+
+                        MessageBox.Show(ex.Message);
+                        return -1;
+                    }
+                    ConexionBD.CerrarConexion();
+
+                    return -1;
+
+
+                }
+                return -1;
+            }
+           
 
 
         }

@@ -170,6 +170,7 @@
             // 
             this.mtxtNif.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(94)))), ((int)(((byte)(129)))));
             this.mtxtNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtNif.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.mtxtNif.Location = new System.Drawing.Point(478, 101);
             this.mtxtNif.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mtxtNif.Mask = "00000000-L";
