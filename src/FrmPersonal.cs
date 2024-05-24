@@ -22,6 +22,9 @@ namespace PROYECTO
             frmPpal.IdiomaCambiado += new FrmPpal.IdiomaCambiadoEventHandler(OnIdiomaCambiado);
             ActualizarIdioma();
             dgvEmpleados.RowTemplate.Height = 50;
+            Color colorCelda = ColorTranslator.FromHtml("#CBF8FA");
+
+            dgvEmpleados.DefaultCellStyle.BackColor = colorCelda;
         }
 
         public FrmPersonal()
